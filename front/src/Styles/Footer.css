@@ -1,0 +1,27 @@
+footer {
+    background: linear-gradient(to right, #000000, #808080);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-links a.privacy-link {
+    text-decoration: none;
+    color: white; 
+    border-bottom: 1px solid white; 
+    margin: 0 10px;
+  }
+  .footer-links a.privacy-link:hover {
+    color: blue; 
+    border-bottom: 1px solid blue;
+  }
+  
