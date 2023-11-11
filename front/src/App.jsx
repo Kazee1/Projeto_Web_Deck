@@ -4,11 +4,13 @@
 
 import PaginaInicial from './Inicio/PaginaInicial'
 import Footer from './Inicio/Footer'
+import Header from './Inicio/Header'
 
 function App() {
 
   return (
     <>
+      <Header/>
       <PaginaInicial/>
       <Footer/>
     </>
