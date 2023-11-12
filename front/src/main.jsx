@@ -9,25 +9,30 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Login from './Inicio/Login.jsx';
 import Cadastro from './Inicio/Cadastro.jsx';
 import EsqueceuSenha from './Inicio/EsqueceuSenha.jsx';
+import PaginaInicial from './Inicio/PaginaInicial.jsx';
+
 //Adicionando as rotas
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/', // Página inicial para fazer login
     element: <App />,
-    
     children: [
       {
-        path: '/Login',
-        element: <Login/>
+        path: '/',
+        element: <PaginaInicial />
       },
       {
-        path: '/Cadastrar',
-        element: <Cadastro/>
+        path: 'Login',
+        element: <Login />
       },
       {
-        path: '/EsqueceuSenha',
-        element: <EsqueceuSenha/>
-      }   
+        path: 'Cadastro',
+        element: <Cadastro />
+      },
+      {
+        path: 'EsqueceuSenha',
+        element: <EsqueceuSenha />
+      }
     ]
   }
 ]);

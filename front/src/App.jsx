@@ -2,17 +2,13 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 
-import PaginaInicial from './Inicio/PaginaInicial'
-import Footer from './Inicio/Footer'
-import Header from './Inicio/Header'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
-      <Header/>
-      <PaginaInicial/>
-      <Footer/>
+       <Outlet/>
     </>
   )
 }

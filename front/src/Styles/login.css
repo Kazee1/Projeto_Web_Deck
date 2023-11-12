@@ -1,43 +1,56 @@
-main {
-    font-family: Arial, sans-serif;
+.login {
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
-.container {
+.container-login {
+    margin-top: -140px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 500px; /* Aumente a largura do contêiner */
+    width: 500px; /* Aumente a largura do contêiner conforme desejado */
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #ccc; /* Adiciona uma única borda */
 }
 
-.container h4{
-    font-family: bold;
-    margin-bottom: 20px;
+.container-register {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 500px; /* Aumente a largura do contêiner conforme desejado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc; /* Adiciona uma única borda */
 }
 
-.form-group {
+.container-register h3 {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+
+.form-group-login {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.form-group-login label {
     display: block;
     margin-bottom: 5px;
 }
 
-.form-group input {
+.form-group-login input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 3px;
 }
 
@@ -47,7 +60,7 @@ main {
     border: none;
     border-radius: 3px;
     padding: 10px;
-    width: 100%;
+    width: 113%;
     cursor: pointer;
 }
 
@@ -58,10 +71,11 @@ main {
 .links {
     margin-top: 20px;
     font-size: 12px;
-    margin-left: -40px;
+    text-align: center; /* Centraliza o texto horizontalmente */
 }
 
 .links p {
+    margin-top: 10px;
     margin: 5px 0;
 }
 

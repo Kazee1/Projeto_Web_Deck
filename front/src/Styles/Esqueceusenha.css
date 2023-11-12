@@ -1,0 +1,58 @@
+.Esqueceusenha {
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 100vh;
+}
+
+.container-reset-password {
+    margin-top: -200px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.reset-password-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #00000015;
+}
+
+.reset-password-form h1 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-group-reset {
+    margin: 15px 0;
+}
+
+.form-group-reset label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.form-group-reset input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reset-password-form button {
+    background-color: #0366d6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-password-form button:hover {
+    background-color: #0056b3;
+}
