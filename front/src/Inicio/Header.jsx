@@ -8,7 +8,7 @@ export default function Header(){
         <>
         <header>
         <img src={DeckCraftify}></img>
-        <h2>DECKCRAFTIFY</h2>
+        <h2>TRADING DECK BUILDER</h2>
         <nav>
           <div className="dropdown">
             <button className="dropbtn">&#9776;</button>
