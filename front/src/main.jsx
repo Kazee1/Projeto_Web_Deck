@@ -11,6 +11,8 @@ import Cadastro from './Inicio/Cadastro.jsx';
 import EsqueceuSenha from './Inicio/EsqueceuSenha.jsx';
 import PaginaInicial from './Inicio/PaginaInicial.jsx';
 
+import DungeonsDragons from './FichaBuilder/Fichas/DungeonsDragons.jsx';
+import CallCthulhu from './FichaBuilder/Fichas/CallCthulhu.jsx';
 //Adicionando as rotas
 const router = createBrowserRouter([
   {
@@ -32,7 +34,15 @@ const router = createBrowserRouter([
       {
         path: 'EsqueceuSenha',
         element: <EsqueceuSenha />
-      }
+      },
+      {
+        path: 'Testes',
+        element: <DungeonsDragons/>
+      },
+      {
+        path: 'Teste',
+        element: <CallCthulhu/>
+      },
     ]
   }
 ]);

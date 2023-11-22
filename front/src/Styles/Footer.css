@@ -1,27 +1,31 @@
 footer {
-    background: linear-gradient(to right, #000000, #808080);
-    color: white;
-    padding: 10px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .footer-links a.privacy-link {
-    text-decoration: none;
-    color: white; 
-    border-bottom: 1px solid white; 
-    margin: 0 10px;
-  }
-  .footer-links a.privacy-link:hover {
-    color: blue; 
-    border-bottom: 1px solid blue;
-  }
-  
+  background: linear-gradient(to right, #000000, #808080);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  flex-shrink: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; 
+  padding: 0; 
+}
+
+.footer-links a.privacy-link {
+  text-decoration: none;
+  color: white; 
+  border-bottom: 1px solid white; 
+  margin: 0 10px;
+}
+
+.footer-links a.privacy-link:hover {
+  color: blue; 
+  border-bottom: 1px solid blue;
+}
