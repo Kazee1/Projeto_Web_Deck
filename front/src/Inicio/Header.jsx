@@ -1,5 +1,5 @@
 import "../Styles/Header.css";
-import DeckCraftify from '../Imagens/DeckCraftify.png'
+import rpglogo from '../Imagens/rpglogo.jpg'
 
 import { Link, Navigate } from 'react-router-dom'
 
@@ -7,8 +7,8 @@ export default function Header(){
     return (
         <>
         <header>
-        <img src={DeckCraftify}></img>
-        <h2>TRADING DECK BUILDER</h2>
+        <img src={rpglogo}></img>
+        <h2>RPG Maker</h2>
         <nav>
           <div className="dropdown">
             <button className="dropbtn">&#9776;</button>

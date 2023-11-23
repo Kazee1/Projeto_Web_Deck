@@ -1,0 +1,1027 @@
+.Ficha1 {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    padding-bottom: 1950px;
+  }
+  
+.CallPage1 {
+    position: relative;
+    width: 918px;
+    height: 1188px;
+    margin: auto;
+  }
+
+.CallPage2{
+    position: absolute;
+    top: 1300px;
+    width: 918px;
+    height: 1188px;
+    margin: auto;
+  }
+
+.CallPage1 .CallImagem1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,  -50%);
+  }
+
+.CallImagem1{
+    width: 918px;
+    height: 1188px;   
+}
+.CallImagem2{
+    width: 918px;
+    height: 1188px;
+}
+
+.NomeJogador, .JogadorJogador, .OcupacaoJogador, .IdadeJogador, .SexoJogador, .ResidenciaJogador,
+.NascimentoJogador, .ForJogador, .For1Jogador,  .For2Jogador, .ConJogador, .Con1Jogador, .Con2Jogador, 
+.TamJogador, .Tam1Jogador, .Tam2Jogador,.DesJogador, .Des1Jogador, .Des2Jogador, .ApaJogador,.Apa1Jogador, 
+.Apa2Jogador, .IntJogador, .Int1Jogador, .Int2Jogador, .PodJogador, .Pod1Jogador, .Pod2Jogador, .EduJogador, 
+.Edu1Jogador, .Edu2Jogador, .TaxaMovJogador{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+}
+.NomeJogador{
+  font-size: 18px;
+  top: 75px;
+  left: 130px;
+  width: 290px;
+}
+.JogadorJogador{
+  font-size: 18px;
+  top: 96px;
+  left: 160px;
+  width: 245px;
+}
+.OcupacaoJogador{
+  font-size: 18px;
+  top: 120px;
+  left: 155px;
+  width: 250px;
+}
+.IdadeJogador{
+  font-size: 18px;
+  top: 143px;
+  left: 120px;
+  width: 120px;
+}
+.SexoJogador{
+  font-size: 18px;
+  top: 143px;
+  left: 282px;
+  width: 130px;
+}
+
+.ResidenciaJogador{
+  font-size: 18px;
+  top: 165px;
+  left: 165px;
+  width: 250px;
+}
+
+.NascimentoJogador{
+  font-size: 18px;
+  top: 188px;
+  left: 173px;
+  width: 240px;
+}
+
+.ForJogador, .ConJogador, .TamJogador{
+  text-align: center;
+  font-size: 20px;
+  left: 506px;
+  width: 23px;
+}
+.For1Jogador,.Con1Jogador, .Tam1Jogador{
+  text-align: center;
+  font-size: 10px;
+  left: 543px;
+  width: 23px;
+}
+.For2Jogador, .Con2Jogador, .Tam2Jogador{
+  text-align: center;
+  font-size: 10px;
+  left: 543px;
+  width: 23px;
+}
+
+.DesJogador, .ApaJogador, .IntJogador{
+  text-align: center;
+  font-size: 20px;
+  left: 637px;
+  width: 23px;
+}
+.Des1Jogador, .Apa1Jogador, .Int1Jogador{
+  text-align: center;
+  font-size: 10px;
+  left: 673px;
+  width: 23px;
+}
+.Des2Jogador, .Apa2Jogador, .Int2Jogador{
+  text-align: center;
+  font-size: 10px;
+  left: 673px;
+  width: 23px;
+}
+
+.PodJogador, .EduJogador, .TaxaMovJogador{
+  text-align: center;
+  font-size: 20px;
+  left: 776px;
+  width: 23px;
+}
+.Pod1Jogador, .Edu1Jogador{
+  text-align: center;
+  font-size: 10px;
+  left: 812px;
+  width: 23px;
+}
+
+.Pod2Jogador, .Edu2Jogador{
+  text-align: center;
+  font-size: 10px;
+  left: 812px;
+  width: 23px;
+}
+
+.TaxaMov1Jogador{
+  position: absolute;
+  top: 171px;
+  left: 814px;
+  width: 22px;
+  height: 22px;
+  border: 0px solid;
+}
+
+.TaxaMov2Jogador{
+  position: absolute;
+  top: 192px;
+  left: 814px;
+  width: 22px;
+  height: 22px;
+}
+
+.LesaoGraveJogador{
+  position: absolute;
+  top: 220px;
+  left: 100px;
+  width: 23px;
+  height: 23px;
+}
+
+.LesaoMaximoJogador{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  top: 228px;
+  left: 150px;
+  width: 53px;
+
+  font-size: 14px;
+}
+
+.InsanidadeTempJogador{
+  position: absolute;
+  top: 219px;
+  left: 301px;
+  width: 23px;
+  height: 23px;
+}
+
+.InsanidadeIndJogador{
+  position: absolute;
+  top: 219px;
+  left: 391px;
+  width: 23px;
+  height: 23px;
+}
+
+.InsanidadeIniJogador{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+
+  left: 452px;
+  top: 227px;
+  width: 47px;
+
+}
+
+.SorteJogador{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  font-size: 14;
+
+  left: 268px;
+  top: 345px;
+  width: 47px;
+}
+
+.PontosDeMagia{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+
+  left: 732px;
+  top: 310px;
+  width: 47px;
+}
+
+
+.ForJogador, .DesJogador, .PodJogador{
+  top: 95px;
+}
+.For1Jogador, .Des1Jogador, .Pod1Jogador{
+  top: 90px;
+}
+.For2Jogador, .Des2Jogador, .Pod2Jogador{
+  top: 108px;
+}
+
+.ConJogador, .ApaJogador, .EduJogador{
+  top: 139px;
+}
+.Con1Jogador, .Apa1Jogador, .Edu1Jogador{
+  top: 135px;
+}
+.Con2Jogador, .Apa2Jogador, .Edu2Jogador{
+top: 154px;
+}
+
+.TamJogador, .IntJogador, .TaxaMovJogador{
+  top: 185px;
+}
+.Tam1Jogador, .Int1Jogador{
+  top: 181px;
+}
+.Tam2Jogador, .Int2Jogador{
+  top: 200px;
+}
+
+
+.jAntropologia, .jFogo1, .jRifles1, .jArqueologia1,
+.jArremessar1, .jArte1, .jVazio1, .jVazio6,
+.jVazio11, .jAvaliacao1, .jCavalgar1, .jCharme1,
+.jChaveiro1, .jCiencia1, .jVazio16{
+  position: absolute;
+  left: 63px;
+  width: 15px;
+  height: 15px;
+
+} 
+
+.jAntropologia1, .jFogo2, .jRifles2, .jArqueologia2,
+.jArremessar2, .jArte2, .jVazio2, .jVazio7,
+.jVazio12, .jAvaliacao2, .jCavalgar2, .jCharme2,
+.jChaveiro2, .jCiencia2, .jVazio17{
+  position: absolute;
+  font-size: 16px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 214px;
+  width: 18px;
+} 
+
+.jAntropologia2, .jFogo3, .jRifles3, .jArqueologia3,
+.jArremessar3, .jArte3, .jVazio3, .jVazio8,
+.jVazio13, .jAvaliacao3, .jCavalgar3, .jCharme3,
+.jChaveiro3, .jCiencia3, .jVazio18{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 240px;
+  width: 12px;
+}
+
+.jAntropologia3, .jFogo4, .jRifles4, .jArqueologia4,
+.jArremessar4, .jArte4, .jVazio4, .jVazio9,
+.jVazio14, .jAvaliacao4, .jCavalgar4, .jCharme4,
+.jChaveiro4, .jCiencia4, .jVazio19{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 240px;
+  width: 12px;
+}
+
+.jVazio21, .jVazio26, .jEletrico1, .jMecanico1, .jContabilidade1, .jDireito1, .jDirigir1, .jDisfarce1, .jEncontrar1, .jEscutar1, .jEscalar1, .jEsquivar1,
+.jLabia1, .jIntimidacao1, .jHistoria1{
+  position: absolute;
+  left: 260px;
+  width: 15px;
+  height: 15px;
+}
+
+.jVazio22, .jVazio27, .jEletrico2, .jMecanico2, .jContabilidade2, .jDireito2, .jDirigir2, .jDisfarce2, .jEncontrar2, .jEscutar2, .jEscalar2, .jEsquivar2,
+.jLabia2, .jIntimidacao2, .jHistoria2{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  left: 411px;
+  width: 18px;
+}
+
+.jVazio23, .jVazio28, .jEletrico3, .jMecanico3, .jContabilidade3, .jDireito3, .jDirigir3, .jDisfarce3, .jEncontrar3, .jEscutar3, .jEscalar3, .jEsquivar3,
+.jLabia3, .jIntimidacao3, .jHistoria3{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 437px;
+  width: 12px;
+}
+
+.jVazio24, .jVazio29, .jEletrico4, .jMecanico4, .jContabilidade4, .jDireito4, .jDirigir4, .jDisfarce4, .jEncontrar4, .jEscutar4, .jEscalar4, .jEsquivar4,
+.jLabia4, .jIntimidacao4, .jHistoria4{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 437px;
+  width: 12px;
+}
+
+.jFurtividade1, .jLinguaN1,.jLinguaNN1, .jLingua1, .jLingua6, .jLingua11, .jLingua16, .jLutar1, .jNada1,
+.jMedicina1, .jMundo1, .jNatacao1, .jNavegacao1{
+  position: absolute;
+  left: 458px;
+  width: 15px;
+  height: 15px;
+}
+
+.jFurtividade2, .jLinguaN2,.jLinguaNN2, .jLingua2, .jLingua7, .jLingua12, .jLingua17, .jLutar2, .jNada2,
+.jMedicina2, .jMundo2, .jNatacao2, .jNavegacao2, .jMythos1, .jCredito1{
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  left: 609px;
+  width: 18px;
+}
+
+.jFurtividade3, .jLinguaN3, .jLinguaNN3,.jLingua3, .jLingua8, .jLingua13, .jLingua18, .jLutar3, .jNada3,
+.jMedicina3, .jMundo3, .jNatacao3, .jNavegacao3, .jMythos2, .jCredito2{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 635px;
+  width: 12px;
+}
+
+.jFurtividade4, .jLinguaN4,.jLinguaNN4, .jLingua4, .jLingua9, .jLingua14, .jLingua19, .jLutar4, .jNada4,
+.jMedicina4, .jMundo4, .jNatacao4, .jNavegacao4, .jMythos3, .jCredito3{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 635px;
+  width: 12px;
+}
+
+.jOcultista1, .jOperar1, .jPersuasao1, .jPilotar1, .jAlgum1, .jDigitacao1, .jSocorro1, .jPsicana1, .jPsicologia1, .jSaltar1, .jRastrear1, .jSobrevivencia1, .jBiblioteca1, .jAdiciona1, .jAdiciona6{
+  position: absolute;
+  left: 655px;
+  width: 15px;
+  height: 15px;
+}
+
+.jOcultista2, .jOperar2, .jPersuasao2, .jPilotar2, .jAlgum2, .jDigitacao2, .jSocorro2, .jPsicana2, .jPsicologia2, .jSaltar2, .jRastrear2, .jSobrevivencia2, .jBiblioteca2, .jAdiciona2, .jAdiciona7{
+  position: absolute;
+  position: absolute;
+  white-space: nowrap;
+  border: none; 
+  font-size: 16px;
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 806px;
+  width: 18px;
+}
+
+.jOcultista3, .jOperar3, .jPersuasao3, .jPilotar3, .jAlgum3, .jDigitacao3, .jSocorro3, .jPsicana3, .jPsicologia3, .jSaltar3, .jRastrear3, .jSobrevivencia3, .jBiblioteca3, .jAdiciona3, .jAdiciona8{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 832px;
+  width: 12px;
+}
+
+.jOcultista4, .jOperar4, .jPersuasao4, .jPilotar4, .jAlgum4, .jDigitacao4, .jSocorro4, .jPsicana4, .jPsicologia4, .jSaltar4, .jRastrear4, .jSobrevivencia4, .jBiblioteca4, .jAdiciona4, .jAdiciona9{
+  position: absolute;
+  font-size: 9px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  text-align: center;
+  left: 832px;
+  width: 12px;
+}    
+ 
+.jAntropologia, .jVazio21,.jFurtividade1,.jOcultista1{
+  top: 460px;
+}
+.jAntropologia1, .jVazio22,.jFurtividade2,.jOcultista2{
+  top:461px
+}
+.jAntropologia2, .jVazio23,.jFurtividade3,.jOcultista3{
+  top: 457px;
+}
+.jAntropologia3, .jVazio24,.jFurtividade4,.jOcultista4{
+  top: 470px;
+}
+.jFogo1, .jVazio26, .jLinguaN1,.jOperar1{
+  top: 487px;
+}
+.jFogo2, .jVazio27, .jLinguaN2,.jOperar2{
+  top: 488px;
+}
+.jFogo3, .jVazio28, .jLinguaN3,.jOperar3{
+ top: 484px;
+}
+.jFogo4, .jVazio29, .jLinguaN4,.jOperar4{
+top: 497px;
+}
+.jRifles1, .jEletrico1,.jLinguaNN1,.jPersuasao1{
+  top: 515px
+}
+.jRifles2, .jEletrico2,.jLinguaNN2,.jPersuasao2{
+  top: 516px;
+}
+.jRifles3, .jEletrico3,.jLinguaNN3,.jPersuasao3{
+top: 512px;
+}
+.jRifles4, .jEletrico4,.jLinguaNN4,.jPersuasao4{
+top: 525px;
+}
+
+.jArqueologia1,.jMecanico1,.jLingua1, .jPilotar1{
+  top: 543px;
+}
+.jArqueologia2,.jMecanico2,.jLingua2, .jPilotar2{
+  top: 544px;
+}
+.jArqueologia3,.jMecanico3,.jLingua3, .jPilotar3{
+  top: 540px;
+}
+.jArqueologia4,.jMecanico4,.jLingua4, .jPilotar4{
+  top: 553px;
+}
+
+.jArremessar1, .jContabilidade1,.jLingua6,.jAlgum1{
+  top: 571px;
+}
+.jArremessar2, .jContabilidade2,.jLingua7,.jAlgum2{
+  top: 572px;
+}
+.jArremessar3, .jContabilidade3,.jLingua8,.jAlgum3{
+  top: 568px;
+}
+.jArremessar4, .jContabilidade4,.jLingua9,.jAlgum4{
+  top: 581px;
+}
+
+.jArte1, .jDireito1, .jLingua11,.jDigitacao1{
+  top: 600px;
+}
+.jArte2, .jDireito2, .jLingua12,.jDigitacao2{
+  top: 601px;
+}
+.jArte3, .jDireito3, .jLingua13,.jDigitacao3{
+  top: 597px;
+}
+.jArte4, .jDireito4, .jLingua14,.jDigitacao4{
+  top: 610px;
+}
+
+.jVazio1, .jDirigir1,  .jLingua16,.jSocorro1{
+  top: 628px;
+}
+.jVazio2, .jDirigir2,  .jLingua17,.jSocorro2{
+  top: 629px;
+}
+.jVazio3, .jDirigir3,  .jLingua18,.jSocorro3{
+  top: 625px;
+}
+.jVazio4, .jDirigir4,  .jLingua19,.jSocorro4{
+  top: 638px;
+}
+
+.jVazio6, .jDisfarce1, .jLutar1,.jPsicana1{
+  top: 656px;
+}
+.jVazio7, .jDisfarce2, .jLutar2,.jPsicana2{
+  top: 657px;
+}
+.jVazio8, .jDisfarce3, .jLutar3,.jPsicana3{
+  top: 653px;
+}
+.jVazio9, .jDisfarce4, .jLutar4,.jPsicana4{
+  top: 666px;
+}
+
+.jVazio11, .jEncontrar1, .jNada1,.jPsicologia1{
+  top: 683px;
+}
+.jVazio12, .jEncontrar2, .jNada2,.jPsicologia2{
+  top: 684px;
+}
+.jVazio13, .jEncontrar3, .jNada3,.jPsicologia3{
+  top: 680px;
+}
+.jVazio14, .jEncontrar4, .jNada4,.jPsicologia4{
+  top: 693px;
+}
+
+.jAvaliacao1, .jEscutar1,.jMedicina1,.jSaltar1{
+  top: 712px;
+}
+.jAvaliacao2, .jEscutar2,.jMedicina2,.jSaltar2{
+  top: 713px;
+}
+.jAvaliacao3, .jEscutar3,.jMedicina3,.jSaltar3{
+  top: 709px;
+}
+.jAvaliacao4, .jEscutar4,.jMedicina4,.jSaltar4{
+  top: 722px;
+}
+
+.jCavalgar1,.jEscalar1,.jRastrear1{
+  top: 740px;
+}
+
+.jCavalgar2,.jEscalar2,.jRastrear2, .jMythos1{
+  top: 741px;
+}
+
+.jCavalgar3,.jEscalar3,.jRastrear3,.jMythos2{
+  top: 737px;
+}
+
+.jCavalgar4,.jEscalar4,.jRastrear4,.jMythos3{
+  top: 750px;
+}
+
+.jCharme1,.jEsquivar1,.jMundo1, .jSobrevivencia1{
+  top: 768px;
+}
+.jCharme2,.jEsquivar2,.jMundo2, .jSobrevivencia2{
+  top: 769px;
+}
+.jCharme3,.jEsquivar3,.jMundo3, .jSobrevivencia3{
+  top: 765px;
+}
+.jCharme4,.jEsquivar4,.jMundo4, .jSobrevivencia4{
+  top: 778px;
+}
+
+.jChaveiro1,.jLabia1,  .jNatacao1,.jBiblioteca1{
+  top: 796px;
+}
+.jChaveiro2,.jLabia2,  .jNatacao2,.jBiblioteca2{
+  top: 797px;
+}
+.jChaveiro3,.jLabia3,  .jNatacao3,.jBiblioteca3{
+  top: 793px;
+}
+.jChaveiro4,.jLabia4,  .jNatacao4,.jBiblioteca4{
+  top: 806px;
+}
+
+.jCiencia1,.jIntimidacao1,.jNavegacao1,.jAdiciona1{
+  top: 825px;
+}
+.jCiencia2,.jIntimidacao2,.jNavegacao2,.jAdiciona2{
+  top: 826px;
+}
+.jCiencia3,.jIntimidacao3,.jNavegacao3,.jAdiciona3{
+  top: 822px;
+}
+.jCiencia4,.jIntimidacao4,.jNavegacao4,.jAdiciona4{
+  top: 835px;
+}
+
+.jVazio16, .jHistoria1,.jAdiciona6{
+top: 852px;
+}
+.jVazio17, .jHistoria2,.jAdiciona7, .jCredito1{
+  top: 853px;
+}
+.jVazio18, .jHistoria3,.jAdiciona8, .jCredito2{
+  top: 849px;
+}
+.jVazio19, .jHistoria4,.jAdiciona9, .jCredito3{
+  top: 862px;
+}
+
+.jArte5, .jVazio5, .jVazio10, .jVazio15, .jVazio20, .jVazio25, .jVazio30,
+.jLinguaN5,.jLinguaNN5,.jLingua5,.jLingua10,.jLingua15,.jLingua20,.jNada5,.jAlgum5,.jSobrevivencia5,.jAdiciona5,.jAdiciona10{
+  position: absolute;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  width: 110px;
+  font-size: 11px;
+}
+
+.jArte5{
+ top: 609px; 
+ left: 83px;
+}
+.jVazio5{
+  top: 631px;
+  left: 83px;
+}
+.jVazio10{
+  top: 659px;
+  left: 83px;
+}
+.jVazio15{
+  top: 687px;
+  left: 83px;
+}
+
+.jVazio20{
+  top: 855px;
+  left: 83px;
+}
+
+.jVazio25{
+  top: 462px;
+  left: 280px;
+}
+
+.jVazio30{
+  top: 491px;
+  left: 280px;
+}
+
+.jLinguaN5{
+  top: 500px;
+  left: 480px;
+}
+
+.jLinguaNN5{
+  top: 520px;
+  left: 480px;
+}
+
+.jLingua5{
+  top: 555px;
+  left: 480px;
+}
+
+.jLingua10{
+  top: 576px;
+  left: 480px;
+}
+
+.jLingua15{
+  top: 604px;
+  left: 480px;
+}
+
+.jLingua20{
+  top: 632px;
+  left: 480px;
+}
+
+.jNada5{
+  top: 687px;
+  left: 480px;
+}
+
+.jAlgum5{
+  top: 576px;
+  left: 675px;
+}
+
+.jSobrevivencia5{
+  top: 780px;
+  left: 675px;
+}
+
+.jAdiciona5{
+  top: 828px;
+  left: 675px;
+}
+
+.jAdiciona10{
+  top: 855px;
+  left: 675px; 
+}
+
+
+
+
+.jArmasDesarmada1, .jRegular1, .jDificil1, .jExtremo1,
+.jDanod1, .jAlcanceTiro1, .jAtaquesa1, .jMunicao1, .jDefeitos1{
+  text-align: center;
+  text-align: 16px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  top: 940px;
+}
+
+.jArmasDesarmada2, .jRegular2, .jDificil2, .jExtremo2,
+.jDanod2, .jAlcanceTiro2, .jAtaquesa2, .jMunicao2, .jDefeitos2{
+  text-align: center;
+  text-align: 16px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  top: 963px;
+}
+
+.jArmasDesarmada1, .jArmasDesarmada2{
+  left: 70px;
+  width: 100px;
+}
+
+.jRegular1, .jRegular2{
+  left: 184px;
+  width: 45px;
+}
+.jDificil1, .jDificil2{
+  left: 243px;
+  width: 45px;
+}
+.jExtremo1, .jExtremo2{
+  left: 302px;
+  width: 45px;
+}
+.jDanod1, .jDanod2{
+  left: 361px;
+  width: 90px;
+}
+.jAlcanceTiro1, .jAlcanceTiro2{
+  left: 465px;
+  width: 45px;
+}
+.jAtaquesa1, .jAtaquesa2{
+  left: 524px;
+  width: 45px;
+}
+.jMunicao1, .jMunicao2{
+  left: 583px;
+  width: 45px;
+}
+.jDefeitos1, .jDefeitos2{
+  left: 642px;
+  width: 45px;
+}
+
+.jBonusDeDano, .jCorpo{
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  left: 784px;
+  width: 50px;
+}
+.jBonusDeDano{
+  top: 920px;
+}
+.jCorpo {
+  top: 965px;
+}
+
+.jEsquivador{
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  left: 778px;
+  top: 1006px;
+  width: 25px;
+}
+.jEsquivador1{
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  left: 814px;
+  top: 1002px;
+  width: 25px;
+} 
+.jEsquivador2{
+  text-align: center;
+  font-size: 11px;
+  font-weight: bold;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  left: 814px;
+  top: 1022px;
+  width: 25px;
+}
+
+
+.jDescricao, .jCaracteristicas, .jIdeologias, .jCicatrizes, .jPessoas, .jFobias, .jLocais, .jTomos, .jPertencesQuerido,.jEntidades,
+.jEquipamento, .jPertences, .jPatrimonio{
+  font-size: 14px;
+  position: absolute;
+  display: inline-block;
+  overflow-y: hidden;
+  resize: none; 
+  white-space: pre-wrap;
+  border: none;
+  background-color: transparent;
+  outline: none; 
+  word-wrap: break-word;
+  line-height: 1.15;
+}
+
+.jDescricao{
+  top: 130px;
+  left: 80px;
+  width: 360px;
+  height: 70px;
+}
+
+.jCaracteristicas{
+  top: 130px;
+  left: 465px;
+  width: 250px;
+  height: 70px;
+}
+
+.jIdeologias{
+  top: 220px;
+  left: 80px;
+  width: 360px;
+  height: 70px;
+}
+
+.jCicatrizes{
+  top: 220px;
+  left: 465px;
+  width: 360px;
+  height: 70px;
+}
+
+.jPessoas{
+  top: 310px;
+  left: 80px;
+  width: 360px;
+  height: 70px;
+}
+
+.jFobias{
+  top: 310px;
+  left: 465px;
+  width: 360px;
+  height: 70px;
+}
+
+.jLocais{
+  top: 400px;
+  left: 80px;
+  width: 360px;
+  height: 70px;
+}
+
+.jTomos{
+  top: 400px;
+  left: 465px;
+  width: 360px;
+  height: 70px;
+}
+
+.jPertencesQuerido{
+  top: 490px;
+  left: 80px;
+  width: 360px;
+  height: 100px;
+}
+
+.jEntidades{
+  top: 490px;
+  left: 465px;
+  width: 360px;
+  height: 100px;
+}
+
+.jEquipamento{
+  top: 640px;
+  left: 80px;
+  width: 210px;
+  height: 230px;
+}
+
+.jPertences{
+  top: 640px;
+  left: 300px;
+  width: 210px;
+  height: 230px;
+}
+
+.jNivelGasto{
+  font-size: 12px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  top: 649px;
+  left: 645px;
+  width: 180px;
+}
+
+.jDinheiro{
+  font-size: 12px;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;
+  position: absolute;
+  top: 673px;
+  left: 600px;
+  width: 230px;
+}
+
+.jPatrimonio{
+ top: 715px;
+ left: 530px;
+ width: 302px;
+ height: 160px; 
+}

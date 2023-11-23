@@ -1,0 +1,1582 @@
+.Ficha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    padding-bottom: 3100px;
+  }
+  
+  .Page1 {
+    position: relative;
+    width: 918px;
+    height: 1188px;
+    margin: auto;
+  }
+
+  .Page2{
+    position: absolute;
+    top: 1300px;
+    width: 918px;
+    height: 1188px;
+    margin: auto;
+  }
+  .Page3{
+    position: absolute;
+    top: 2490px;
+    width: 918px;
+    height: 1188px;
+    margin: auto;
+  }
+
+  .Page1 .Imagem1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,  -50%);
+  }
+  
+  .Imagem1 {
+    width: 918px;
+    height: 1188px;
+  }
+
+  .Imagem2{
+    width: 918px;
+    height: 1188px;
+  }
+
+  .Imagem3{
+    width: 918px;
+    height: 1188px;
+  }
+  
+  
+  .NomePerso, .NomePerso1, .Class_Nivel, .Antecedente, .NomeDoJogador,
+  .Raca, .Tendencia, .Experiencia, .Forca, .ForcaBonus, .Destreza, .DestrezaBonus, .Constituicao,
+  .ConstituicaoBonus,.Inteligencia,.InteligenciaBonus, .Sabedoria,.SabedoriaBonus, .Carisma,
+  .CarismaBonus, .Inspiracao, .Proficiencia, .radioForca, .SubForca, .radioDestreza, .SubDestreza, .radioConstituicao,
+  .SubConstituicao, .radioInteligencia, .SubInteligencia, .radioSabedoria
+  ,.SubSabedoria, .radioCarisma, .SubCarisma, .radioAcrobacia, .SubAcrobacia,
+  .radioArcanismo, .SubArcanismo, .radioAtletismo, .SubAtletismo,
+  .radioAtuacao, .SubAtuacao, .radioEnganacao, .SubEnganacao, .radioFurtividade,
+  .SubFurtividade, .radioHistoria, .SubHistoria, .SubIntimidacao, .radioIntimidacao, .radioIntuicao, .SubIntuicao, .radioInvestigacao,
+  .SubInvestigacao, .radioAnimais, .SubAnimais, .radioMedicina, .SubMedicina, .radioNatureza, .SubNatureza, .radioPercepcao, .SubPercepcao,
+  .radioPersuasao, .SubPersuasao, .radioPrestigio, .SubPrestigio, .radioReligiao, .SubReligiao, .radioSobrevivencia, .SubSobrevivencia,
+  .Armadura, .Iniciativa, .Deslocamento, .VidaMaxima, .VidaAtual, .VidaTemporaria, .DadosVidaTotal, .DadosVida, .Sucesso1, .Sucesso2,
+  .Sucesso3, .Fracasso1, .Fracasso2, .Fracasso3, .NomeAtaque1, .NomeAtaque2, .NomeAtaque3,
+  .DTAtaque1, .DTAtaque2, .DTAtaque3, .BonusAtaque1, .BonusAtaque2, .BonusAtaque3, .SabedoriaPassiva, .PC, .PP, .PE, .PO, .PL, .Idade,
+  .Altura, .Peso, .Olhos, .Pele, .Cabelo, .Guilda
+  {
+    position:absolute;
+    white-space: nowrap;
+    border: none; 
+    background: transparent; 
+    outline: none;
+  }
+
+  .NomePerso {
+    font-weight: bold;
+    font-size: 24px; 
+    top:84px;
+    left:67px;
+    width: 310px;
+    height: 40px; 
+  }
+
+  .Class_Nivel{
+    font-size: 15px;
+    top: 75px;
+    left: 402px;
+    width: 155px;
+    height: 21px;
+  }
+
+  .Antecedente{
+    font-size: 15px;
+    top: 75px;
+    left: 574px;
+    width: 145px;
+    height: 21px; 
+  }
+
+  .NomeDoJogador{
+    font-size: 15px;
+    top: 75px;
+    left: 718px;
+    width: 135px;
+    height: 21px;
+  }
+
+  .Raca{
+    font-size: 15px;
+    top: 115px;
+    left: 402px;
+    width: 155px;
+    height: 21px;
+  }
+
+  .Tendencia{
+    font-size: 15px;
+    top: 115px;
+    left: 572px;
+    width: 145px;
+    height: 21px;
+  }
+
+  .Experiencia{
+    font-size: 15px;
+    top: 115px;
+    left: 720px;
+    width: 135px;
+    height: 21px;;
+  }
+
+  .Forca{
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    top: 238px;
+    left: 56px;
+    width: 55px;
+    height: 32px;
+  }
+
+  .ForcaBonus{
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    top: 277px;
+    left: 65px;
+    width: 35px;
+    height: 25px;
+  }
+
+  .Destreza{
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    top: 346px;
+    left: 56px;
+    width: 55px;
+    height: 32px;
+  }
+
+  .DestrezaBonus{  
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    top: 385px;
+    left: 65px;
+    width: 35px;
+    height: 25px;
+  }
+
+  .Constituicao{
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    top: 454px;
+    left: 56px;
+    width: 55px;
+    height: 32px;
+  }
+
+  .ConstituicaoBonus{  
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    top: 493px;
+    left: 65px;
+    width: 35px;
+    height: 25px;
+  }
+
+  .Inteligencia{
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    top: 562px;
+    left: 56px;
+    width: 55px;
+    height: 32px;
+
+  }
+
+  .InteligenciaBonus{ 
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    top: 601px;
+    left: 65px;
+    width: 35px;
+    height: 25px;
+  }
+
+  .Sabedoria{
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    top: 670px;
+    left: 56px;
+    width: 55px;
+    height: 32px;
+  }
+
+  .SabedoriaBonus{
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    top: 709px;
+    left: 65px;
+    width: 35px;
+    height: 25px;
+  }
+
+  .Carisma{
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    top: 778px;
+    left: 56px;
+    width: 55px;
+    height: 32px;
+  }
+
+  .CarismaBonus{  
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+    top: 817px;
+    left: 65px;
+    width: 35px;
+    height: 25px;
+  }
+
+  .Inspiracao{ 
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    top: 198px;
+    left: 142px;
+    width: 33px;
+    height: 24px;
+  }
+
+  .Proficiencia{
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    top: 246px;
+    left: 141px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .radioForca{
+    top: 310px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubForca{ 
+    text-align: center;
+    font-size: 11px;
+    top: 310px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioDestreza{
+    top: 329px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubDestreza{  
+    text-align: center;
+    font-size: 11px;
+    top: 331px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioConstituicao{
+    top: 349px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubConstituicao{
+    text-align: center;
+    font-size: 11px;
+    top: 350px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioInteligencia{ 
+    top: 370px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubInteligencia{    
+    text-align: center;
+    font-size: 11px;
+    top: 371px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioSabedoria{
+    top: 390px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubSabedoria{   
+    text-align: center;
+    font-size: 11px;
+    top: 392px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioCarisma{
+    top: 411px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubCarisma{
+    text-align: center;
+    font-size: 11px;
+    top: 413px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioAcrobacia{
+    top: 482px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubAcrobacia{
+    text-align: center;
+    font-size: 11px;
+    top: 483px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioArcanismo{
+    top: 502px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubArcanismo{
+    text-align: center;
+    font-size: 11px;
+    top: 503px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioAtletismo{
+    top: 523px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubAtletismo{  
+    text-align: center;
+    font-size: 11px;
+    top: 524px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioAtuacao{
+    top: 543px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubAtuacao{
+    text-align: center;
+    font-size: 11px;
+    top: 544px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioEnganacao{
+    top: 563px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubEnganacao{
+    text-align: center;
+    font-size: 11px;
+    top: 564px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioFurtividade{
+    top: 583px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubFurtividade{
+    text-align: center;
+    font-size: 11px;
+    top: 584px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioHistoria{
+    top: 603px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubHistoria{
+    text-align: center;
+    font-size: 11px;
+    top: 604px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioIntimidacao{
+    top: 623px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubIntimidacao{
+    text-align: center;
+    font-size: 11px;
+    top: 624px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioIntuicao{
+    top: 643px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubIntuicao{
+    text-align: center;
+    font-size: 11px;
+    top: 644px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioInvestigacao{
+    top: 663px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubInvestigacao{
+    text-align: center;
+    font-size: 11px;
+    top: 664px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioAnimais{
+    top: 684px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubAnimais{
+    text-align: center;
+    font-size: 11px;
+    top: 686px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioMedicina{
+    top: 704px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubMedicina{
+    text-align: center;
+    font-size: 11px;
+    top: 705px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioNatureza{
+    top: 725px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubNatureza{
+    text-align: center;
+    font-size: 11px;
+    top: 726px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioPercepcao{
+    top: 745px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubPercepcao{
+    text-align: center;
+    font-size: 11px;
+    top: 746px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioPersuasao{
+    top: 765px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubPersuasao{
+    text-align: center;
+    font-size: 11px;
+    top: 766px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioPrestigio{
+    top: 785px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubPrestigio{
+    text-align: center;
+    font-size: 11px;
+    top: 786px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioReligiao{
+    top: 805px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubReligiao{
+    text-align: center;
+    font-size: 11px;
+    top: 806px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .radioSobrevivencia{
+    top: 826px;
+    left: 147px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .SubSobrevivencia{
+    text-align: center;
+    font-size: 11px;
+    top: 827px;
+    left: 167px;
+    width: 20px;
+    height: 10px;
+  }
+
+  .Armadura{
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    top: 236px;
+    left: 353px;
+    width: 30px;
+    height: 20px;
+  }
+
+  .Iniciativa{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    top: 235px;
+    left: 420px;
+    width: 62px;
+    height: 20px;
+  }
+
+  .Deslocamento{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    top: 235px;
+    left: 510px;
+    width: 62px;
+    height: 20px;
+  }
+
+  .VidaMaxima{
+    font-weight: bold;
+    font-size: 14px;
+    top: 297px;
+    left: 435px;
+    width: 140px;
+    height: 16px;
+  }
+
+  .VidaAtual{
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    top: 325px;
+    left: 333px;
+    width: 249px;
+    height: 35px;
+  }
+
+  .VidaTemporaria{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    top: 405px;
+    left: 333px;
+    width: 249px;
+    height: 30px;
+  }
+
+  .DadosVidaTotal{
+    font-weight: bold;
+    font-size: 14px;
+    top: 470px;
+    left: 370px;
+    width: 74px;
+    height: 30px;
+  }
+
+  .DadosVida{
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    top: 497px;
+    left: 340px;
+    width: 105px;
+    height: 30px;
+  }
+
+  .Sucesso1{
+    top: 480px;
+    left: 512px;
+    width: 16px;
+    height: 16px; 
+  }
+
+  .Sucesso2{
+    top: 480px;
+    left: 531px;
+    width: 16px;
+    height: 16px; 
+  }
+
+  .Sucesso3{
+    top: 480px;
+    left: 551px;
+    width: 16px;
+    height: 16px; 
+  }
+
+  .Fracasso1{
+    top: 502px;
+    left: 512px;
+    width: 16px;
+    height: 16px; 
+  }
+
+  .Fracasso2{
+    top: 502px;
+    left: 531px;
+    width: 16px;
+    height: 16px; 
+  }
+
+  .Fracasso3{
+    top: 502px;
+    left: 551px;
+    width: 16px;
+    height: 16px; 
+  }
+
+  .NomeAtaque1{
+    font-size: 14px;
+    top: 594px;
+    left: 337px;
+    width: 84px;
+    height: 16px;
+  }
+
+  .BonusAtaque1{
+    font-size: 14px;
+    top: 594px;
+    left: 438px;
+    width: 42px;
+    height: 16px;
+  }
+
+  .DTAtaque1{
+    font-size: 14px;
+    top: 594px;
+    left: 493px;
+    width: 84px;
+    height: 16px;
+  }
+
+  .NomeAtaque2{
+    font-size: 14px;
+    top: 625px;
+    left: 337px;
+    width: 84px;
+    height: 16px;
+  }
+
+  .BonusAtaque2{
+    font-size: 14px;
+    top: 625px;
+    left: 438px;
+    width: 42px;
+    height: 16px;
+  }
+
+  .DTAtaque2{
+    font-size: 14px;
+    top: 625px;
+    left: 493px;
+    width: 84px;
+    height: 16px;
+  }
+
+  .NomeAtaque3{
+    font-size: 14px;
+    top: 657px;
+    left: 337px;
+    width: 84px;
+    height: 16px;
+  }
+
+  .BonusAtaque3{
+    font-size: 14px;
+    top: 657px;
+    left: 438px;
+    width: 42px;
+    height: 16px;
+  }
+
+  .DTAtaque3{
+    font-size: 14px;
+    top: 657px;
+    left: 493px;
+    width: 84px;
+    height: 16px;
+  }
+
+
+  .Magias, .Idiomas, .Personalidade, .Ideias, .Ligacoes,
+  .Defeitos, .Caracteristicas, .Equipamento, .Orgs, .TalentosAdicionais, .Tesouros, .HistoriaPersonagem{
+    position: absolute;
+    display: inline-block;
+    overflow-y: hidden;
+    resize: none; 
+    white-space: pre-wrap;
+    border: none;
+    background-color: transparent;
+    outline: none; 
+    word-wrap: break-word;
+    line-height: 1.15;
+  }
+
+  .Magias{
+    font-size: 14px;
+    top: 675px;
+    left: 327px;
+    width: 260px;
+    height: 175px;
+    max-width: 260px;
+    max-height: 175px;
+  }
+
+  .SabedoriaPassiva{
+    text-align: center; 
+    font-weight: bold; 
+    font: 20px;
+    top: 885px;
+    left: 45px;
+    width: 35px;
+    height: 28px;
+  }
+
+  .Idiomas{
+    font-size: 14px;
+    top: 936px;
+    left: 45px;
+    width: 255px;
+    height: 192px;
+    max-width: 255px;
+    max-height: 192px;
+  }
+
+  .Personalidade{ 
+    font-size: 13px;
+    top: 207px;
+    left: 626px;
+    width: 227px;
+    height: 75px;
+  }
+
+  .Ideias{
+    font-size: 12px;
+    top: 309px;
+    left: 623px;
+    width: 237px;
+    height: 52px;
+  }
+
+  .Ligacoes{
+    font-size: 12px;
+    top: 393px;
+    left: 623px;
+    width: 237px;
+    height: 55px;
+  }
+
+  .Defeitos{
+    font-size: 12px;
+    top: 476px;
+    left: 623px;
+    width: 237px;
+    height: 55px;
+  }
+
+  .Caracteristicas{
+    font-size: 14px;
+    top: 572px;
+    left: 619px;
+    width: 240px;
+    height: 566px;
+  }
+
+  .PC{
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      left: 335px;
+      top: 901px;
+      width: 55px;
+  }
+
+  .PP{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    left: 336px;
+    top: 940px;
+    width: 55px;
+  }
+
+  .PE{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    left: 336px;
+    top: 980px;
+    width: 55px;
+  }
+
+  .PO{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    left: 336px;
+    top: 1019px;
+    width: 55px;
+  }
+
+  .PL{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    left: 336px;
+    top: 1058px;
+    width: 55px;
+  }
+
+  .Equipamento{
+    font-size: 14px;
+    left: 400px;
+    top: 884px;
+    width: 178px;
+    height: 240px;
+  }
+
+  .NomePerso1 {
+    font-weight: bold;
+    font-size: 24px; 
+    top:92px;
+    left:67px;
+    width: 310px;
+    height: 40px; 
+  }
+
+  .Idade{
+    font-size: 15px;
+    top: 83px;
+    left: 400px;
+    width: 155px;
+    height: 21px;
+  }
+
+  .Altura{
+    font-size: 15px;
+    top: 83px;
+    left: 565px;
+    width: 145px;
+    height: 21px; 
+  }
+
+  .Peso{
+    font-size: 15px;
+    top: 83px;
+    left: 708px;
+    width: 135px;
+    height: 21px;
+  }
+
+  .Olhos{
+    font-size: 15px;
+    top: 120px;
+    left: 400px;
+    width: 155px;
+    height: 21px;
+  }
+
+  .Pele{
+    font-size: 15px;
+    top: 120px;
+    left: 565px;
+    width: 135px;
+    height: 21px;
+  }
+
+  .Cabelo{
+    font-size: 15px;
+    top: 120px;
+    left: 708px;
+    width: 135px;
+    height: 21px;;
+  }
+
+  .Orgs{
+    font-size: 16px;
+    top: 198px;
+    left: 341px;
+    height: 320px;
+    width: 263px;
+  }
+
+  .TalentosAdicionais{
+    font-size: 16px;
+    top: 565px;
+    left: 341px;
+    height: 310px;
+    width: 520px;
+  }
+
+  .Tesouros{
+    font-size: 16px;
+    top: 900px;
+    left: 341px;
+    height: 220px;
+    width: 520px;
+  }
+
+  .Guilda{
+   text-align: center;
+   font: 16px;
+   top:240px;
+   left: 630px;
+   width: 210px;
+  }
+
+  .HistoriaPersonagem{
+    font-size: 16px;
+    top: 580px;
+    left: 50px; 
+    height: 560px;
+    width: 247px;
+  }
+
+  .CheckNivel1-1 , .CheckNivel2-1, .CheckNivel3-1 , .CheckNivel4-1 , .CheckNivel5-1 , .CheckNivel6-1 , 
+  .CheckNivel7-1 , .CheckNivel8-1 , .CheckNivel9-1 ,
+  .CheckNivel1-2 , .CheckNivel2-2 , .CheckNivel3-2 , .CheckNivel4-2 , .CheckNivel5-2 , .CheckNivel6-2 , 
+  .CheckNivel7-2 , .CheckNivel8-2 , .CheckNivel9-2 ,
+  .CheckNivel1-3 , .CheckNivel2-3 , .CheckNivel3-3 ,  .CheckNivel4-3 ,  .CheckNivel5-3 ,  .CheckNivel6-3 , 
+  .CheckNivel7-3 , .CheckNivel8-3 , .CheckNivel9-3 ,  
+  .CheckNivel1-4 ,  .CheckNivel2-4 , .CheckNivel3-4 ,  .CheckNivel4-4 ,  .CheckNivel5-4 ,  .CheckNivel6-4 , 
+  .CheckNivel7-4 ,  .CheckNivel8-4 , .CheckNivel9-4 ,  
+  .CheckNivel1-5 ,   .CheckNivel2-5 ,  .CheckNivel3-5 ,  .CheckNivel4-5 ,  .CheckNivel5-5 ,  .CheckNivel6-5 , 
+  .CheckNivel7-5 ,   .CheckNivel8-5 ,  .CheckNivel9-5 ,  
+  .CheckNivel1-6 ,   .CheckNivel2-6 ,  .CheckNivel3-6 ,  .CheckNivel4-6 ,  .CheckNivel5-6 ,  .CheckNivel6-6 , 
+  .CheckNivel7-6 ,   .CheckNivel8-6 ,  .CheckNivel9-6 ,  
+  .CheckNivel1-7 ,   .CheckNivel2-7 ,  .CheckNivel3-7 ,  .CheckNivel4-7 ,  .CheckNivel5-7 ,  .CheckNivel6-7 , 
+  .CheckNivel7-7 ,   .CheckNivel8-7 ,  .CheckNivel9-7 ,
+  .CheckNivel1-8 ,   .CheckNivel2-8 ,  .CheckNivel3-8 ,  .CheckNivel4-8 ,  .CheckNivel5-8 ,  .CheckNivel6-8 , 
+  .CheckNivel7-8,
+  .CheckNivel1-9 ,   .CheckNivel2-9 ,  .CheckNivel3-9 ,  .CheckNivel4-9 ,  .CheckNivel5-9 ,  .CheckNivel6-9 , 
+  .CheckNivel7-9,
+  .CheckNivel1-10 ,   .CheckNivel2-10 ,  .CheckNivel3-10 ,  .CheckNivel4-10 ,
+  .CheckNivel1-11 ,   .CheckNivel2-11 ,  .CheckNivel3-11 ,  .CheckNivel4-11 ,
+  .CheckNivel1-12 ,   .CheckNivel2-12 ,  .CheckNivel3-12 ,  .CheckNivel4-12 ,
+  .CheckNivel1-13 ,   .CheckNivel2-13 ,  .CheckNivel3-13 ,  .CheckNivel4-13 {
+    font-size: 14px;
+    position: absolute;
+    display: inline-block;
+    overflow-y: hidden;
+    resize: none; 
+    white-space: pre-wrap;
+    border: none;
+    background-color: transparent;
+    outline: none; 
+    word-wrap: break-word;
+    line-height: 1.15;
+  }
+
+  .ClasseConjurador,.HabilidadeChave,.CD, .ModificadorAtaque,
+  .Truque1, .Truque2, .Truque3, .Truque4, .Truque5, .Truque6, .Truque7, .Truque8,
+  .SlotNivel1-1, .SlotNivel2-1, .SlotNivel3-1, .SlotNivel4-1, .SlotNivel5-1, .SlotNivel6-1,
+  .SlotNivel7-1, .SlotNivel8-1, .SlotNivel9-1, .SlotNivel1-2, .SlotNivel2-2, .SlotNivel3-2,
+  .SlotNivel4-2, .SlotNivel5-2, .SlotNivel6-2, .SlotNivel7-2, .SlotNivel8-2, .SlotNivel9-2,
+  .SlotNivel1-3, .SlotNivel2-3, .SlotNivel3-3, .SlotNivel4-3, .SlotNivel5-3, .SlotNivel6-3,
+  .SlotNivel7-3, .SlotNivel8-3, .SlotNivel9-3, .SlotNivel1-4, .SlotNivel2-4, .SlotNivel3-4,
+  .SlotNivel4-4, .SlotNivel5-4, .SlotNivel6-4, .SlotNivel7-4, .SlotNivel8-4, .SlotNivel9-4,
+  .SlotNivel1-5, .SlotNivel2-5, .SlotNivel3-5, .SlotNivel4-5, .SlotNivel5-5, .SlotNivel6-5, 
+  .SlotNivel7-5, .SlotNivel8-5, .SlotNivel9-5, .SlotNivel1-6, .SlotNivel2-6, .SlotNivel3-6,
+  .SlotNivel4-6, .SlotNivel5-6, .SlotNivel6-6, .SlotNivel7-6, .SlotNivel8-6, .SlotNivel9-6, 
+  .SlotNivel1-7, .SlotNivel2-7, .SlotNivel3-7, .SlotNivel4-7, .SlotNivel5-7, .SlotNivel6-7, 
+  .SlotNivel7-7, .SlotNivel8-7, .SlotNivel9-7, .SlotNivel1-8, .SlotNivel2-8, .SlotNivel3-8,
+  .SlotNivel4-8, .SlotNivel5-8, .SlotNivel6-8, .SlotNivel7-8, .SlotNivel1-9, .SlotNivel2-9, 
+  .SlotNivel3-9, .SlotNivel4-9, .SlotNivel5-9, .SlotNivel6-9, .SlotNivel7-9, .SlotNivel1-10, 
+  .SlotNivel2-10, .SlotNivel3-10, .SlotNivel4-10, .SlotNivel1-11, .SlotNivel2-11, .SlotNivel3-11, 
+  .SlotNivel4-11, .SlotNivel1-12, .SlotNivel2-12, .SlotNivel3-12, .SlotNivel4-12, .SlotNivel1-13, 
+  .SlotNivel2-13, .SlotNivel3-13, .SlotNivel4-13{
+    width: 245px;
+    font-size: 14px;
+    position:absolute;
+    white-space: nowrap;
+    border: none; 
+    background: transparent; 
+    outline: none;
+  }
+
+  .ClasseConjurador{
+    width: 290px;
+    font-size: 24px;
+    font-weight: bold;
+    top: 100px;
+    left: 70px;
+
+  }
+
+  .HabilidadeChave{
+    width: 95px;
+    font-size: 22px;
+    text-align: center;
+    left: 425px;
+    top: 90px;
+  }
+
+  .CD{
+    width: 95px;
+    font-size: 22px;
+    text-align: center;
+    left: 574px;
+    top: 90px;
+  }
+
+  .ModificadorAtaque{
+    width: 95px;
+    font-size: 22px;
+    text-align: center;
+    left: 728px;
+    top: 90px;
+  }
+
+  .Truque1, .Truque2, .Truque3, .Truque4, .Truque5, .Truque6, .Truque7, .Truque8{
+    left: 50px;
+  }
+
+  .CheckNivel1-1,.CheckNivel1-2,.CheckNivel1-3,.CheckNivel1-4,.CheckNivel1-5,.CheckNivel1-6,.CheckNivel1-7,.CheckNivel1-8,.CheckNivel1-9,
+  .CheckNivel1-10,.CheckNivel1-11,.CheckNivel1-12,.CheckNivel1-13,
+  .CheckNivel2-1,.CheckNivel2-2,.CheckNivel2-3,.CheckNivel2-4,.CheckNivel2-5,.CheckNivel2-6,.CheckNivel2-7,.CheckNivel2-8,.CheckNivel2-9,
+  .CheckNivel2-10,.CheckNivel2-11,.CheckNivel2-12,.CheckNivel2-13{
+    left: 42px;
+  }
+
+  .SlotNivel1-1,.SlotNivel1-2,.SlotNivel1-3,.SlotNivel1-4,.SlotNivel1-5,.SlotNivel1-6,.SlotNivel1-7,.SlotNivel1-8,.SlotNivel1-9,
+  .SlotNivel1-10,.SlotNivel1-11,.SlotNivel1-12,.SlotNivel1-13,
+  .SlotNivel2-1,.SlotNivel2-2,.SlotNivel2-3,.SlotNivel2-4,.SlotNivel2-5,.SlotNivel2-6,.SlotNivel2-7,.SlotNivel2-8,.SlotNivel2-9,
+  .SlotNivel2-10,.SlotNivel2-11,.SlotNivel2-12,.SlotNivel2-13{
+    left: 62px;
+  }
+
+  .Truque1{
+    top: 260px;
+  }
+  .Truque2{
+    top: 281px;
+  }
+  .Truque3{
+    top: 302px;
+  }
+  .Truque4{
+    top: 323px;
+  }
+  .Truque5{
+    top: 344px;
+  }
+  .Truque6{
+    top: 365px;
+  }
+  .Truque7{
+    top: 386px;
+  }
+  .Truque8{
+    top: 407px;
+  }
+
+  .SlotNivel1-1, .CheckNivel1-1{
+    top: 519px;
+  }
+  .SlotNivel1-2, .CheckNivel1-2{
+    top: 540px;
+  }
+  .SlotNivel1-3,  .CheckNivel1-3{
+    top: 561px;
+  }
+  .SlotNivel1-4, .CheckNivel1-4{
+    top: 582px;
+  }
+  .SlotNivel1-5, .CheckNivel1-5{
+    top: 603px;
+  }
+  .SlotNivel1-6, .CheckNivel1-6{
+    top: 624px;
+  }
+  .SlotNivel1-7, .CheckNivel1-7{
+    top: 645px;
+  }
+  .SlotNivel1-8, .CheckNivel1-8{
+    top: 666px;
+  }
+  .SlotNivel1-9, .CheckNivel1-9{
+    top: 687px;
+  }
+  .SlotNivel1-10, .CheckNivel1-10{
+    top: 708px;
+  }
+  .SlotNivel1-11, .CheckNivel1-11{
+    top: 729px;
+  }
+  .SlotNivel1-12, .CheckNivel1-12{
+    top: 750px;
+  }
+  .SlotNivel1-13, .CheckNivel1-13{
+    top: 771px;
+  }
+
+  .SlotNivel2-1, .CheckNivel2-1{
+    top: 859px;
+  }
+  .SlotNivel2-2, .CheckNivel2-2{
+    top: 880px;
+  }
+  .SlotNivel2-3, .CheckNivel2-3{
+    top: 901px;
+  }
+  .SlotNivel2-4, .CheckNivel2-4{
+    top: 922px;
+  }
+  .SlotNivel2-5, .CheckNivel2-5{
+    top: 943px;
+  }
+  .SlotNivel2-6, .CheckNivel2-6{
+    top: 964px;
+  }
+  .SlotNivel2-7, .CheckNivel2-7{
+    top: 985px;
+  }
+  .SlotNivel2-8, .CheckNivel2-8{
+    top: 1006px;
+  }
+  .SlotNivel2-9, .CheckNivel2-9{
+    top: 1027px;
+  }
+  .SlotNivel2-10, .CheckNivel2-10{
+    top: 1048px;
+  }
+  .SlotNivel2-11, .CheckNivel2-11{
+    top: 1069px;
+  }
+  .SlotNivel2-12, .CheckNivel2-12{
+    top: 1090px;
+  }
+  .SlotNivel2-13, .CheckNivel2-13{
+    top: 1111px;
+  }
+
+
+  .CheckNivel3-1,.CheckNivel3-2,.CheckNivel3-3,.CheckNivel3-4,.CheckNivel3-5,.CheckNivel3-6,.CheckNivel3-7,.CheckNivel3-8,.CheckNivel3-9,
+  .CheckNivel3-10,.CheckNivel3-11,.CheckNivel3-12,.CheckNivel3-13,
+  .CheckNivel4-1,.CheckNivel4-2,.CheckNivel4-3,.CheckNivel4-4,.CheckNivel4-5,.CheckNivel4-6,.CheckNivel4-7,.CheckNivel4-8,.CheckNivel4-9,
+  .CheckNivel4-10,.CheckNivel4-11,.CheckNivel4-12,.CheckNivel4-13,
+  .CheckNivel5-1,.CheckNivel5-2,.CheckNivel5-3,.CheckNivel5-4,.CheckNivel5-5,.CheckNivel5-6,.CheckNivel5-7,.CheckNivel5-8,.CheckNivel5-9{
+    left: 325px;
+  }
+
+  .SlotNivel3-1,.SlotNivel3-2,.SlotNivel3-3,.SlotNivel3-4,.SlotNivel3-5,.SlotNivel3-6,.SlotNivel3-7,.SlotNivel3-8,.SlotNivel3-9,
+  .SlotNivel3-10,.SlotNivel3-11,.SlotNivel3-12,.SlotNivel3-13,
+  .SlotNivel4-1,.SlotNivel4-2,.SlotNivel4-3,.SlotNivel4-4,.SlotNivel4-5,.SlotNivel4-6,.SlotNivel4-7,.SlotNivel4-8,.SlotNivel4-9,
+  .SlotNivel4-10,.SlotNivel4-11,.SlotNivel4-12,.SlotNivel4-13,
+  .SlotNivel5-1,.SlotNivel5-2,.SlotNivel5-3,.SlotNivel5-4,.SlotNivel5-5,.SlotNivel5-6,.SlotNivel5-7,.SlotNivel5-8,.SlotNivel5-9{
+    left: 345px;
+  }
+
+  .SlotNivel3-1, .CheckNivel3-1, .SlotNivel6-1, .CheckNivel6-1{
+    top: 265px;
+  }
+  .SlotNivel3-2, .CheckNivel3-2,.SlotNivel6-2, .CheckNivel6-2{
+    top: 286px;
+  }
+  .SlotNivel3-3, .CheckNivel3-3, .SlotNivel6-3, .CheckNivel6-3{
+    top: 307px;
+  }
+  .SlotNivel3-4, .CheckNivel3-4, .SlotNivel6-4, .CheckNivel6-4{
+    top: 328px;
+  }
+  .SlotNivel3-5, .CheckNivel3-5, .SlotNivel6-5, .CheckNivel6-5{
+    top: 349px;
+  }
+  .SlotNivel3-6, .CheckNivel3-6, .SlotNivel6-6, .CheckNivel6-6{
+    top: 370px;
+  }
+  .SlotNivel3-7, .CheckNivel3-7, .SlotNivel6-7, .CheckNivel6-7{
+    top: 391px;
+  }
+  .SlotNivel3-8, .CheckNivel3-8, .SlotNivel6-8, .CheckNivel6-8{
+    top: 412px;
+  }
+  .SlotNivel3-9, .CheckNivel3-9, .SlotNivel6-9, .CheckNivel6-9{
+    top: 433px;
+  }
+  .SlotNivel3-10, .CheckNivel3-10{
+    top: 454px;
+  }
+  .SlotNivel3-11, .CheckNivel3-11{
+    top: 475px;
+  }
+  .SlotNivel3-12, .CheckNivel3-12{
+    top: 496px;
+  }
+  .SlotNivel3-13, .CheckNivel3-13{
+    top: 517px;
+  }
+
+  .SlotNivel4-1, .CheckNivel4-1, .SlotNivel7-5, .CheckNivel7-5{
+    top: 603px;
+  }
+  .SlotNivel4-2, .CheckNivel4-2, .SlotNivel7-6, .CheckNivel7-6{
+    top: 624px;
+  }
+  .SlotNivel4-3, .CheckNivel4-3, .SlotNivel7-7, .CheckNivel7-7{
+    top: 645px;
+  }
+  .SlotNivel4-4, .CheckNivel4-4, .SlotNivel7-8, .CheckNivel7-8{
+    top: 666px;
+  }
+  .SlotNivel4-5, .CheckNivel4-5, .SlotNivel7-9, .CheckNivel7-9{
+    top: 687px;
+  }
+  .SlotNivel4-6, .CheckNivel4-6{
+    top: 708px;
+  }
+  .SlotNivel4-7, .CheckNivel4-7{
+    top: 729px;
+  }
+  .SlotNivel4-8, .CheckNivel4-8{
+    top: 750px;
+  }
+  .SlotNivel4-9, .CheckNivel4-9{
+    top: 771px;
+  }
+  .SlotNivel4-10, .CheckNivel4-10{
+    top: 792px;
+  }
+  .SlotNivel4-11, .CheckNivel4-11{
+    top: 813px;
+  }
+  .SlotNivel4-12, .CheckNivel4-12{
+    top: 834px;
+  }
+  .SlotNivel4-13, .CheckNivel4-13{
+    top: 855px;
+  }
+
+  .SlotNivel5-1, .CheckNivel5-1{
+    top: 943px;
+  }
+  .SlotNivel5-2, .CheckNivel5-2{
+    top: 964px;
+  }
+  .SlotNivel5-3, .CheckNivel5-3, .SlotNivel9-1, .CheckNivel9-1{
+    top: 985px;
+  }
+  .SlotNivel5-4, .CheckNivel5-4, .SlotNivel9-2, .CheckNivel9-2{
+    top: 1006px;
+  }
+  .SlotNivel5-5, .CheckNivel5-5, .SlotNivel9-3, .CheckNivel9-3{
+    top: 1027px;
+  }
+  .SlotNivel5-6, .CheckNivel5-6, .SlotNivel9-4, .CheckNivel9-4{
+    top: 1048px;
+  }
+  .SlotNivel5-7, .CheckNivel5-7, .SlotNivel9-5, .CheckNivel9-5{
+    top: 1069px;
+  }
+  .SlotNivel5-8, .CheckNivel5-8, .SlotNivel9-6, .CheckNivel9-6{
+    top: 1090px;
+  }
+  .SlotNivel5-9, .CheckNivel5-9, .SlotNivel9-7, .CheckNivel9-7{
+    top: 1111px;
+  }
+
+  .CheckNivel6-1,.CheckNivel6-2,.CheckNivel6-3,.CheckNivel6-4,.CheckNivel6-5,.CheckNivel6-6,.CheckNivel6-7,.CheckNivel6-8,.CheckNivel6-9,
+  .CheckNivel7-1,.CheckNivel7-2,.CheckNivel7-3,.CheckNivel7-4,.CheckNivel7-5,.CheckNivel7-6,.CheckNivel7-7,.CheckNivel7-8,.CheckNivel7-9,
+  .CheckNivel8-1,.CheckNivel8-2,.CheckNivel8-3,.CheckNivel8-4,.CheckNivel8-5,.CheckNivel8-6,.CheckNivel8-7,
+  .CheckNivel9-1,.CheckNivel9-2,.CheckNivel9-3,.CheckNivel9-4,.CheckNivel9-5,.CheckNivel9-6,.CheckNivel9-7{
+    left: 606px ;
+  }
+
+  .SlotNivel6-1,.SlotNivel6-2,.SlotNivel6-3,.SlotNivel6-4,.SlotNivel6-5,.SlotNivel6-6,.SlotNivel6-7,.SlotNivel6-8,.SlotNivel6-9,
+  .SlotNivel7-1,.SlotNivel7-2,.SlotNivel7-3,.SlotNivel7-4,.SlotNivel7-5,.SlotNivel7-6,.SlotNivel7-7,.SlotNivel7-8,.SlotNivel7-9,
+  .SlotNivel8-1,.SlotNivel8-2,.SlotNivel8-3,.SlotNivel8-4,.SlotNivel8-5,.SlotNivel8-6,.SlotNivel8-7,
+  .SlotNivel9-1,.SlotNivel9-2,.SlotNivel9-3,.SlotNivel9-4,.SlotNivel9-5,.SlotNivel9-6,.SlotNivel9-7{
+    left: 626px;
+  }
+
+.SlotNivel7-1, .CheckNivel7-1{
+top: 519px;
+}
+.SlotNivel7-2, .CheckNivel7-2{
+top:540px
+}
+.SlotNivel7-3, .CheckNivel7-3{
+top: 561px;
+}
+.SlotNivel7-4, .CheckNivel7-4{
+top: 582px;
+}
+
+.SlotNivel8-1, .CheckNivel8-1{
+  top: 774px;
+}
+.SlotNivel8-2, .CheckNivel8-2{
+  top:795px
+}
+.SlotNivel8-3, .CheckNivel8-3{
+  top: 816px;
+  }
+.SlotNivel8-4, .CheckNivel8-4{
+  top: 837px;
+}
+.SlotNivel8-5, .CheckNivel8-5{
+  top: 858px;
+}
+.SlotNivel8-6, .CheckNivel8-6{
+  top: 879px;
+}
+.SlotNivel8-7, .CheckNivel8-7{
+  top: 900px;
+}
+
+.EspacoTotal1,.EspacoTotal2,.EspacoTotal3,.EspacoTotal4,.EspacoTotal5,.EspacoTotal6,
+.EspacoTotal7,.EspacoTotal8,.EspacoTotal9,.EspacoUtilizado1,.EspacoUtilizado2,.EspacoUtilizado3,
+.EspacoUtilizado4,.EspacoUtilizado5,.EspacoUtilizado6,.EspacoUtilizado7,.EspacoUtilizado8,
+.EspacoUtilizado9{
+  font-size: 20px;
+  width: 54px;
+  font-weight: bold;
+  text-align: center;
+  position:absolute;
+  white-space: nowrap;
+  border: none; 
+  background: transparent; 
+  outline: none;  
+}
+
+.EspacoTotal1{
+  top: 475px;
+  left: 77px;
+}
+.EspacoUtilizado1{
+  top: 475px;
+  left: 150px;
+  width: 150px;
+}
+
+.EspacoTotal2{
+  top: 816px;
+  left: 77px;
+}
+.EspacoUtilizado2{
+  top: 816px;
+  left: 150px;
+  width: 150px;
+}
+
+.EspacoTotal3{
+  top: 222px;
+  left: 358px;
+}
+.EspacoUtilizado3{
+  top: 222px;
+  left: 435px;
+  width: 150px;
+}
+
+.EspacoTotal4{
+  top: 560px;
+  left: 359px;
+}
+.EspacoUtilizado4{
+  top: 560px;
+  left: 435px;
+  width: 150px;
+}
+
+.EspacoTotal5{
+  top: 900px;
+  left: 359px;
+}
+.EspacoUtilizado5{
+  top: 900px;
+  left: 435px;
+  width: 150px;
+}
+
+.EspacoTotal6{
+  top: 222px;
+  left: 640px;
+}
+.EspacoUtilizado6{
+  top: 222px;
+  left: 715px;
+  width: 150px;
+}
+
+.EspacoTotal7{
+  top: 475px;
+  left: 640px;
+}
+.EspacoUtilizado7{
+  top: 475px;
+  left: 715px;
+  width: 150px;
+}
+
+.EspacoTotal8{
+  top: 733px;
+  left: 640px;
+}
+.EspacoUtilizado8{
+  top: 733px;
+  left: 715px;
+  width: 150px;
+}
+
+.EspacoTotal9{
+  top: 944px;
+  left: 640px;
+}
+.EspacoUtilizado9{
+  top: 944px;
+  left: 715px;
+  width: 150px;
+}

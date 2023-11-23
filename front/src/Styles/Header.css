@@ -1,11 +1,12 @@
-body {
+html,body {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
   }
   
   header {
-    background: linear-gradient(to top, #1F6690, #2980B9, #3498DB);
+    background: linear-gradient(to top, #000000, #0a0a0a, #141414,#1e1e1e);
     color: white;
     padding: 4px;
     display: flex;
@@ -57,7 +58,7 @@ body {
     display: block;
   }
   
-  .dropdown-content .link:hover {background-color: #f1f1f1}
+  .dropdown-content .link:hover {background-color: #CCCCCC}
   
   .dropdown:hover .dropdown-content {
     display: block;
@@ -65,5 +66,5 @@ body {
   
  
   .dropdown:hover .dropbtn {
-  background-color: #5DADE2; 
+  background-color: #808080; 
   }
