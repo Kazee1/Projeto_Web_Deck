@@ -1,0 +1,31 @@
+.CorVermelho {
+    background-color: red;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.CorAzul {
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.CorLaranja {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.imagemRPG, .imagemDD, .imagemCALL {
+    max-width: 200px; 
+    margin-right: 20px;
+}
+
+.CallOfCthulhuRPG h2, p{
+    padding-left: 30px;
+}
+
+
