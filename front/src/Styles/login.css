@@ -12,11 +12,11 @@
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 500px; /* Aumente a largura do contêiner conforme desejado */
+    width: 500px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ccc; /* Adiciona uma única borda */
+    border: 1px solid #ccc; 
 }
 
 .container-register {
@@ -24,11 +24,11 @@
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 500px; /* Aumente a largura do contêiner conforme desejado */
+    width: 500px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #ccc; /* Adiciona uma única borda */
+    border: 1px solid #ccc; 
 }
 
 .container-register h3 {
@@ -71,7 +71,7 @@
 .links {
     margin-top: 20px;
     font-size: 12px;
-    text-align: center; /* Centraliza o texto horizontalmente */
+    text-align: center; 
 }
 
 .links p {
