@@ -1,0 +1,59 @@
+.DadosRoleta {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: -20px;
+  }
+  
+  .SelectDados {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .SelectDados select{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  .SelectDados p{
+    font-weight: bold;
+  }
+  .SelectDados button{
+    height: 30px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #0366d6;
+    color: white;
+  }
+  .SelectDados button:hover{
+    background-color: #0056b3;
+  }
+
+  #dados {
+    margin-top: -5px;
+  }
+
+.dado {
+    width: 100px;
+    margin-top: 20px;
+}
+
+.dado-container {
+    position: relative;
+    display: inline-block;
+}
+
+.numero {
+    display: none;
+    position: absolute;
+    top: 38%;
+    left: 34%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    z-index: 1; 
+}

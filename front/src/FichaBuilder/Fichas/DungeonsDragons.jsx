@@ -1,16 +1,91 @@
 import HeaderLogado from "../HeaderLogado";
 import Footer from "../../Inicio/Footer";
 import "../../Styles/Fichas/DungeonsDragons.css";
+import "../../Styles/Fichas/Dados.css";
 
 import Imagem1 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page1.jpg";
 import Imagem2 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page2.jpg";
 import Imagem3 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page3.jpg";
+import Dado from "../../Imagens/d20.png";
+
+import React, { useState, useEffect } from "react";
 
 export default function DungeonsDragons() {
+  const [numDados, setNumDados] = useState(0);
+
+  useEffect(() => {
+    mostrarDados();
+  }, [numDados]);
+
+  function mostrarDados() {
+    const dadosContainer = document.getElementById("dados");
+    dadosContainer.innerHTML = "";
+
+    for (let i = 0; i < numDados; i++) {
+      const dadoContainer = document.createElement("div");
+      dadoContainer.className = "dado-container";
+
+      const dado = document.createElement("img");
+      dado.className = "dado";
+      dado.src = Dado;
+      dado.setAttribute("alt", "D20");
+
+      const numero = document.createElement("p");
+      numero.className = "numero";
+
+      dadoContainer.appendChild(dado);
+      dadoContainer.appendChild(numero);
+      dadosContainer.appendChild(dadoContainer);
+    }
+  }
+
+  function handleSelectChange(event) {
+    const value = parseInt(event.target.value);
+    setNumDados(value);
+  }
+
+  function sortearNovosNumeros() {
+    const dados = document.querySelectorAll(".dado");
+
+    dados.forEach((dado) => {
+      const numero = dado.nextElementSibling;
+      const numeroSorteado = Math.floor(Math.random() * 20) + 1;
+
+      numero.innerText = "";
+      dado.style.animation = "shake 0.5s ease-in-out";
+      dado.style.transform = "rotate(360deg)";
+
+      setTimeout(function () {
+        dado.style.animation = "";
+        dado.style.transform = "";
+      }, 1500);
+
+      setTimeout(function () {
+        numero.innerText = numeroSorteado;
+        numero.style.display = "block";
+      }, 1500);
+    });
+  }
+
   return (
     <>
       <HeaderLogado />
       <main>
+        <div className="DadosRoleta">
+          <div className="SelectDados">
+            <p>Jogar Dados: </p>
+            <select value={numDados} onChange={handleSelectChange}>
+              <option value="0">0 dados</option>
+              <option value="1">1 dado</option>
+              <option value="2">2 dados</option>
+              <option value="3">3 dados</option>
+              <option value="4">4 dados</option>
+              <option value="5">5 dados</option>
+            </select>
+            <button onClick={sortearNovosNumeros}>Jogar</button>
+          </div>
+          <div id="dados"></div>
+        </div>
         <form action="GET/POST" className="DungeonsDragonsFicha">
           <div className="Save">
             <input
