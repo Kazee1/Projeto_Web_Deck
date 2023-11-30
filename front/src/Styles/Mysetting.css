@@ -1,0 +1,117 @@
+.CenteredContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Cor de fundo temporária */
+  }
+  
+  .ContainerMyprofile {
+    width: 918px;
+    height: 500px;
+    border: 1px solid #ccc; /* Adicione uma borda para visualização */
+    padding: 20px; /* Adiciona espaço interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .LayoutGeral {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .LayoutGeral p {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .PasswordLayout,
+  .NewPasswordLayout,
+  .ConfirmPasswordLayout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .PasswordLayout label,
+  .NewPasswordLayout label,
+  .ConfirmPasswordLayout label {
+    flex: 1;
+    text-align: right;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px; /* Aumenta o tamanho do label */
+  }
+  
+  .PasswordLayout input,
+  .NewPasswordLayout input,
+  .ConfirmPasswordLayout input {
+    flex: 2;
+    padding: 12px; /* Aumenta o espaçamento interno do input */
+    width: 100%; /* Ocupa todo o espaço disponível */
+    font-size: 18px; /* Aumenta o tamanho do texto do input */
+  }
+  
+  .ButtonsWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .ButtonsWrapper button {
+    padding: 15px 25px; 
+    font-size: 18px;
+  }
+
+  .ButtonsWrapper .Button1{
+    position: absolute;
+    left: -300px;
+  }
+  .Button2{
+    position: absolute;
+    left: 250px;
+
+  }
+  @media (min-width: 768px) {
+    .LayoutGeral {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .PasswordLayout,
+    .NewPasswordLayout,
+    .ConfirmPasswordLayout {
+      width: 70%;
+      margin-bottom: 20px;
+    }
+  
+    .PasswordLayout label,
+    .NewPasswordLayout label,
+    .ConfirmPasswordLayout label {
+      text-align: left;
+      margin-right: 10px;
+    }
+  
+    .PasswordLayout input,
+    .NewPasswordLayout input,
+    .ConfirmPasswordLayout input {
+      padding: 12px;
+    }
+  
+    .ButtonsWrapper {
+      margin-top: 20px;
+      position: absolute;
+      top: 480px;
+      left: 48%;
+    }
+  
+    .ButtonsWrapper button {
+      padding: 15px 25px;
+      font-size: 18px;
+    }
+  }
+  
