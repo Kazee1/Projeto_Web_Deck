@@ -9,6 +9,8 @@ import "../../Styles/Fichas/CallCthulhu.css";
 import "../../Styles/Fichas/Dados.css";
 
 import React, { useState, useEffect } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 export default function CallCthulhu() {
   const [numDados, setNumDados] = useState(0);
@@ -67,6 +69,35 @@ export default function CallCthulhu() {
     });
   }
 
+
+  const [fileName, setFileName] = useState('');
+
+  const handleFileNameChange = (e) => {
+    setFileName(e.target.value);
+  };
+
+  const downloadPdf = () => {
+    const finalFileName = fileName.trim() || 'Call_of_Cthulhu';
+
+    const input1 = document.getElementById('CallPage1');
+    const input2 = document.getElementById('CallPage2');
+
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    html2canvas(input1).then((canvas1) => {
+      const imgData1 = canvas1.toDataURL('image/png');
+      pdf.addImage(imgData1, 'PNG', 0, 0, 210, 297);
+
+      html2canvas(input2).then((canvas2) => {
+        const imgData2 = canvas2.toDataURL('image/png');
+        pdf.addPage();
+        pdf.addImage(imgData2, 'PNG', 0, 0, 210, 297);
+
+        pdf.save(`${finalFileName}.pdf`);
+      });
+    });
+  };
+
   return (
     <>
       <Header />
@@ -82,7 +113,8 @@ export default function CallCthulhu() {
               <option value="4">4 dados</option>
               <option value="5">5 dados</option>
             </select>
-            <button onClick={sortearNovosNumeros}>Jogar</button>
+            <button className="Botaoroleta" onClick={sortearNovosNumeros}>Jogar</button>
+            <button className="DownloadFicha" onClick={downloadPdf}>&#x25BC; Download</button>
           </div>
           <div id="dados"></div>
         </div>
@@ -93,10 +125,12 @@ export default function CallCthulhu() {
               name="NomeCall"
               placeholder="Nome Da Ficha"
               className="NomeCall"
+              value={fileName}
+              onChange={handleFileNameChange}
             />
           </div>
           <div className="FichaCall" id="FichaCall">
-            <div className="CallPage1">
+            <div className="CallPage1" id="CallPage1">
               <img src={Imagem1} className="CallImagem1" alt="page1" />
               <div className="Cabeca">
                 <input type="text" className="NomeJogador" />
@@ -505,7 +539,7 @@ export default function CallCthulhu() {
                 <input type="text" className="jEsquivador2" />
               </div>
             </div>
-            <div className="CallPage2">
+            <div className="CallPage2" id="CallPage2">
               <img src={Imagem2} className="CallImagem2" alt="page2" />
               <div className="Tudo">
                 <textarea className="jDescricao" />

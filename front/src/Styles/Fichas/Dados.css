@@ -21,7 +21,7 @@
   .SelectDados p{
     font-weight: bold;
   }
-  .SelectDados button{
+  .SelectDados .Botaoroleta{
     height: 30px;
     width: 60px;
     border-radius: 50%;
@@ -30,6 +30,15 @@
   }
   .SelectDados button:hover{
     background-color: #0056b3;
+  }
+
+  .SelectDados .DownloadFicha{
+    position: absolute;
+    left:80%;
+    font-size: 22px;
+    background-color: #0366d6 ;
+    color: white;
+    border-radius: 20%;
   }
 
   #dados {

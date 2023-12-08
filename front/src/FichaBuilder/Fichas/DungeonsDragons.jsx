@@ -9,6 +9,9 @@ import Imagem3 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page3.jpg";
 import Dado from "../../Imagens/d20.png";
 
 import React, { useState, useEffect } from "react";
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+
 
 export default function DungeonsDragons() {
   const [numDados, setNumDados] = useState(0);
@@ -67,6 +70,41 @@ export default function DungeonsDragons() {
     });
   }
 
+  const [fileName, setFileName] = useState('');
+
+  const handleFileNameChange = (e) => {
+    setFileName(e.target.value);
+  };
+
+  const downloadPdf = () => {
+    const finalFileName = fileName.trim() || 'Dungeons_And_Dragons';
+
+    const input1 = document.getElementById('Page1');
+    const input2 = document.getElementById('Page2');
+    const input3 = document.getElementById('Page3');
+    console.log("oi");
+
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    html2canvas(input1).then((canvas1) => {
+      const imgData1 = canvas1.toDataURL('image/png');
+      pdf.addImage(imgData1, 'PNG', 0, 0, 210, 297);  
+
+      html2canvas(input2).then((canvas2) => {
+        const imgData2 = canvas2.toDataURL('image/png');
+        pdf.addPage();
+        pdf.addImage(imgData2, 'PNG', 0, 0, 210, 297);
+
+        html2canvas(input3).then((canvas3) =>{
+          const imgData3 = canvas3.toDataURL('image/png');
+          pdf.addPage();
+          pdf.addImage(imgData3, 'PNG', 0, 0, 210, 297); 
+          pdf.save(`${finalFileName}.pdf`);
+        });
+      });
+    });
+  };
+
   return (
     <>
       <HeaderLogado />
@@ -82,7 +120,8 @@ export default function DungeonsDragons() {
               <option value="4">4 dados</option>
               <option value="5">5 dados</option>
             </select>
-            <button onClick={sortearNovosNumeros}>Jogar</button>
+            <button className="Botaoroleta" onClick={sortearNovosNumeros}>Jogar</button>
+            <button className="DownloadFicha" onClick={downloadPdf}>&#x25BC; Download</button>
           </div>
           <div id="dados"></div>
         </div>
@@ -93,10 +132,12 @@ export default function DungeonsDragons() {
               name="NomeDD"
               placeholder="Nome Da Ficha"
               className="NomeDD"
+              value={fileName}
+              onChange={handleFileNameChange}
             />
           </div>
           <div className="Ficha">
-            <div className="Page1">
+            <div className="Page1" id="Page1">
               <img src={Imagem1} className="Imagem1" alt="page1" />
               <div className="cabeca">
                 <input type="text" className="NomePerso" />
@@ -224,7 +265,7 @@ export default function DungeonsDragons() {
                 <textarea className="Equipamento" />
               </div>
             </div>
-            <div className="Page2">
+            <div className="Page2" id="Page2">
               <img src={Imagem2} className="Imagem2" />
               <div className="Cabeca">
                 <input type="text" className="NomePerso1" />
@@ -245,7 +286,7 @@ export default function DungeonsDragons() {
                 <textarea className="HistoriaPersonagem" />
               </div>
             </div>
-            <div className="Page3">
+            <div className="Page3" id="Page3">
               <img src={Imagem3} className="Imagem3" />
               <div className="cabeca">
                 <input type="text" className="ClasseConjurador" />
