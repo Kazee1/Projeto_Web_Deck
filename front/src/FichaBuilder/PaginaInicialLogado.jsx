@@ -51,6 +51,12 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
     console.log(`Div clicada! Index: ${ficha}`);
   };
 
+  const handleExcluirFicha = (index) => {
+    const novasFichas = [...fichasUsuario];
+    novasFichas.splice(index, 1);
+    setFichasFiltradas(novasFichas);
+  };
+
   return (
     <>
       <HeaderLogado />
@@ -76,6 +82,7 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
                 alt={`Imagem ${ficha.TipoFicha}`}
               />
               <p>Ficha: {ficha.NomeFicha}</p>
+              <button onClick={() => handleExcluirFicha(index)}>Excluir</button>
             </div>
           ))}
         </div>
