@@ -5,16 +5,28 @@ import { useState } from 'react';
 import axios from 'axios';
 import * as yup from 'yup';
 import {set, useForm} from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup';
 import { Link, Navigate } from 'react-router-dom'
 
 export default function Login(){
     const [userCriado,setUserCriado] = useState(false);
     const [msg, setMsg] = useState();
+
+    const schema = yup.object({
+        username: yup.string().required('Usuário obrigatório'),
+        email: yup.string().email('Email inválido').required('Email obrigatório'),
+        password: yup.string().min(2,'Senha com no mínimo 2 caracteres').required(),
+        passwordConf: yup.string().required('Confirme a senha').oneOf([yup.ref('password')], 'As senhas devem coincidir!'),
+    });
     
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(e);}
-        
+    const form = useForm({
+        resolver: yupResolver(schema)
+    });
+
+    const { register, handleSubmit, formState } = form;
+
+    const {errors} = formState;
+
     const submit = async (data) => {
         try {
             const response = await axios.post('http://localhost:3000/Cadastro', data);
