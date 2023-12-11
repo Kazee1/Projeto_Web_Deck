@@ -1,8 +1,54 @@
 .FichasContainer {
     width: 100%; 
     overflow: hidden; 
+    margin-bottom: 4000px;
+  }
+
+  .PesquisarFicha button{
+    position: absolute;
+    top: 50%;
+    background-color: #0366d6;
+    font-weight: bold;
+    color: #fff;
+    width: 140px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s; 
+
+  }
+
+  .PesquisarFicha button:hover {
+    background-color: #0056b3;
   }
   
+
+  .PesquisarFicha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 75px;
+    position: relative;
+    padding-bottom: 50px;
+  }
+  
+  .PesquisarFicha input{
+    font-size: 20px;
+    border-radius: 10px;
+    width: 450px;
+
+  }
+  
+  .PesquisarFicha::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid black; 
+  }
+
   .MinhasFichas {
     width: 23%;
     height: 179px;

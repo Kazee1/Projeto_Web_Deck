@@ -59,12 +59,15 @@ export default function Cadastro() {
     try {
         const response = await axios.post('http://localhost:3000/Cadastro', data);
         setMsg(response.data);
-        if(response.data.includes('sucesso'))
+        if(response.data.includes('sucesso')){
             setUserCriado(true);
+            setTimeout(function(){
+              window.location.href = '/login';
+            } , 2000);  
+          }
     } catch (error) {
         setMsg(error.response.data);
-    }   
-    
+    }    
 }
   return (
     <>

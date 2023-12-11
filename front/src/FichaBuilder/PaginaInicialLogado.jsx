@@ -62,6 +62,7 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
       <HeaderLogado />
       <main>
         <form onSubmit={handleSubmit}>
+          <div className="PesquisarFicha">
           <input
             type="text"
             placeholder="Pesquisar Ficha"
@@ -69,6 +70,7 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
             onChange={handleInputChange}
           />
           <button type="submit">Pesquisar</button>
+          </div>
         </form>
         <div className="FichasContainer">
           {fichasFiltradas.map((ficha, index) => (
