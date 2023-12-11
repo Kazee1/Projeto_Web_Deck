@@ -9,18 +9,19 @@ import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 
 export default function Login(){
-    const schema = yup.object({
-        email: yup.string().email('Email inválido').required('Email obrigatório'),
-        password: yup.string().min(2,'Campo Senha Obrigatório').required(),
-    });
+    const form = useForm();
+    // const schema = yup.object({
+    //     email: yup.string().email('Email inválido').required('Email obrigatório'),
+    //     password: yup.string().min(2,'Campo Senha Obrigatório').required(),
+    // });
 
     const [msg, setMsg] = useState(' ');
 
-    const form = useForm({
-        resolver: yupResolver(schema)
-    });
+    // const form = useForm({
+    //     resolver: yupResolver(schema)
+    // });
 
-    const { register, handleSubmit, formState } = form;
+    const { register,control, handleSubmit, formState } = form;
 
     const {errors} = formState;
 
@@ -38,7 +39,7 @@ export default function Login(){
     }
 
     if(msg.toLowerCase().includes('autenticado')){
-        return <Navigate to='/caminho' />
+        return <Navigate to='/inicio' />
     }
 
     return (
@@ -47,17 +48,18 @@ export default function Login(){
         <main className="login">
         <div className="container-login">
             <h3 className="sign">SIGN IN</h3>
-            <form action="post" method="post" onSubmit={handleSubmit(submit)} noValidate>
+            <form onSubmit={handleSubmit(submit)} noValidate>
                 <div className="form-group-login">
-                    <label htmlFor="username">Username or Email</label>
-                    <input type="text" id="username" name="username" required/>
+                    <label htmlFor="username" >Username</label>
+                    <input type="text" id="username" {...register('username')}/>
                 </div>
                 <div className="form-group-login">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" required/>
+                    <input type="password" id="password" {...register('password')}/>
                 </div>
-                <button className="btn" type="submit">Sign in</button>
+                <button className="btn">Sign in</button>
             </form>
+            <p className='server-response'>{msg}</p>
             <div className="links">
                 <p><Link to="/EsqueceuSenha" className="link">Forgot password?</Link></p>
                 <p>Don't have an account? <Link to='/Cadastro' className="link">Sign Up</Link></p>
