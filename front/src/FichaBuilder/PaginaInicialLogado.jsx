@@ -18,20 +18,44 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
   const [fichasUsuario, setFichasUsuario] = useState([]);
   const [filtro, setFiltro] = useState("");
   const [fichasFiltradas, setFichasFiltradas] = useState([]);
+  //Trava por Token
 
+  const [validado, setValidado] = useState(false);
+  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(``);
-        setFichasUsuario(response.data);
-        setFichasFiltradas(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    async function valida(){
+        try{
+            const resposta = await axios.get(`http://localhost:3000/inicio`,config);
+            console.log(resposta);
+            if(resposta.status === 200)
+            { 
+              setValidado(true);
+            }
+        }catch(error){
+            setValidado(false);
+        }
+    }
+    valida();
+  }, []);
 
-    fetchData();
-  }, [idUsuarioLogado]);
+  if(!validado)
+  {
+    return <p>Token Inválido</p>
+  }
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:3000/inicio`);
+  //       setFichasUsuario(response.data);
+  //       setFichasFiltradas(response.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [idUsuarioLogado]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

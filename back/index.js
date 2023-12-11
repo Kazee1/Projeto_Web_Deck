@@ -25,6 +25,10 @@ app.post('/Cadastro', async (req,res) =>{
     for (let usurario of usuarios){
          if(usurario.email === email){
              return res.status(409).send(`Usuario com email ${email} já existe.`);
+         }
+         if(usurario.username===username)
+         {
+            return res.status(409).send(`Usuario com email ${email} já existe.`);
          }   
     }
     
@@ -69,6 +73,10 @@ app.post('/Login', async (req,res) => {
 
 })
 
+app.get('/inicio',verificaToken ,async(req,res)=>{
+    return res.json();
+});
+
 // //Requisicao com POST publica para criar usuário
 // app.post('/Cadastro', async (req,res) => {
 //     //extraindo os dados do formulário para criacao do usuario
@@ -103,18 +111,16 @@ app.post('/Login', async (req,res) => {
 //     res.send(`Tudo certo usuario criado com sucesso.`);
 // });
 
-// function verificaToken(req,res,next){
+function verificaToken(req,res,next){
 
-//     const authHeaders = req.headers['authorization'];
-    
-//     const token = authHeaders && authHeaders.split(' ')[1]
-//     //Bearer token
+    const authHeaders = req.headers['authorization'];
+    const token = authHeaders && authHeaders.split(' ')[1];
+    //verifica se o token existe
+    if(token == null) return res.status(401).send('Acesso Negado');
+    //verifica se o token é valido
+    jwt.verify(token, process.env.TOKEN, (err) => {
+        if(err) return res.status(402).send('Token Inválido/Expirado');
+        next();
+    });
+}
 
-//     if(token == null) return res.status(401).send('Acesso Negado');
-
-//     jwt.verify(token, process.env.TOKEN, (err) => {
-//         if(err) return res.status(403).send('Token Inválido/Expirado');
-//         next();
-//     })
-
-// }
