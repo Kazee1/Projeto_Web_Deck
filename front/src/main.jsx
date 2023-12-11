@@ -10,7 +10,7 @@ import Login from './Inicio/Login.jsx';
 import Cadastro from './Inicio/Cadastro.jsx';
 import EsqueceuSenha from './Inicio/EsqueceuSenha.jsx';
 import PaginaInicial from './Inicio/PaginaInicial.jsx';
-
+import PaginaInicialLogado from './FichaBuilder/PaginaInicialLogado.jsx';
 import DungeonsDragons from './FichaBuilder/Fichas/DungeonsDragons.jsx';
 import CallCthulhu from './FichaBuilder/Fichas/CallCthulhu.jsx';
 import Myprofile from './FichaBuilder/Myprofile.jsx';
@@ -38,11 +38,11 @@ const router = createBrowserRouter([
         element: <EsqueceuSenha />
       },
       {
-        path: 'Testes',
+        path: 'DungeonsDragons',
         element: <DungeonsDragons/>
       },
       {
-        path: 'Teste',
+        path: 'CallCthulhu',
         element: <CallCthulhu/>
       },
       {
@@ -52,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: 'setting',
         element: <MySetting/>
+      },
+      {
+        path: 'inicio',
+        element: <PaginaInicialLogado/>
       },
     ]
   }
