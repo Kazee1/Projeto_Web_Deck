@@ -106,5 +106,17 @@
     "username": "49406121808",
     "email": "gabriell_cocovilo20@outlook.com",
     "password": "$2b$10$f9gf.rxdW7oJ1vVkt97FneVQwBCpC3v8EwctfVlgnXIyqWUPu2PTi"
+  },
+  {
+    "id": 19,
+    "username": "auu@a",
+    "email": "a@fdf",
+    "password": "$2b$10$eicV5cdsanApy/VimbksL.aBZtCyDR8CGDx8KFXiu0uH0dnJ6Ld.."
+  },
+  {
+    "id": 20,
+    "username": "yup",
+    "email": "yup@yup",
+    "password": "$2b$10$8iHvWmQWXuUII3gsmCSMu.I0Su4Yr6TqYiSqsKSjZWwajSGEU7x2G"
   }
 ]

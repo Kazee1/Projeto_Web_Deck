@@ -31,29 +31,41 @@ export default function Cadastro() {
 
   const { errors } = formState;
 
+  // const submit = async (data) => {
+  //   try {
+  //     await handleSubmit((data) => {
+  //       console.log("Dados a serem enviados:", data);
+  //       axios
+  //         .post("http://localhost:3000/Cadastro", data)
+  //         .then((response) => {
+  //           setMsg(response.data);
+  //           if (response.data.includes("sucesso")) {
+  //             setUserCriado(true);
+  //             setTimeout(() => {
+  //               window.location.href = "/login";
+  //             }, 2000);
+  //           }
+  //         })
+  //         .catch((error) => {
+  //           setMsg(error.response.data);
+  //         });
+  //     })(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
   const submit = async (data) => {
+        
     try {
-      await handleSubmit((data) => {
-        console.log("Dados a serem enviados:", data);
-        axios
-          .post("http://localhost:3000/Cadastro", data)
-          .then((response) => {
-            setMsg(response.data);
-            if (response.data.includes("sucesso")) {
-              setUserCriado(true);
-              setTimeout(() => {
-                window.location.href = "/login";
-              }, 2000);
-            }
-          })
-          .catch((error) => {
-            setMsg(error.response.data);
-          });
-      })(data);
+        const response = await axios.post('http://localhost:3000/Cadastro', data);
+        setMsg(response.data);
+        if(response.data.includes('sucesso'))
+            setUserCriado(true);
     } catch (error) {
-      console.error(error);
-    }
-  };
+        setMsg(error.response.data);
+    }   
+    
+}
   return (
     <>
       <Header />

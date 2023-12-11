@@ -11,7 +11,7 @@ import { Link, Navigate } from 'react-router-dom';
 export default function Login(){
     
     const schema = yup.object().shape({
-        email: yup.string().email('Email inválido').required('Email obrigatório'),
+        username: yup.string().required("Usuário obrigatório"),
         password: yup.string().min(2, 'Campo Senha Obrigatório').required('Senha obrigatória'),
       });
     
@@ -22,23 +22,44 @@ export default function Login(){
       const [msg, setMsg] = useState('');
       const { errors } = formState;
 
+      // const submit = async (data) => {
+      //   try {
+      //     const response = await form.trigger();
+      //     if (Object.keys(errors).length === 0) {
+      //       const response = await axios.post('http://localhost:3000/Login', data);
+      //       if (response && response.data && response.data.token) {
+      //         const token = response.data.token;
+      //         sessionStorage.setItem('token', token);
+      //         setMsg('Autenticado');
+      //       } else {
+      //         setMsg('Erro ao autenticar');
+      //       }
+      //     }
+      //   } catch (error) {
+      //     setMsg(error.response?.data || 'Erro ao realizar a requisição');
+      //   }
+      // };
+
       const submit = async (data) => {
+        
         try {
-          const response = await form.trigger();
-          if (Object.keys(errors).length === 0) {
-            const response = await axios.post('http://localhost:3000/login', data);
-            if (response && response.data && response.data.token) {
-              const token = response.data.token;
-              sessionStorage.setItem('token', token);
-              setMsg('Autenticado');
-            } else {
-              setMsg('Erro ao autenticar');
-            }
-          }
+            const response = await axios.post('http://localhost:3000/Login', data);
+            
+            const token = response.data.token;
+            sessionStorage.setItem('token', token);
+            if(token)
+                setMsg('Autenticado');
         } catch (error) {
-          setMsg(error.response?.data || 'Erro ao realizar a requisição');
-        }
-      };
+            setMsg(error.response.data);
+        }   
+        
+    }
+
+    if(msg.toLowerCase().includes('autenticado')){
+      return <Navigate to='/inicio' />
+  }
+
+
     return (
         <>
         <Header/>
@@ -47,9 +68,9 @@ export default function Login(){
             <h3 className="sign">SIGN IN</h3>
             <form onSubmit={handleSubmit(submit)} noValidate>
                 <div className="form-group-login">
-                    <label htmlFor="username" >Email</label>
-                    <input type="text" id="username" {...register('email')}/>
-                    {errors.email && <p className="error-message">{errors.email.message}</p>}
+                    <label htmlFor="username" >Username</label>
+                    <input type="text" id="username" {...register('username')}/>
+                    {errors.username && <p className="error-message">{errors.username.message}</p>}
                 </div>
                 <div className="form-group-login">
                     <label htmlFor="password">Password</label>
