@@ -52,5 +52,59 @@
     "username": "dfda",
     "email": "d@fdaoioaa",
     "password": "$2b$10$cMG6t5tlU1vSLGqjpE7J.u9IHj9/VBAMZ76yzQJGdCHl/UXH7wAjy"
+  },
+  {
+    "id": 10,
+    "username": "",
+    "email": "",
+    "password": "$2b$10$.VvLY5G1k/XYb5oDzq7.0ONDtzcDsOFel.xPyC/xFGQTaIP1BfEIi"
+  },
+  {
+    "id": 11,
+    "username": "kazebolls",
+    "email": "as@w",
+    "password": "$2b$10$uN10jF11Poy8E13uO2UbzOhw52Y42O7zmoSF6A2nZDlDNOKeyBgVa"
+  },
+  {
+    "id": 12,
+    "username": "kazebolls",
+    "email": "gabriel_cocovilo20@outlook.com",
+    "password": "$2b$10$iI4y6iHZqqm4iTdDKZYlj.d690BtFyOYcNBcBsnyHjSH00/NB3lye"
+  },
+  {
+    "id": 13,
+    "username": "kazebolls",
+    "email": "gabriel_cocovilso20@outlook.com",
+    "password": "$2b$10$JtO09gPg0mxxDgXbUw3V..dyF6GStH1QT0DbhrjiXeYykBPM3foGe"
+  },
+  {
+    "id": 14,
+    "username": "49406121808",
+    "email": "asd@we",
+    "password": "$2b$10$tcRm9VEn4hIevL1exJqyBe3BlChjfx73zSjKnUNn6WQsxlyMX4.qa"
+  },
+  {
+    "id": 15,
+    "username": "49406121808",
+    "email": "gq@ou",
+    "password": "$2b$10$UrMcc93CfHsCn4keqrb7leCrx.vlcb0/cpR5P3xRMleWIT9j.J4J."
+  },
+  {
+    "id": 16,
+    "username": "49406121808",
+    "email": "Jorge@outlook.com",
+    "password": "$2b$10$5oXmZ31wZWYDmnV2wKWQB.6tIVLnbOoA4oV8vWWyngVZXMW3y9WQa"
+  },
+  {
+    "id": 17,
+    "username": "Galo doido",
+    "email": "@outlook.comGalodoido",
+    "password": "$2b$10$vMQksNeDWT4MjsmmiQnJSuW0sIDyenM1h.p7Lwa0sTto0H3h564Fm"
+  },
+  {
+    "id": 18,
+    "username": "49406121808",
+    "email": "gabriell_cocovilo20@outlook.com",
+    "password": "$2b$10$f9gf.rxdW7oJ1vVkt97FneVQwBCpC3v8EwctfVlgnXIyqWUPu2PTi"
   }
 ]
