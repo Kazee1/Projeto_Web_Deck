@@ -81,12 +81,12 @@ app.get("/profile",verificaToken, async(req,res)=>{
 app.get("/setting",verificaToken, async(req,res)=>{
     return res.send()
 });
-app.get("/CallCthulhu",verificaToken, async(req,res)=>{
-    return res.send()
-});
+
 app.get("/DungeonsDragons",verificaToken, async(req,res)=>{
     return res.send()
 });
+
+
 // //Requisicao com POST publica para criar usuário
 // app.post('/Cadastro', async (req,res) => {
 //     //extraindo os dados do formulário para criacao do usuario

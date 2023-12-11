@@ -16,6 +16,25 @@ import axios from "axios";
 
 export default function DungeonsDragons() {
   const [numDados, setNumDados] = useState(0);
+  const [validado, setValidado] = useState(false);
+   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+   
+  useEffect(() => {
+    async function valida(){
+      try{
+        const resposta = await axios.get(`http://localhost:3000/DungeonsDragons`,config);
+        console.log(resposta);
+        if(resposta.status === 200)
+        { 
+          console.log("validado")
+          setValidado(true);
+        }
+      }catch(error){
+        setValidado(false);
+        }
+    }
+    valida();
+  },[]);
 
    //Trava por Token
    const [validado, setValidado] = useState(false);

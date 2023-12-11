@@ -42,6 +42,10 @@ export default function CallCthulhu() {
     return <p>Token Inválido</p>
   }
   useEffect(() => {
+    console.log("teste");
+  }, []);
+
+  useEffect(() => {
     mostrarDados();
   }, [numDados]);
 
