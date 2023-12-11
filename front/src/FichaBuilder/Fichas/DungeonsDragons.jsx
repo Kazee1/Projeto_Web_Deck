@@ -37,8 +37,10 @@ export default function DungeonsDragons() {
   },[]);
 
   useEffect(() => {
-    mostrarDados();
-  }, [numDados]);
+    if (validado) {
+      mostrarDados();
+    }
+  }, [validado, numDados]);
 
   function mostrarDados() {
     const dadosContainer = document.getElementById("dados");
@@ -124,6 +126,12 @@ export default function DungeonsDragons() {
       });
     });
   };
+
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
 
   return (
     <>
