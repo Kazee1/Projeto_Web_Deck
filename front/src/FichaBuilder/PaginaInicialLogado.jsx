@@ -1,8 +1,8 @@
 import Footer from "../Inicio/Footer";
 import HeaderLogado from "./HeaderLogado";
-import CTHULHUFICHA from '../Imagens/CTHULHUFicha'
-import DragonsFicha from '../Imagens/DragonsFicha'
-
+// import CTHULHUFICHA from '../Imagens/CTHULHUFicha'
+import DragonsFicha from '../Imagens/DragonsFicha.png'
+import CTHULHUFICHA from '../Imagens/CTHULHUFicha.png'
 
 import "../Styles/PaginaInicialLogado.css";
 

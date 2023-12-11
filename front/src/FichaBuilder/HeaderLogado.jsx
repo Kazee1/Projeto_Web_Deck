@@ -18,8 +18,8 @@ export default function Header() {
         <div className="dropdown-profile">
             <button className="dropbtn1-profile">Monte sua Ficha!</button>
             <div className="dropdown-content-profile">
-              <Link to="/Cadastro" className="link-profile">Dungeons and Dragons</Link>
-              <Link to="/Cadastro" className="link-profile">Call of Cthulhu</Link>             
+              <Link to="/DungeonsDragons" className="link-profile">Dungeons and Dragons</Link>
+              <Link to="/CallCthulhu" className="link-profile">Call of Cthulhu</Link>             
             </div>
           </div>
         </nav>
