@@ -118,5 +118,17 @@
     "username": "yup",
     "email": "yup@yup",
     "password": "$2b$10$8iHvWmQWXuUII3gsmCSMu.I0Su4Yr6TqYiSqsKSjZWwajSGEU7x2G"
+  },
+  {
+    "id": 21,
+    "username": "f",
+    "email": "deus@deus",
+    "password": "$2b$10$hE7ef4x4.o0E4r.ZTB0pYun/FBirZqZEHMtFFEGVfv7oIBJ8y1922"
+  },
+  {
+    "id": 22,
+    "username": "GrandeCoconut",
+    "email": "me@me",
+    "password": "$2b$10$tEWK/7p/syzPWaFu2j9cj.bXJX2qV6AxrXAT.YQDUNcUiWkcWTVDi"
   }
 ]

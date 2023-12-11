@@ -25,6 +25,10 @@ app.post('/Cadastro', async (req,res) =>{
     for (let usurario of usuarios){
          if(usurario.email === email){
              return res.status(409).send(`Usuario com email ${email} já existe.`);
+         }
+         if(usurario.username===username)
+         {
+            return res.status(409).send(`Usuario com email ${email} já existe.`);
          }   
     }
     
@@ -41,8 +45,7 @@ app.post('/Cadastro', async (req,res) =>{
 })
 
 app.post('/Login', async (req,res) => {
-
-//     //extraindo os dados do formulário para criacao do usuario
+    //extraindo os dados do formulário para criacao do usuario
     const {username, password} = req.body; 
     const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
     const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
@@ -55,10 +58,8 @@ app.post('/Login', async (req,res) => {
              if(passwordValidado){          
                    const token = jwt.sign(user, process.env.TOKEN);
                     console.log("foi");
-                    return res.json({ "token" : token});
-                    
+                    return res.json({ "token" : token});      
              }
-            
              else
                  return res.status(422).send(`Usuario ou senhas incorretas.`);
          }  
@@ -69,6 +70,17 @@ app.post('/Login', async (req,res) => {
 
 })
 
+app.get('/inicio',verificaToken ,async(req,res)=>{
+    return res.send();
+});
+
+app.get("/profile",verificaToken, async(req,res)=>{
+    return res.send()
+});
+
+app.get("/setting",verificaToken, async(req,res)=>{
+    return res.send()
+});
 // //Requisicao com POST publica para criar usuário
 // app.post('/Cadastro', async (req,res) => {
 //     //extraindo os dados do formulário para criacao do usuario
@@ -103,18 +115,15 @@ app.post('/Login', async (req,res) => {
 //     res.send(`Tudo certo usuario criado com sucesso.`);
 // });
 
-// function verificaToken(req,res,next){
+function verificaToken(req,res,next)
+{
+    const authHeaders = req.headers['authorization'];
+    const token = authHeaders && authHeaders.split(' ')[1]
+    //Bearer token
+    if(token == null) return res.status(401).send('Acesso Negado');
+    jwt.verify(token, process.env.TOKEN, (err) => {
+        if(err) return res.status(403).send('Token Inválido/Expirado');
+        next();
+    })
+}
 
-//     const authHeaders = req.headers['authorization'];
-    
-//     const token = authHeaders && authHeaders.split(' ')[1]
-//     //Bearer token
-
-//     if(token == null) return res.status(401).send('Acesso Negado');
-
-//     jwt.verify(token, process.env.TOKEN, (err) => {
-//         if(err) return res.status(403).send('Token Inválido/Expirado');
-//         next();
-//     })
-
-// }

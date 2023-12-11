@@ -18,20 +18,41 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
   const [fichasUsuario, setFichasUsuario] = useState([]);
   const [filtro, setFiltro] = useState("");
   const [fichasFiltradas, setFichasFiltradas] = useState([]);
-
+  //Trava por Token
+  const [validado, setValidado] = useState(false);
+  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(``);
-        setFichasUsuario(response.data);
-        setFichasFiltradas(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    async function valida(){
+        try{
+            const resposta = await axios.get(`http://localhost:3000/inicio`,config);
+            console.log(resposta);
+            if(resposta.status === 200)
+            { 
+              console.log("validado")
+              setValidado(true);
+            }
+        }catch(error){
+              setValidado(false);
+        }
+    }
+    valida();
+  },[]);
 
-    fetchData();
-  }, [idUsuarioLogado]);
+  
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(`http://localhost:3000/inicio`);
+  //       setFichasUsuario(response.data);
+  //       setFichasFiltradas(response.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [idUsuarioLogado]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,7 +77,12 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
     novasFichas.splice(index, 1);
     setFichasFiltradas(novasFichas);
   };
-
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
+  else{
   return (
     <>
       <HeaderLogado />
@@ -92,4 +118,5 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
       <Footer />
     </>
   );
+}
 }
