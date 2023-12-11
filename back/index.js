@@ -74,7 +74,9 @@ app.post('/Login', async (req,res) => {
 })
 
 app.get('/inicio',verificaToken ,async(req,res)=>{
-    return res.json();
+    const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
+    const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
+    return res.send();
 });
 
 // //Requisicao com POST publica para criar usuário
@@ -111,16 +113,15 @@ app.get('/inicio',verificaToken ,async(req,res)=>{
 //     res.send(`Tudo certo usuario criado com sucesso.`);
 // });
 
-function verificaToken(req,res,next){
-
+function verificaToken(req,res,next)
+{
     const authHeaders = req.headers['authorization'];
-    const token = authHeaders && authHeaders.split(' ')[1];
-    //verifica se o token existe
+    const token = authHeaders && authHeaders.split(' ')[1]
+    //Bearer token
     if(token == null) return res.status(401).send('Acesso Negado');
-    //verifica se o token é valido
     jwt.verify(token, process.env.TOKEN, (err) => {
-        if(err) return res.status(402).send('Token Inválido/Expirado');
+        if(err) return res.status(403).send('Token Inválido/Expirado');
         next();
-    });
+    })
 }
 

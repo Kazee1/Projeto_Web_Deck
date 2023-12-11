@@ -30,19 +30,17 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
             console.log(resposta);
             if(resposta.status === 200)
             { 
+              console.log("validado")
               setValidado(true);
             }
         }catch(error){
-            setValidado(false);
+              setValidado(false);
         }
     }
     valida();
-  }, []);
+  },[]);
 
-  if(!validado)
-  {
-    return <p>Token Inválido</p>
-  }
+  
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -80,7 +78,12 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
     novasFichas.splice(index, 1);
     setFichasFiltradas(novasFichas);
   };
-
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
+  else{
   return (
     <>
       <HeaderLogado />
@@ -114,4 +117,5 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
       <Footer />
     </>
   );
+}
 }
