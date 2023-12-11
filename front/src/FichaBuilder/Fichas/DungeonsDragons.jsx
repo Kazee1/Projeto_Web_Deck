@@ -36,37 +36,12 @@ export default function DungeonsDragons() {
     valida();
   },[]);
 
-   //Trava por Token
-   const [validado, setValidado] = useState(false);
-   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
-   
-  
   useEffect(() => {
-    async function valida(){
-      try{
-        const resposta = await axios.get(`http://localhost:3000/inicio`,config);
-        console.log(resposta);
-        if(resposta.status === 200)
-        { 
-          console.log("validado")
-          setValidado(true);
-        }
-      }catch(error){
-        setValidado(false);
-        }
+    if (validado) {
+      mostrarDados();
     }
-    valida();
-  },[]);
-    
-  useEffect(() => {
-    mostrarDados();
-  }, [numDados]);
-  
-  if(!validado)
-  {
-    console.log("Token Inválido")
-    return <p>Token Inválido</p>
-  }
+  }, [validado, numDados]);
+
   function mostrarDados() {
     const dadosContainer = document.getElementById("dados");
     dadosContainer.innerHTML = "";
@@ -151,6 +126,12 @@ export default function DungeonsDragons() {
       });
     });
   };
+
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
 
   return (
     <>
