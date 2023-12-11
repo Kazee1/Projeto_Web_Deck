@@ -16,6 +16,10 @@ export default function CallCthulhu() {
   const [numDados, setNumDados] = useState(0);
 
   useEffect(() => {
+    console.log("teste");
+  }, []);
+
+  useEffect(() => {
     mostrarDados();
   }, [numDados]);
 

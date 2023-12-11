@@ -130,5 +130,11 @@
     "username": "GrandeCoconut",
     "email": "me@me",
     "password": "$2b$10$tEWK/7p/syzPWaFu2j9cj.bXJX2qV6AxrXAT.YQDUNcUiWkcWTVDi"
+  },
+  {
+    "id": 23,
+    "username": "aaa",
+    "email": "kaze@hotmail.com",
+    "password": "$2b$10$dVAW4gGJsA44hIx5m3NQZehJu/IwZXar1.NG60mx7LXQHKxTG2SVq"
   }
 ]
