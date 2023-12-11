@@ -45,8 +45,7 @@ app.post('/Cadastro', async (req,res) =>{
 })
 
 app.post('/Login', async (req,res) => {
-
-//     //extraindo os dados do formulário para criacao do usuario
+    //extraindo os dados do formulário para criacao do usuario
     const {username, password} = req.body; 
     const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
     const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
@@ -59,10 +58,8 @@ app.post('/Login', async (req,res) => {
              if(passwordValidado){          
                    const token = jwt.sign(user, process.env.TOKEN);
                     console.log("foi");
-                    return res.json({ "token" : token});
-                    
+                    return res.json({ "token" : token});      
              }
-            
              else
                  return res.status(422).send(`Usuario ou senhas incorretas.`);
          }  
@@ -74,11 +71,16 @@ app.post('/Login', async (req,res) => {
 })
 
 app.get('/inicio',verificaToken ,async(req,res)=>{
-    const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
-    const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
     return res.send();
 });
 
+app.get("/profile",verificaToken, async(req,res)=>{
+    return res.send()
+});
+
+app.get("/setting",verificaToken, async(req,res)=>{
+    return res.send()
+});
 // //Requisicao com POST publica para criar usuário
 // app.post('/Cadastro', async (req,res) => {
 //     //extraindo os dados do formulário para criacao do usuario

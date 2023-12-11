@@ -19,7 +19,6 @@ export default function PaginaInicialLogado({ idUsuarioLogado }) {
   const [filtro, setFiltro] = useState("");
   const [fichasFiltradas, setFichasFiltradas] = useState([]);
   //Trava por Token
-
   const [validado, setValidado] = useState(false);
   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
   
