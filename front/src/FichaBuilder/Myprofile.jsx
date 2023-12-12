@@ -119,7 +119,6 @@ export default function Myprofile() {
       </main>
       <Footer />
     </>
-  dados();
   );
   
 }

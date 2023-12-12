@@ -73,15 +73,16 @@ export default function PaginaInicialLogado() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar lógica para lidar com o envio do formulário
-    // por exemplo, enviar a solicitação de pesquisa para o backend
-    console.log('Pesquisar:', filtro);
-    // Adicione aqui a lógica para enviar a pesquisa ao backend
+
+    // const resultados = fichasUsuario.filter((item) =>
+    // item.NomeFicha.toLowerCase().includes(filtro.toLowerCase())
+    //);
+    // setFichasFiltradas(resultados);
   };
 
   const handleInputChange = (e) => {
     setFiltro(e.target.value);
-    console.log(filtro);
+    console.log(setFiltro);
   };
 
   const handleDivClick = (nomeFicha, tipoFicha) => {
