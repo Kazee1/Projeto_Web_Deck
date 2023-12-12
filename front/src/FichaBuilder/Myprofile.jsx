@@ -5,6 +5,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import {set, useForm} from 'react-hook-form';
 
 export default function Myprofile() {
   const [fullName, setFullName] = useState("");
@@ -21,6 +22,16 @@ export default function Myprofile() {
       Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
     },
   };
+
+  const schema = yup.object({
+    nome: yup.string().required("Digite o nome completo"),
+  });
+  
+  const form = useForm({
+    resolver: yupResolver(schema)
+  });
+  const {formState } = form;
+  const {errors} = formState;
 
   useEffect(() => {
     async function valida() {
@@ -89,6 +100,7 @@ export default function Myprofile() {
                   }}
                   disabled={!isEditMode}
                 />
+                <p className='erro'>{errors.nome?.message}</p>
               </div>
               <div className="UsernameLayout">
                 <label>Username:</label>

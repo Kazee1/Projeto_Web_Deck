@@ -24,14 +24,12 @@ export default function Myprofile() {
     username: yup.string().required("Digite o Usuário"),
     email: yup.string().email('Email inválido').required("Digite o seu email"),
     password: yup.string().min(4,'Minimo de 4 caracteres').required('Digite sua senha atual'),
-    
-    newPasswordConf: yup.string().oneOf([yup.ref('newPassword')], 'As senhas devem coincidir!').required(),
-    
-    newPassword: yup.string().min(4,'Minimo de 4 caracteres').required("Qual sua nova senha?")
-});
+    newPassword: yup.string().min(4,'Minimo de 4 caracteres').required("Qual sua nova senha?"),
+    newPasswordConf: yup.string().oneOf([yup.ref('newPassword')], 'As senhas devem coincidir!').required("")
+  });
   const form = useForm({
     resolver: yupResolver(schema)
-});
+  });
 
   const { register, control, handleSubmit, formState } = form;
   const {errors} = formState;
