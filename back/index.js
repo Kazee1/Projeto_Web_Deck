@@ -112,6 +112,44 @@ app.post('/setting', async (req,res) => {
     fs.writeFileSync(banco,JSON.stringify(usuarios,null,2));
     res.send(`Tudo certo alterações feita com sucesso.`);
 })
+app.post('/setting', async (req,res) => {
+    
+    const {PasswordLayout, NewUsernameLayout,NewPasswordLayout,ConfirmPasswordLayout,NewEmailLayout} = req.body; 
+    
+    const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
+    const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
+    console.log(IdUser);
+    console.log(NewEmailLayout);
+    for (let user of usuarios){
+        if(user.id === IdUser){
+            console.log(NewEmailLayout);
+            const passwordValidado = await bcrypt.compare(PasswordLayout, user.password);
+            console.log(NewEmailLayout);
+            if(passwordValidado){      
+            if(NewPasswordLayout !== undefined){
+                const salt = await bcrypt.genSalt(10);
+                const passwordCrypt = await bcrypt.hash(NewPasswordLayout,salt);
+                user.password = passwordCrypt;
+            }
+            if(NewUsernameLayout !== undefined){
+                user.username = NewUsernameLayout;
+            }
+            if(NewEmailLayout !== undefined){
+                user.email = NewEmailLayout;
+            }
+            console.log("altereados");
+
+        }else{
+            console.log("senha incorreta");
+             return res.status(422).send(`Senha incorreta!`);
+        }
+        
+
+        }
+    }
+    fs.writeFileSync(banco,JSON.stringify(usuarios,null,2));
+    res.send(`Tudo certo alterações feita com sucesso.`);
+})
 
 app.post('/DungeonsDragons',async (req,res) => {
     const {NomeDD,NomePerso, Class_Nivel,Antecedente,NomeDoJogador,Raca,Tendencia,Experiencia,Forca,ForcaBonus,Destreza,DestrezaBonus,Constituicao,ConstituicaoBonus,Inteligencia,InteligenciaBonus,Sabedoria,SabedoriaBonus,Carisma,CarismaBonus,Inspiracao,Proficiencia,radioForca,SubForca,radioDestreza,SubDestreza,radioConstituicao,SubConstituicao,radioInteligencia,SubInteligencia,radioSabedoria,SubSabedoria,radioCarisma,SubCarisma,radioAcrobacia,SubAcrobacia,radioArcanismo,SubArcanismo,radioAtletismo,SubAtletismo,radioAtuacao,SubAtuacao,radioEnganacao,SubEnganacao,radioFurtividade,SubFurtividade,radioHistoria,SubHistoria,radioIntimidacao,SubIntimidacao,radioIntuicao,SubIntuicao,radioInvestigacao,SubInvestigacao,radioAnimais,SubAnimais,radioMedicina,SubMedicina,radioNatureza,SubNatureza,radioPercepcao,SubPercepcao,radioPersuasao,SubPersuasao,radioPrestigio,SubPrestigio,radioReligiao,SubReligiao,radioSobrevivencia,SubSobrevivencia,Armadura,Iniciativa,Deslocamento,VidaMaxima,VidaAtual,VidaTemporaria,DadosVidaTotal,DadosVida,Sucesso1,Sucesso2,Sucesso3,Fracasso1,Fracasso2,Fracasso3,NomeAtaque1,BonusAtaque1,DTAtaque1,NomeAtaque2,BonusAtaque2,DTAtaque2,NomeAtaque3,BonusAtaque3,DTAtaque3,Magias,SabedoriaPassiva,Idiomas,Personalidade,Ideias,Ligacoes,Defeitos,Caracteristicas,PC,PP,PE,PO,PL,Equipamento,NomePerso1,Idade,Altura,Peso,Olhos,Pele,Cabelo,Orgs,Guilda,TalentosAdicionais,Tesouros,HistoriaPersonagem,ClasseConjurador,HabilidadeChave,CD,ModificadorAtaque,Truque1,Truque2,Truque3,Truque4,Truque5,Truque6,Truque7,Truque8,EspacoTotal1,EspacoUtilizado1,CheckNivel1_1,SlotNivel1_1,CheckNivel1_2,SlotNivel1_2,CheckNivel1_3,SlotNivel1_3,CheckNivel1_4,SlotNivel1_4,CheckNivel1_5,SlotNivel1_5,CheckNivel1_6,SlotNivel1_6,CheckNivel1_7,SlotNivel1_7,CheckNivel1_8,SlotNivel1_8,CheckNivel1_9,SlotNivel1_9,CheckNivel1_10,SlotNivel1_10,CheckNivel1_11,SlotNivel1_11,CheckNivel1_12,SlotNivel1_12,CheckNivel1_13,SlotNivel1_13,EspacoTotal2,EspacoUtilizado2,CheckNivel2_1,SlotNivel2_1,CheckNivel2_2,SlotNivel2_2,CheckNivel2_3,SlotNivel2_3,CheckNivel2_4,SlotNivel2_4,CheckNivel2_5,SlotNivel2_5,CheckNivel2_6,SlotNivel2_6,CheckNivel2_7,SlotNivel2_7,CheckNivel2_8,SlotNivel2_8,CheckNivel2_9,SlotNivel2_9,CheckNivel2_10,SlotNivel2_10,CheckNivel2_11,SlotNivel2_11,CheckNivel2_12,SlotNivel2_12,CheckNivel2_13,SlotNivel2_13,EspacoTotal3,EspacoUtilizado3,CheckNivel3_1,SlotNivel3_1,CheckNivel3_2,SlotNivel3_2,CheckNivel3_3,SlotNivel3_3,CheckNivel3_4,SlotNivel3_4,CheckNivel3_5,SlotNivel3_5,CheckNivel3_6,SlotNivel3_6,CheckNivel3_7,SlotNivel3_7,CheckNivel3_8,SlotNivel3_8,CheckNivel3_9,SlotNivel3_9,CheckNivel3_10,SlotNivel3_10,CheckNivel3_11,SlotNivel3_11,CheckNivel3_12,SlotNivel3_12,CheckNivel3_13,SlotNivel3_13,EspacoTotal4,EspacoUtilizado4,CheckNivel4_1,SlotNivel4_1,CheckNivel4_2,SlotNivel4_2,CheckNivel4_3,SlotNivel4_3,CheckNivel4_4,SlotNivel4_4,CheckNivel4_5,SlotNivel4_5,CheckNivel4_6,SlotNivel4_6,CheckNivel4_7,SlotNivel4_7,CheckNivel4_8,SlotNivel4_8,CheckNivel4_9,SlotNivel4_9,CheckNivel4_10,SlotNivel4_10,CheckNivel4_11,SlotNivel4_11,CheckNivel4_12,SlotNivel4_12,CheckNivel4_13,SlotNivel4_13,EspacoTotal5,EspacoUtilizado5,CheckNivel5_1,SlotNivel5_1,CheckNivel5_2,SlotNivel5_2,CheckNivel5_3,SlotNivel5_3,CheckNivel5_4,SlotNivel5_4,CheckNivel5_5,SlotNivel5_5,CheckNivel5_6,SlotNivel5_6,CheckNivel5_7,SlotNivel5_7,CheckNivel5_8,SlotNivel5_8,CheckNivel5_9,SlotNivel5_9,EspacoTotal6,EspacoUtilizado6,CheckNivel6_1,SlotNivel6_1,CheckNivel6_2,SlotNivel6_2,CheckNivel6_3,SlotNivel6_3,CheckNivel6_4,SlotNivel6_4,CheckNivel6_5,SlotNivel6_5,CheckNivel6_6,SlotNivel6_6,CheckNivel6_7,SlotNivel6_7,CheckNivel6_8,SlotNivel6_8,CheckNivel6_9,SlotNivel6_9,EspacoTotal7,EspacoUtilizado7,CheckNivel7_1,SlotNivel7_1,CheckNivel7_2,SlotNivel7_2,CheckNivel7_3,SlotNivel7_3,CheckNivel7_4,SlotNivel7_4,CheckNivel7_5,SlotNivel7_5,CheckNivel7_6,SlotNivel7_6,CheckNivel7_7,SlotNivel7_7,CheckNivel7_8,SlotNivel7_8,CheckNivel7_9,SlotNivel7_9,EspacoTotal8,EspacoUtilizado8,CheckNivel8_1,SlotNivel8_1,CheckNivel8_2,SlotNivel8_2,CheckNivel8_3,SlotNivel8_3,CheckNivel8_4,SlotNivel8_4,CheckNivel8_5,SlotNivel8_5,CheckNivel8_6,SlotNivel8_6,CheckNivel8_7,SlotNivel8_7,EspacoTota9,EspacoUtilizado9,CheckNive9_1,SlotNive9_1,CheckNive9_2,SlotNive9_2,CheckNive9_3,SlotNive9_3,CheckNive9_4,SlotNive9_4,CheckNive9_5,SlotNive9_5,CheckNive9_6,SlotNive9_6,CheckNive9_7,SlotNive9_7} = req.body;
@@ -174,12 +212,18 @@ app.get("/profile",verificaToken, async(req,res, next)=>{
 });
 
 app.get("/profile2", async(req,res, next)=>{
-    IdUser = req.userId;
+    //IdUser = parseInt(req.userId);
+    // IdUser = 6;
+    console.log("aaaaa");
+    //parseint(IdUser);
+    console.log(IdUser);
     const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
     const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
+    console.log(IdUser);
     for (let user of usuarios){
         if(user.id === IdUser){
-            res.json({username:user.username, email:user.email});
+            console.log(user.username);
+            res.json({"username":user.username, "email":user.email});
         }
     }
     //res.status(200).json({ userId: req.userId });
