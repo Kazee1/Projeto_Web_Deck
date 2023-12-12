@@ -16,26 +16,21 @@ import axios from "axios";
 
 export default function CallCthulhu() {
   const [numDados, setNumDados] = useState(0);
+  const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
-  const config = {
-    headers: {
-      Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
-    },
-  };
-
+  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+  
   useEffect(() => {
     async function valida() {
       try {
-        const resposta = await axios.get(
-          `http://localhost:3000/CallCthulhu`,
-          config
-        );
-        console.log(resposta);
-        if (resposta.status === 200) {
-          console.log("validado");
-          setValidado(true);
-        }
+        const response = await axios.get(`http://localhost:3000/CallCthulhu`, config);
+        setValidado(true);
+        console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
+        setUserId(response.data.userId);
+        
       } catch (error) {
+        // Trate os erros, se necessário
+        console.error('Erro ao obter dados:', error);
         setValidado(false);
       }
     }

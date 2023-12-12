@@ -42,6 +42,10 @@ const router = createBrowserRouter([
         element: <DungeonsDragons/>
       },
       {
+        path: '/DungeonsDragons/:userId/:nomeFicha', 
+        element: <DungeonsDragons />
+      },
+      {
         path: 'CallCthulhu',
         element: <CallCthulhu/>
       },

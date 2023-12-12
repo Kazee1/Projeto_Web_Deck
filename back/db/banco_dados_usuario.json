@@ -136,5 +136,17 @@
     "username": "aaa",
     "email": "kaze@hotmail.com",
     "password": "$2b$10$dVAW4gGJsA44hIx5m3NQZehJu/IwZXar1.NG60mx7LXQHKxTG2SVq"
+  },
+  {
+    "id": 24,
+    "username": "444",
+    "email": "aaaa@out.coms",
+    "password": "$2b$10$SQ.BI4WDaa4jAcrDLNUEne8eLmsNn7vwS.O1h8iCrIrZwRX8LyAnC"
+  },
+  {
+    "id": 25,
+    "username": "Kazi",
+    "email": "kazi@h",
+    "password": "$2b$10$MCuxcaY9HAerJRxsNuC6MeCU2wpLiIp9bsFgXr1zzPqeO/ooDhckG"
   }
 ]
