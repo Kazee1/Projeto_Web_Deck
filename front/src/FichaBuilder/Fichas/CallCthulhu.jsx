@@ -9,19 +9,44 @@ import "../../Styles/Fichas/CallCthulhu.css";
 import "../../Styles/Fichas/Dados.css";
 
 import React, { useState, useEffect } from "react";
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+
+import axios from "axios";
 
 export default function CallCthulhu() {
   const [numDados, setNumDados] = useState(0);
+  const [validado, setValidado] = useState(false);
+  const config = {
+    headers: {
+      Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
+    },
+  };
 
   useEffect(() => {
-    console.log("teste");
+    async function valida() {
+      try {
+        const resposta = await axios.get(
+          `http://localhost:3000/CallCthulhu`,
+          config
+        );
+        console.log(resposta);
+        if (resposta.status === 200) {
+          console.log("validado");
+          setValidado(true);
+        }
+      } catch (error) {
+        setValidado(false);
+      }
+    }
+    valida();
   }, []);
 
   useEffect(() => {
-    mostrarDados();
-  }, [numDados]);
+    if (validado) {
+      mostrarDados();
+    }
+  }, [validado, numDados]);
 
   function mostrarDados() {
     const dadosContainer = document.getElementById("dados");
@@ -73,34 +98,39 @@ export default function CallCthulhu() {
     });
   }
 
-
-  const [fileName, setFileName] = useState('');
+  const [fileName, setFileName] = useState("");
 
   const handleFileNameChange = (e) => {
     setFileName(e.target.value);
   };
 
   const downloadPdf = () => {
-    const finalFileName = fileName.trim() || 'Call_of_Cthulhu';
+    const finalFileName = fileName.trim() || "Call_of_Cthulhu";
 
-    const input1 = document.getElementById('CallPage1');
-    const input2 = document.getElementById('CallPage2');
+    const input1 = document.getElementById("CallPage1");
+    const input2 = document.getElementById("CallPage2");
 
-    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pdf = new jsPDF("p", "mm", "a4");
 
     html2canvas(input1).then((canvas1) => {
-      const imgData1 = canvas1.toDataURL('image/png');
-      pdf.addImage(imgData1, 'PNG', 0, 0, 210, 297);
+      const imgData1 = canvas1.toDataURL("image/png");
+      pdf.addImage(imgData1, "PNG", 0, 0, 210, 297);
 
       html2canvas(input2).then((canvas2) => {
-        const imgData2 = canvas2.toDataURL('image/png');
+        const imgData2 = canvas2.toDataURL("image/png");
         pdf.addPage();
-        pdf.addImage(imgData2, 'PNG', 0, 0, 210, 297);
+        pdf.addImage(imgData2, "PNG", 0, 0, 210, 297);
 
         pdf.save(`${finalFileName}.pdf`);
       });
     });
   };
+
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
 
   return (
     <>
@@ -117,8 +147,12 @@ export default function CallCthulhu() {
               <option value="4">4 dados</option>
               <option value="5">5 dados</option>
             </select>
-            <button className="Botaoroleta" onClick={sortearNovosNumeros}>Jogar</button>
-            <button className="DownloadFicha" onClick={downloadPdf}>&#x25BC; Download</button>
+            <button className="Botaoroleta" onClick={sortearNovosNumeros}>
+              Jogar
+            </button>
+            <button className="DownloadFicha" onClick={downloadPdf}>
+              &#x25BC; Download
+            </button>
           </div>
           <div id="dados"></div>
         </div>

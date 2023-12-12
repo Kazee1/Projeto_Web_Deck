@@ -86,6 +86,10 @@ app.get("/DungeonsDragons",verificaToken, async(req,res)=>{
     return res.send()
 });
 
+app.get("/CallCthulhu",verificaToken, async(req,res)=>{
+    return res.send()
+});
+
 
 // //Requisicao com POST publica para criar usuário
 // app.post('/Cadastro', async (req,res) => {

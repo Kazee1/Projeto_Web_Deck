@@ -38,7 +38,7 @@ export default function DungeonsDragons() {
 
   useEffect(() => {
     if (validado) {
-      mostrarDados();
+      mostrarDados(); // Execute se validado for true
     }
   }, [validado, numDados]);
 
