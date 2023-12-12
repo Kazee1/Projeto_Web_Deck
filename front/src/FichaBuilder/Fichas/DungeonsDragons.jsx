@@ -17,7 +17,7 @@ import axios from "axios";
 export default function DungeonsDragons() {
   const [numDados, setNumDados] = useState(0);
   const [validado, setValidado] = useState(false);
-   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
    
   useEffect(() => {
     async function valida(){

@@ -17,37 +17,37 @@ export default function CallCthulhu() {
   const [numDados, setNumDados] = useState(0);
 
    //Trava por Token
-   const [validado, setValidado] = useState(false);
-   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+  const [validado, setValidado] = useState(false);
+  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
    
    useEffect(() => {
-     async function valida(){
-         try{
-             const resposta = await axios.get(`http://localhost:3000/inicio`,config);
-             console.log(resposta);
-             if(resposta.status === 200)
-             { 
-               console.log("validado")
-               setValidado(true);
-             }
-         }catch(error){
-               setValidado(false);
-         }
-     }
-     valida();
-   },[]);
+    async function valida(){
+      try{
+        const resposta = await axios.get(`http://localhost:3000/CallCthulhu`,config);
+        console.log(resposta);
+        if(resposta.status === 200)
+        { 
+          console.log("validado")
+          setValidado(true);
+        }
+      }catch(error){
+        setValidado(false);
+        }
+    }
+    valida();
+  },[]);
+
+  useEffect(() => {
+    if (validado) {
+      mostrarDados();
+    }
+  }, [validado, numDados]);
+
   if(!validado)
   {
     console.log("Token Inválido")
     return <p>Token Inválido</p>
   }
-  useEffect(() => {
-    console.log("teste");
-  }, []);
-
-  useEffect(() => {
-    mostrarDados();
-  }, [numDados]);
 
   function mostrarDados() {
     const dadosContainer = document.getElementById("dados");
@@ -99,7 +99,6 @@ export default function CallCthulhu() {
     });
   }
 
-
   const [fileName, setFileName] = useState('');
 
   const handleFileNameChange = (e) => {
@@ -127,6 +126,12 @@ export default function CallCthulhu() {
       });
     });
   };
+
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
 
   return (
     <>
