@@ -73,29 +73,57 @@ export default function PaginaInicialLogado() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // const resultados = fichasUsuario.filter((item) =>
-    // item.NomeFicha.toLowerCase().includes(filtro.toLowerCase())
-    //);
-    // setFichasFiltradas(resultados);
   };
 
   const handleInputChange = (e) => {
-    setFiltro(e.target.value);
-    console.log(setFiltro);
+    const { value } = e.target;
+    setFiltro(value);
+
+    const fichasFiltradas = fichasUsuario.nomeFichas.filter((nomeFicha) =>
+      nomeFicha.toLowerCase().startsWith(value.toLowerCase())
+    );
+
+    const tipoFichasFiltradas = fichasUsuario.tipoFichas.filter(
+      (tipoFicha, index) =>
+        fichasFiltradas.includes(fichasUsuario.nomeFichas[index])
+    );
+
+    setFichasFiltradas({
+      nomeFichas: fichasFiltradas,
+      tipoFichas: tipoFichasFiltradas,
+    });
   };
 
   const handleDivClick = (nomeFicha, tipoFicha) => {
     // Lógica a ser executada quando a div for clicada
     console.log(`Div clicada! Index: ${nomeFicha} ${userId} ${tipoFicha}`);
-    window.location.href = `http://localhost:5173/${tipoFicha}/${userId}/${nomeFicha}`
+    window.location.href = `http://localhost:5173/${tipoFicha}/${userId}/${nomeFicha}`;
   };
 
-  const handleExcluirFicha = (index) => {
-    /// const novasFichas = [...fichasUsuario];
-    //novasFichas.splice(index, 1);
-    //setFichasFiltradas(novasFichas);
+  const handleExcluirFicha = async (index) => {
+    try {
+      const nomeDaFicha = fichasFiltradas.nomeFichas[index];
+      
+      // Faz a requisição DELETE para o servidor com o nome da ficha
+      await axios.delete(`http://localhost:3000/ficha/${nomeDaFicha}`);
+      
+      // Se a exclusão for bem-sucedida no servidor, atualize a lista de fichas localmente
+      const novasNomeFichas = [...fichasFiltradas.nomeFichas];
+      const novosTipoFichas = [...fichasFiltradas.tipoFichas];
+  
+      novasNomeFichas.splice(index, 1);
+      novosTipoFichas.splice(index, 1);
+  
+      setFichasFiltradas({
+        nomeFichas: novasNomeFichas,
+        tipoFichas: novosTipoFichas,
+      });
+    } catch (error) {
+      console.error('Erro ao excluir ficha:', error);
+      // Lide com erros ou mostre uma mensagem de erro ao usuário
+    }
   };
+  
 
   if (!validado) {
     console.log("Token Inválido");
@@ -120,20 +148,26 @@ export default function PaginaInicialLogado() {
             {fichasFiltradas.nomeFichas &&
             fichasFiltradas.nomeFichas.length > 0 ? (
               fichasFiltradas.nomeFichas.map((nomeFicha, index) => (
-                <div
-                  key={index}
-                  className="MinhasFichass"
-                >
-                  <div className="MinhasFichas"
-                    onClick={() => handleDivClick(nomeFicha, fichasFiltradas.tipoFichas[index])}
+                <div key={index} className="MinhasFichass">
+                  <div
+                    className="MinhasFichas"
+                    onClick={() =>
+                      handleDivClick(
+                        nomeFicha,
+                        fichasFiltradas.tipoFichas[index]
+                      )
+                    }
                   >
-                  <img
-                    src={tipoFichaImagens[fichasFiltradas.tipoFichas[index]]}
-                    alt={`Imagem ${fichasFiltradas.tipoFichas[index]}`}
-                  />
-                  <p>Ficha: {nomeFicha}</p>
+                    <img
+                      src={tipoFichaImagens[fichasFiltradas.tipoFichas[index]]}
+                      alt={`Imagem ${fichasFiltradas.tipoFichas[index]}`}
+                    />
+                    <p>Ficha: {nomeFicha}</p>
                   </div>
-                  <button  className='excluiAlgo' onClick={() => handleExcluirFicha(index)}>
+                  <button
+                    className="excluiAlgo"
+                    onClick={() => handleExcluirFicha(index)}
+                  >
                     Excluir
                   </button>
                 </div>

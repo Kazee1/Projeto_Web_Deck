@@ -218,10 +218,6 @@ app.get("/inicio2", async (req, res) => {
     // Parseia o conteúdo do arquivo JSON para um objeto JavaScript
     const fichas = JSON.parse(data);
     console.log("oi");
-
-    fichas.forEach((ficha, index) => {
-        console.log(`Tipo de idUsuario da ficha ${index + 1}:`, typeof ficha.idUsuario);
-      });
     const nomeFichas = fichas
       .filter((ficha) => ficha.idUsuario === parseInt(IdUser))
       .map((ficha) => ficha.NomeFicha);
@@ -234,6 +230,32 @@ app.get("/inicio2", async (req, res) => {
     res.status(500).json({ error: "Erro ao buscar NomeFichas." });
   }
 });
+
+app.delete('/ficha/:nomeDaFicha', (req, res) => {
+    const nomeDaFicha = req.params.nomeDaFicha;
+    console.log(nomeDaFicha)
+    try {
+      // Ler o arquivo JSON
+      const data = fs.readFileSync('./db/banco_dados_fichas.json', 'utf8');
+      const fichas = JSON.parse(data);
+  
+      // Encontrar o índice da ficha a ser excluída pelo nome
+      const index = fichas.findIndex((ficha) => ficha.NomeFicha === nomeDaFicha);
+  
+      if (index !== -1) {
+        // Remover a ficha do array
+        fichas.splice(index, 1);
+  
+        fs.writeFileSync('./db/banco_dados_fichas.json', JSON.stringify(fichas,null,2));
+  
+        res.status(200).json({ message: `Ficha ${nomeDaFicha} excluída com sucesso` });
+      } else {
+        res.status(404).json({ error: `Ficha ${nomeDaFicha} não encontrada` });
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao excluir ficha' });
+    }
+  });
 
 function verificaToken(req, res, next) {
   const authHeaders = req.headers["authorization"];
