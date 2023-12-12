@@ -1,7 +1,8 @@
 import "../Styles/Mysetting.css";
 import Header from "./HeaderLogado";
 import Footer from "../Inicio/Footer";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Myprofile() {
   const [password, setPassword] = useState("");
@@ -11,6 +12,26 @@ export default function Myprofile() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isEditEnable, setIsEditEnable] = useState(true);
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
+
+  const [validado, setValidado] = useState(false);
+  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+  
+  useEffect(() => {
+    async function valida(){
+        try{
+            const resposta = await axios.get(`http://localhost:3000/setting`,config);
+            console.log(resposta);
+            if(resposta.status === 200)
+            { 
+              console.log("validado")
+              setValidado(true);
+            }
+        }catch(error){
+              setValidado(false);
+        }
+    }
+    valida();
+  },[]);
 
   const handleSaveClick = () => {
     setIsEditMode(false);
@@ -23,6 +44,12 @@ export default function Myprofile() {
     setIsEditEnable(false);
     setIsSaveEnabled(true);
   };
+
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
 
   return (
     <>

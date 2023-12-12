@@ -44,7 +44,6 @@ export default function Login(){
         
         try {
             const response = await axios.post('http://localhost:3000/Login', data);
-            
             const token = response.data.token;
             sessionStorage.setItem('token', token);
             if(token)

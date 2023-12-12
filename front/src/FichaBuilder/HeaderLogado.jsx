@@ -27,8 +27,8 @@ export default function Header() {
           <div className="dropdown-profile">
             <img src={User} className="dropbtn-profile"/>
             <div className="dropdown-content-profile">
-              <Link to="/Cadastro" className="link-profile">My Profile</Link>
-              <Link to="/Login" className="link-profile">Settings</Link>
+              <Link to="/profile" className="link-profile">My Profile</Link>
+              <Link to="/setting" className="link-profile">Settings</Link>
               <Link to="/" className="link-profile">Logout</Link>
             </div>
           </div>

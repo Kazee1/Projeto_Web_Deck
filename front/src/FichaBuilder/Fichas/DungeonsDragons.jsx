@@ -14,10 +14,30 @@ import Dado from "../../Imagens/d20.png";
 import React, { useState, useEffect } from "react";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import axios from "axios";
 
 
 export default function DungeonsDragons() {
   const [numDados, setNumDados] = useState(0);
+  const [validado, setValidado] = useState(false);
+   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
+   
+  useEffect(() => {
+    async function valida(){
+      try{
+        const resposta = await axios.get(`http://localhost:3000/DungeonsDragons`,config);
+        console.log(resposta);
+        if(resposta.status === 200)
+        { 
+          console.log("validado")
+          setValidado(true);
+        }
+      }catch(error){
+        setValidado(false);
+        }
+    }
+    valida();
+  },[]);
 
   const [msg, setMsg] = useState();
   const [fichaCriado,setFichaCriado] = useState(false);
@@ -41,8 +61,10 @@ export default function DungeonsDragons() {
 
 
   useEffect(() => {
-    mostrarDados();
-  }, [numDados]);
+    if (validado) {
+      mostrarDados(); // Execute se validado for true
+    }
+  }, [validado, numDados]);
 
   function mostrarDados() {
     const dadosContainer = document.getElementById("dados");
@@ -128,6 +150,12 @@ export default function DungeonsDragons() {
       });
     });
   };
+
+  if(!validado)
+  {
+    console.log("Token Inválido")
+    return <p>Token Inválido</p>
+  }
 
   return (
     <>
