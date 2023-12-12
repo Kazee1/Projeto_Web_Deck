@@ -56,7 +56,7 @@ app.post('/Login', async (req,res) => {
          if(user.username === username){
              const passwordValidado = await bcrypt.compare(password, user.password);
              if(passwordValidado){          
-                   const token = jwt.sign(user, process.env.TOKEN);
+                   const token = jwt.sign({id: user.id}, process.env.TOKEN);
                     console.log("foi");
                     return res.json({ "token" : token});      
              }
@@ -514,22 +514,25 @@ app.post('/CallCthulhu', async (req,res) => {
 
 app.get('/inicio',verificaToken ,async(req,res)=>{
     return res.send();
+)
+app.get('/inicio',verificaToken ,async(req,res, next)=>{
+    res.status(200).json({ userId: req.userId });
 });
 
-app.get("/profile",verificaToken, async(req,res)=>{
-    return res.send()
+app.get("/profile",verificaToken, async(req,res, next)=>{
+    res.status(200).json({ userId: req.userId });
 });
 
-app.get("/setting",verificaToken, async(req,res)=>{
-    return res.send()
+app.get("/setting",verificaToken, async(req,res, next)=>{
+    res.status(200).json({ userId: req.userId });
 });
 
-app.get("/DungeonsDragons",verificaToken, async(req,res)=>{
-    return res.send()
+app.get("/DungeonsDragons",verificaToken, async(req,res, next)=>{
+    res.status(200).json({ userId: req.userId });
 });
 
-app.get("/CallCthulhu",verificaToken, async(req,res)=>{
-    return res.send()
+app.get("/CallCthulhu",verificaToken, async(req,res, next)=>{
+    res.status(200).json({ userId: req.userId });
 });
 
 
@@ -573,8 +576,10 @@ function verificaToken(req,res,next)
     const token = authHeaders && authHeaders.split(' ')[1]
     //Bearer token
     if(token == null) return res.status(401).send('Acesso Negado');
-    jwt.verify(token, process.env.TOKEN, (err) => {
+    jwt.verify(token, process.env.TOKEN, (err, decoded) => {
         if(err) return res.status(403).send('Token Inválido/Expirado');
+
+        req.userId = decoded.id;
         next();
     })
 }
