@@ -5,6 +5,25 @@ html,body {
   font-family: 'Arial', sans-serif;
 }
 
+.ImgDoHeader {
+  display: flex;
+  align-items: center;
+}
+
+.ImgDoHeader img {
+  margin-right: 10px; 
+}
+
+.ImgDoHeader h2 {
+  color: white; 
+  text-decoration: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.ImgDoHeader{
+  margin-right: 64%;
+}
 .dropbtn-profile {
   background-color: transparent;
   border-radius: 50%;
