@@ -3,6 +3,8 @@ import Header from "./HeaderLogado";
 import Footer from "../Inicio/Footer";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function Myprofile() {
   const [fullName, setFullName] = useState("");
@@ -119,7 +121,6 @@ export default function Myprofile() {
       </main>
       <Footer />
     </>
-  dados();
   );
   
 }

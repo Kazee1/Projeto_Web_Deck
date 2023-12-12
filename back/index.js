@@ -7,8 +7,6 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
-
 //Necessário para extrair os dados de Forms vindos de uma requisição POST
 app.use(express.json());
 app.use(cors());

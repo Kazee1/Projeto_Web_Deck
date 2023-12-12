@@ -4,6 +4,8 @@ import Footer from "../Inicio/Footer";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {set, useForm} from 'react-hook-form';
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function Myprofile() {
   const [password, setPassword] = useState("");
@@ -17,9 +19,23 @@ export default function Myprofile() {
   const [msg, setMsg] = useState();
   const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
-  const form = useForm();
+  
+  const schema = yup.object({
+    username: yup.string().required("Digite o Usuário"),
+    email: yup.string().email('Email inválido').required("Digite o seu email"),
+    password: yup.string().min(4,'Minimo de 4 caracteres').required('Digite sua senha atual'),
+    
+    newPasswordConf: yup.string().oneOf([yup.ref('newPassword')], 'As senhas devem coincidir!').required(),
+    
+    newPassword: yup.string().min(4,'Minimo de 4 caracteres').required("Qual sua nova senha?")
+});
+  const form = useForm({
+    resolver: yupResolver(schema)
+});
 
   const { register, control, handleSubmit, formState } = form;
+  const {errors} = formState;
+
   const config = {
     headers: {
       Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
@@ -91,6 +107,7 @@ export default function Myprofile() {
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
+                <p className='erro'>{errors.password?.message}</p>
               </div>
               <div className="NewUsernameLayout">
                 <label>Username:</label>
@@ -101,6 +118,7 @@ export default function Myprofile() {
                   onChange={(e) => setNewUsername(e.target.value)}
                   disabled={!isEditMode}
                 />
+                <p className='erro'>{errors.username?.message}</p>
               </div>
               <div className="NewPasswordLayout">
                 <label>Nova Senha:</label>
@@ -111,6 +129,7 @@ export default function Myprofile() {
                   onChange={(e) => setNewPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
+                <p className='erro'>{errors.newPassword?.message}</p>
               </div>
               <div className="ConfirmPasswordLayout">
                 <label>Confirmar Senha:</label>
@@ -121,6 +140,7 @@ export default function Myprofile() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
+                <p className='erro'>{errors.newPasswordConf?.message}</p>
               </div>
               <div className="NewEmailLayout">
                 <label>Mudar Email:</label>
@@ -131,6 +151,7 @@ export default function Myprofile() {
                   onChange={(e) => setNewEmail(e.target.value)}
                   disabled={!isEditMode}
                 />
+                <p className='erro'>{errors.email?.message}</p>
               </div>
             <div className="ButtonsWrapper">   
                 <button
