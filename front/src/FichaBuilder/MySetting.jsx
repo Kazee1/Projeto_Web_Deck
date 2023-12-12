@@ -3,6 +3,7 @@ import Header from "./HeaderLogado";
 import Footer from "../Inicio/Footer";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {set, useForm} from 'react-hook-form';
 
 export default function Myprofile() {
   const [password, setPassword] = useState("");
@@ -13,9 +14,12 @@ export default function Myprofile() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [isEditEnable, setIsEditEnable] = useState(true);
   const [isSaveEnabled, setIsSaveEnabled] = useState(false);
-
+  const [msg, setMsg] = useState();
   const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
+  const form = useForm();
+
+  const { register, control, handleSubmit, formState } = form;
   const config = {
     headers: {
       Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
@@ -40,12 +44,23 @@ export default function Myprofile() {
     }
     valida();
   }, []);
-
-  const handleSaveClick = () => {
+  const submit = async (data) => { 
     setIsEditMode(false);
     setIsEditEnable(true);
     setIsSaveEnabled(false);
+    try {
+      const response = await axios.post('http://localhost:3000/setting', data);
+      //setMsg(response.data);
+      //if(response.data.includes('sucesso'))
+       // setFichaCriado(true);
+  } catch (error) {
+      //setMsg(error.response.data);
+  }  
+
   };
+  // const handleSaveClick = () => {
+ 
+  // };
 
   const handleEditClick = () => {
     setIsEditMode(true);
@@ -65,12 +80,14 @@ export default function Myprofile() {
         <div className="CenteredContainer">
           <div className="ContainerMyprofile">
             <div className="LayoutGeral">
+              <form onSubmit={handleSubmit(submit)} noValidate> 
               <p>Alterar Infos</p>
               <div className="PasswordLayout">
                 <label>Senha Atual:</label>
                 <input
                   type="password"
                   value={password}
+                  {...register('PasswordLayout')}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
@@ -80,6 +97,7 @@ export default function Myprofile() {
                 <input
                   type="text"
                   value={newUsername}
+                  {...register('NewUsernameLayout')}
                   onChange={(e) => setNewUsername(e.target.value)}
                   disabled={!isEditMode}
                 />
@@ -89,6 +107,7 @@ export default function Myprofile() {
                 <input
                   type="password"
                   value={newPassword}
+                  {...register('NewPasswordLayout')}
                   onChange={(e) => setNewPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
@@ -98,6 +117,7 @@ export default function Myprofile() {
                 <input
                   type="password"
                   value={confirmPassword}
+                  {...register('ConfirmPasswordLayout')}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
@@ -107,10 +127,21 @@ export default function Myprofile() {
                 <input
                   type="text"
                   value={newEmail}
+                  {...register('NewEmailLayout')}
                   onChange={(e) => setNewEmail(e.target.value)}
                   disabled={!isEditMode}
                 />
               </div>
+            <div className="ButtonsWrapper">   
+                <button
+                  className="Button2"
+                  //onClick={handleSaveClick}
+                  disabled={!isSaveEnabled}
+                >
+                  Salvar
+                </button>
+              </div>
+              </form>
               <div className="ButtonsWrapper">
                 <button
                   className="Button1"
@@ -119,18 +150,11 @@ export default function Myprofile() {
                 >
                   Editar
                 </button>
-                <button
-                  className="Button2"
-                  onClick={handleSaveClick}
-                  disabled={!isSaveEnabled}
-                >
-                  Salvar
-                </button>
-              </div>
+                </div>
             </div>
-          </div>
+          </div>  
         </div>
-      </main>
+        </main>
       <Footer />
     </>
   );

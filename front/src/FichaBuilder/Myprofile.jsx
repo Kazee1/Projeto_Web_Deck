@@ -39,6 +39,20 @@ export default function Myprofile() {
     valida();
   }, []);
 
+  async function dados(){
+    
+      try {
+        const response = await axios.get('http://localhost:3000/profile2');
+        console.log("oioi");
+        const dados = await response.json();
+        document.getElementById('user').value = dados.username;
+        document.getElementById('email').value = dados.email;
+      } catch (error) {
+        console.error('Erro ao obter mensagem do servidor:', error);
+      }
+    
+  }
+
   const handleSaveClick = () => {
     setIsEditMode(false);
     setIsEditEnable(true);
@@ -76,11 +90,11 @@ export default function Myprofile() {
               </div>
               <div className="UsernameLayout">
                 <label>Username:</label>
-                <input type="text" value={username} disabled />
+                <input id= "user" type="text" value={username} disabled />
               </div>
               <div className="EmailLayout">
-                <label>Email:</label>
-                <input type="email" value={email} disabled />
+                <label >Email:</label>
+                <input id= "email" type="email" value={email} disabled />
               </div>
               <div className="ButtonsWrappers">
                 <button
@@ -101,8 +115,11 @@ export default function Myprofile() {
             </div>
           </div>
         </div>
+        
       </main>
       <Footer />
     </>
+  dados();
   );
+  
 }
