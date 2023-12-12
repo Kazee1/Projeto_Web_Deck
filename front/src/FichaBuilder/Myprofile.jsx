@@ -30,6 +30,7 @@ export default function Myprofile() {
         setValidado(true);
         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
+        await dados();
       } catch (error) {
         // Trate os erros, se necessário
         console.error("Erro ao obter dados:", error);
