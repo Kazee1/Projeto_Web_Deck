@@ -52,8 +52,12 @@ export default function CallCthulhu() {
     try {
         const response = await axios.post('http://localhost:3000/CallCthulhu', data);
         setMsg(response.data);
-        if(response.data.includes('sucesso'))
+        if(response.data.includes('sucesso')){
           setFichaCriado(true);
+          setTimeout(() => {
+            window.location.href = '/inicio'
+          },2000);  
+        }
     } catch (error) {
         setMsg(error.response.data);
     }   
