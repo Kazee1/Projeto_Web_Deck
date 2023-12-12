@@ -14,19 +14,25 @@ export default function Myprofile() {
 
   const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
-  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
-  
+  const config = {
+    headers: {
+      Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
+    },
+  };
+
   useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/profile`, config);
+        const response = await axios.get(
+          `http://localhost:3000/profile`,
+          config
+        );
         setValidado(true);
         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
-        
       } catch (error) {
         // Trate os erros, se necessário
-        console.error('Erro ao obter dados:', error);
+        console.error("Erro ao obter dados:", error);
         setValidado(false);
       }
     }
@@ -44,10 +50,9 @@ export default function Myprofile() {
     setIsEditEnable(false);
     setIsSaveEnabled(true);
   };
-  if(!validado)
-  {
-    console.log("Token Inválido")
-    return <p>Token Inválido</p>
+  if (!validado) {
+    console.log("Token Inválido");
+    return <p>Token Inválido</p>;
   }
   return (
     <>
@@ -64,30 +69,32 @@ export default function Myprofile() {
                   value={fullName}
                   onChange={(e) => {
                     setFullName(e.target.value);
-                    setIsSaveEnabled(true); 
+                    setIsSaveEnabled(true);
                   }}
                   disabled={!isEditMode}
                 />
               </div>
               <div className="UsernameLayout">
                 <label>Username:</label>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => {
-                    setUsername(e.target.value);
-                    setIsSaveEnabled(true);
-                  }}
-                  disabled={!isEditMode}
-                />
+                <input type="text" value={username} disabled />
               </div>
               <div className="EmailLayout">
                 <label>Email:</label>
                 <input type="email" value={email} disabled />
               </div>
               <div className="ButtonsWrappers">
-                <button className='Button11' onClick={handleEditClick} disabled={!isEditEnable}>Editar</button>
-                <button className='Button12' onClick={handleSaveClick} disabled={!isSaveEnabled}>
+                <button
+                  className="Button11"
+                  onClick={handleEditClick}
+                  disabled={!isEditEnable}
+                >
+                  Editar
+                </button>
+                <button
+                  className="Button12"
+                  onClick={handleSaveClick}
+                  disabled={!isSaveEnabled}
+                >
                   Salvar
                 </button>
               </div>

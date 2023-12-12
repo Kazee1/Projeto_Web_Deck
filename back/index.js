@@ -7,6 +7,8 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+
+
 //Necessário para extrair os dados de Forms vindos de uma requisição POST
 app.use(express.json());
 app.use(cors());
@@ -16,6 +18,7 @@ app.listen(3000, () => {
     console.log('Servidor na porta 3000');
 });
 
+let userId = null;
 
 app.post('/Cadastro', async (req,res) =>{
     const {username, email, password} = req.body;

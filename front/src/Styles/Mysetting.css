@@ -30,7 +30,8 @@
   .PasswordLayout,
   .NewPasswordLayout,
   .ConfirmPasswordLayout,
-  .NewEmailLayout {
+  .NewEmailLayout,
+  .NewUsernameLayout {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +41,8 @@
   .PasswordLayout label,
   .NewPasswordLayout label,
   .ConfirmPasswordLayout label,
-  .NewEmailLayout label {
+  .NewEmailLayout label,
+  .NewUsernameLayout label {
     flex: 1;
     text-align: right;
     margin-right: 20px;
@@ -51,7 +53,8 @@
   .PasswordLayout input,
   .NewPasswordLayout input,
   .ConfirmPasswordLayout input,
-  .NewEmailLayout input {
+  .NewEmailLayout input,
+  .NewUsernameLayout input {
     flex: 2;
     padding: 12px; /* Aumenta o espaçamento interno do input */
     width: 100%; /* Ocupa todo o espaço disponível */
@@ -88,7 +91,8 @@
     .PasswordLayout,
     .NewPasswordLayout,
     .ConfirmPasswordLayout,
-    .NewEmailLayout {
+    .NewEmailLayout,
+    .NewUsernameLayout {
       width: 70%;
       margin-bottom: 20px;
     }
@@ -96,7 +100,8 @@
     .PasswordLayout label,
     .NewPasswordLayout label,
     .ConfirmPasswordLayout label,
-    .NewEmailLayout label {
+    .NewEmailLayout label,
+    .NewUsernameLayout label {
       text-align: left;
       margin-right: 10px;
     }
@@ -104,14 +109,15 @@
     .PasswordLayout input,
     .NewPasswordLayout input,
     .ConfirmPasswordLayout input,
-    .NewEmailLayout input {
+    .NewEmailLayout input,
+    .NewUsernameLayout input {
       padding: 12px;
     }
   
     .ButtonsWrapper {
       margin-top: 20px;
       position: absolute;
-      top: 550px;
+      top: 600px;
       left: 48%;
     }
   

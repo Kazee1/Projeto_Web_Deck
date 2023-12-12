@@ -8,6 +8,7 @@ export default function Myprofile() {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [newUsername, setNewUsername] = useState("");
   const [newEmail, setNewEmail] = useState("");
   const [isEditMode, setIsEditMode] = useState(false);
   const [isEditEnable, setIsEditEnable] = useState(true);
@@ -15,25 +16,30 @@ export default function Myprofile() {
 
   const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
-  const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
-  
+  const config = {
+    headers: {
+      Authorization: "Bearer ".concat(sessionStorage.getItem("token")),
+    },
+  };
+
   useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/setting`, config);
+        const response = await axios.get(
+          `http://localhost:3000/setting`,
+          config
+        );
         setValidado(true);
         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
-        
       } catch (error) {
         // Trate os erros, se necessário
-        console.error('Erro ao obter dados:', error);
+        console.error("Erro ao obter dados:", error);
         setValidado(false);
       }
     }
     valida();
   }, []);
-
 
   const handleSaveClick = () => {
     setIsEditMode(false);
@@ -47,10 +53,9 @@ export default function Myprofile() {
     setIsSaveEnabled(true);
   };
 
-  if(!validado)
-  {
-    console.log("Token Inválido")
-    return <p>Token Inválido</p>
+  if (!validado) {
+    console.log("Token Inválido");
+    return <p>Token Inválido</p>;
   }
 
   return (
@@ -60,13 +65,22 @@ export default function Myprofile() {
         <div className="CenteredContainer">
           <div className="ContainerMyprofile">
             <div className="LayoutGeral">
-              <p>Alterar Senha ou Email</p>
+              <p>Alterar Infos</p>
               <div className="PasswordLayout">
                 <label>Senha Atual:</label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  disabled={!isEditMode}
+                />
+              </div>
+              <div className="NewUsernameLayout">
+                <label>Username:</label>
+                <input
+                  type="text"
+                  value={newUsername}
+                  onChange={(e) => setNewUsername(e.target.value)}
                   disabled={!isEditMode}
                 />
               </div>
@@ -89,14 +103,14 @@ export default function Myprofile() {
                 />
               </div>
               <div className="NewEmailLayout">
-                  <label>Mudar Email:</label>
-                  <input
-                    type="text"
-                    value={newEmail}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    disabled={!isEditMode}
-                  />
-                </div>
+                <label>Mudar Email:</label>
+                <input
+                  type="text"
+                  value={newEmail}
+                  onChange={(e) => setNewEmail(e.target.value)}
+                  disabled={!isEditMode}
+                />
+              </div>
               <div className="ButtonsWrapper">
                 <button
                   className="Button1"
