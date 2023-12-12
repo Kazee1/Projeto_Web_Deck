@@ -187,7 +187,9 @@ export default function CallCthulhu() {
               placeholder="Nome Da Ficha"
               className="NomeCall"
               value={fileName}
+              {...register('NomeCall')}
               onChange={handleFileNameChange}
+              
             />
           </div>
           <div className="FichaCall" id="FichaCall">

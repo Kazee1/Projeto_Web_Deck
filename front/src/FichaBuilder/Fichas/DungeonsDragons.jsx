@@ -185,7 +185,9 @@ export default function DungeonsDragons() {
               placeholder="Nome Da Ficha"
               className="NomeDD"
               value={fileName}
+              {...register('NomeDD')}
               onChange={handleFileNameChange}
+              
             />
           </div>
           <div className="Ficha">
