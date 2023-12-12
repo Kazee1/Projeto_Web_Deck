@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         element: <DungeonsDragons/>
       },
       {
-        path: '/DungeonsDragons/:userId/:nomeFicha', 
+        path: '/:tipoFicha/:userId/:nomeFicha', 
         element: <DungeonsDragons />
       },
       {
