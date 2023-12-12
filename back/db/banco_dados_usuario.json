@@ -148,5 +148,11 @@
     "username": "Kazi",
     "email": "kazi@h",
     "password": "$2b$10$MCuxcaY9HAerJRxsNuC6MeCU2wpLiIp9bsFgXr1zzPqeO/ooDhckG"
+  },
+  {
+    "id": 26,
+    "username": "abobora",
+    "email": "m@m",
+    "password": "$2b$10$Hw1YL6STlghJD6oEAtKWHuLp3vI.oNkWXb78LORnc5rKPlbo51t.K"
   }
 ]
