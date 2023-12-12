@@ -150,76 +150,51 @@ app.post('/CallCthulhu', async (req,res) => {
     res.send(`Tudo certo usuario criado com sucesso.`);
 })
 
-// app.get('/inicio',verificaToken ,async(req,res)=>{
-//     return res.send();
-// )
 
-app.get('/inicio',verificaToken ,async(req,res, next)=>{
-    IdUser = req.userId;
-    res.status(200).json({ userId: req.userId });
+app.get("/inicio", verificaToken, async (req, res, next) => {
+  IdUser = req.userId;
+  res.status(200).json({ userId: req.userId });
 });
 
-app.get("/profile",verificaToken, async(req,res, next)=>{
-    // IdUser = req.userId;
-    // const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
-    // const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
-    // for (let user of usuarios){
-    //     if(user.id === IdUser){
-    //         res.json({username:user.username, email:user.email});
-    //     }
-    // }
-    res.status(200).json({ userId: req.userId });
+app.get("/profile", verificaToken, async (req, res, next) => {
+  res.status(200).json({ userId: req.userId });
 });
 
-app.get("/profile2", async(req,res, next)=>{
-    IdUser = req.userId;
-    const banco = path.join(__dirname, '.', 'db', 'banco_dados_usuario.json');
-    const usuarios = JSON.parse(fs.readFileSync(banco, { encoding: 'utf8', flag: 'r' }));
-    for (let user of usuarios){
-        if(user.id === IdUser){
-            res.json({username:user.username, email:user.email});
-        }
-    }
-    //res.status(200).json({ userId: req.userId });
+app.get("/setting", verificaToken, async (req, res, next) => {
+  res.status(200).json({ userId: req.userId });
 });
 
-app.get("/setting",verificaToken, async(req,res, next)=>{
-    IdUser = req.userId;
-    res.status(200).json({ userId: req.userId });
+app.get("/DungeonsDragons", verificaToken, async (req, res, next) => {
+  IdUser = req.userId;
+  res.status(200).json({ userId: req.userId });
 });
 
-app.get("/DungeonsDragons",verificaToken, async(req,res, next)=>{
-    IdUser = req.userId;
-    res.status(200).json({ userId: req.userId });
+app.get("/CallCthulhu", verificaToken, async (req, res, next) => {
+  IdUser = req.userId;
+  res.status(200).json({ userId: req.userId });
 });
-
-app.get("/CallCthulhu",verificaToken, async(req,res, next)=>{
-    IdUser = req.userId;
-    res.status(200).json({ userId: req.userId });
-});
-
 
 // //Requisicao com POST publica para criar usuário
 // app.post('/Cadastro', async (req,res) => {
 //     //extraindo os dados do formulário para criacao do usuario
-//     const {username, email, password} = req.body; 
-    
+//     const {username, email, password} = req.body;
+
 //     const jsonPath = path.join(__dirname, '.', 'db', 'banco-dados-usuario.json');
 //     const usuariosCadastrados = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
 
 //     //verifica se já existe usuario com o email informado
-    
+
 //     for (let users of usuariosCadastrados){
 //         if(users.email === email){
 //             //usuario já existe. Impossivel criar outro
 //             //Retornando o erro 409 para indicar conflito
 //             return res.status(409).send(`Usuario com email ${email} já existe.`);
-//         }   
+//         }
 //     }
 //     //Deu certo. Vamos colocar o usuário no "banco"
 //     //Gerar um id incremental baseado na qt de users
 //     const id = usuariosCadastrados.length + 1;
-    
+
 //     //gerar uma senha cryptografada
 //     const salt = await bcrypt.genSalt(10);
 //     const passwordCrypt = await bcrypt.hash(password,salt);
@@ -233,17 +208,62 @@ app.get("/CallCthulhu",verificaToken, async(req,res, next)=>{
 //     res.send(`Tudo certo usuario criado com sucesso.`);
 // });
 
-function verificaToken(req,res,next)
-{
-    const authHeaders = req.headers['authorization'];
-    const token = authHeaders && authHeaders.split(' ')[1]
-    //Bearer token
-    if(token == null) return res.status(401).send('Acesso Negado');
-    jwt.verify(token, process.env.TOKEN, (err, decoded) => {
-        if(err) return res.status(403).send('Token Inválido/Expirado');
+app.get("/inicio2", async (req, res) => {
+  console.log(IdUser);
+  console.log(typeof IdUser);
+  try {
+    const data = fs.readFileSync("./db/banco_dados_fichas.json", "utf8");
+    // Parseia o conteúdo do arquivo JSON para um objeto JavaScript
+    const fichas = JSON.parse(data);
+    console.log("oi");
+    const nomeFichas = fichas
+      .filter((ficha) => ficha.idUsuario === parseInt(IdUser))
+      .map((ficha) => ficha.NomeFicha);
+    const tipoFichas = fichas
+      .filter((ficha) => ficha.idUsuario === parseInt(IdUser))
+      .map((ficha) => ficha.tipo);
 
-        req.userId = decoded.id;
-        next();
-    })
+    res.status(200).json({ nomeFichas, tipoFichas });
+  } catch (error) {
+    res.status(500).json({ error: "Erro ao buscar NomeFichas." });
+  }
+});
+
+app.delete('/ficha/:nomeDaFicha', (req, res) => {
+    const nomeDaFicha = req.params.nomeDaFicha;
+    console.log(nomeDaFicha)
+    try {
+      // Ler o arquivo JSON
+      const data = fs.readFileSync('./db/banco_dados_fichas.json', 'utf8');
+      const fichas = JSON.parse(data);
+  
+      // Encontrar o índice da ficha a ser excluída pelo nome
+      const index = fichas.findIndex((ficha) => ficha.NomeFicha === nomeDaFicha);
+  
+      if (index !== -1) {
+        // Remover a ficha do array
+        fichas.splice(index, 1);
+  
+        fs.writeFileSync('./db/banco_dados_fichas.json', JSON.stringify(fichas,null,2));
+  
+        res.status(200).json({ message: `Ficha ${nomeDaFicha} excluída com sucesso` });
+      } else {
+        res.status(404).json({ error: `Ficha ${nomeDaFicha} não encontrada` });
+      }
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao excluir ficha' });
+    }
+  });
+
+function verificaToken(req, res, next) {
+  const authHeaders = req.headers["authorization"];
+  const token = authHeaders && authHeaders.split(" ")[1];
+  //Bearer token
+  if (token == null) return res.status(401).send("Acesso Negado");
+  jwt.verify(token, process.env.TOKEN, (err, decoded) => {
+    if (err) return res.status(403).send("Token Inválido/Expirado");
+
+    req.userId = decoded.id;
+    next();
+  });
 }
-
