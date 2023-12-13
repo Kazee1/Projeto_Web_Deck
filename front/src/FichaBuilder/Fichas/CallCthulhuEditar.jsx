@@ -15,7 +15,10 @@ import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
 import axios from "axios";
-
+let dados = {
+  username: "a",
+  idUser: "a"
+};
 export default function CallCthulhu() {
   const [numDados, setNumDados] = useState(0);
   const [userId, setUserId] = useState(null);
@@ -25,7 +28,15 @@ export default function CallCthulhu() {
   useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/fichaCall/:userId/:nomeFicha`, config);
+        const url = window.location.href;
+        console.log(window.location.href);
+        const parteUrl = url.split('/');
+        dados.idUser =  parteUrl[4];;
+        dados.username = parteUrl[5];;
+        console.log(dados.idUser);
+        console.log(dados.username);  
+        console.log("não esta certo");
+        const response = await axios.get(`http://localhost:3000/fichaCall/${dados.idUser}/${dados.username}`, config);
         setValidado(true);
         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
@@ -50,7 +61,7 @@ export default function CallCthulhu() {
   const submit = async (data) => {
         
     try {
-        const response = await axios.post('http://localhost:3000/fichaCall/:userId/:nomeFicha', data);
+        const response = await axios.post(`http://localhost:3000/fichaCall/${dados.idUser}/${dados.username}`, data);
         setMsg(response.data);
         if(response.data.includes('sucesso')){
           setFichaCriado(true);

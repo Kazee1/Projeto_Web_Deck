@@ -60,12 +60,10 @@ export default function DungeonsDragons() {
 //     }
 //     valida();
 //   }, []);
+
 useEffect(() => {
     async function valida() {
       try {
-        console.log("não esta certo");
-
-        const response = await axios.get(`http://localhost:3000/fichaDungeons/:userId/:nomeFicha`, config);
         const url = window.location.href;
         console.log(window.location.href);
         const parteUrl = url.split('/');
@@ -73,6 +71,15 @@ useEffect(() => {
         dados.username = parteUrl[5];;
         console.log(dados.idUser);
         console.log(dados.username);  
+        console.log("não esta certo");
+        // const response = await axios.get(`http://localhost:3000/fichaDungeons/:userId/:nomeFicha`, config , {
+        //   params: {
+        //     info: dados.idUser,
+        //     infa: dados.username,
+        //   },
+        // });
+        const response = await axios.get(`http://localhost:3000/editarFicha`, config);
+        
         setValidado(true);
         setUserId(response.data.userId);
     
@@ -84,8 +91,8 @@ useEffect(() => {
         // setInfo(info); // atualizado para usar o nome correto
         // console.log(info);
         // setInfa(infa); // atualizado para usar o nome correto
-        // console.log(infa);
-  
+        console.log("infinito");
+        dados2();
       } catch (error) {
         console.error('Erro ao obter dados:', error);
         setValidado(false);
@@ -105,7 +112,7 @@ useEffect(() => {
   const submit = async (data) => {
         
     try {
-        const response = await axios.post('http://localhost:3000/fichaDungeons/:userId/:nomeFicha', data);
+        const response = await axios.post(`http://localhost:3000/fichaDungeons/${dados.idUser}/${dados.username}`, data);
         setMsg(response.data);
         if(response.data.includes('sucesso')){
           setFichaCriado(true);
@@ -117,6 +124,36 @@ useEffect(() => {
         setMsg(error.response.data);
     }   
 }
+
+
+
+// async function dados() {
+//   console.log("boi feio");
+
+//   try {
+//     const response = await axios.get('/fichaDungeons/muda/pa');
+//     console.log("oioi");
+
+//     if (!response.ok) {
+//       // Se a resposta do servidor não estiver ok, lança um erro
+//       throw new Error(`Erro na requisição: ${response.statusText}`);
+//     }
+
+//     // Aguarda a resolução da promessa retornada por response.json()
+//     const dados = await response.json();
+
+//     console.log(dados.JogadorJogador);
+//     console.log(dados.NomeJogador);
+
+//     // Agora você pode acessar os dados normalmente
+//     // document.getElementById('user').value = dados.username;
+//     // document.getElementById('email').value = dados.email;
+//   } catch (error) {
+//     console.log("erro:::??????");
+//     console.error('Erro ao obter mensagem do servidor:', error.message);
+//   }
+// }
+
 
   useEffect(() => {
     if (validado) {
@@ -214,7 +251,23 @@ useEffect(() => {
     console.log("Token Inválido")
     return <p>Token Inválido</p>
   }
-
+async function dados2(){
+  console.log("boi feio");
+    try {
+      const response = await fetch(`http://localhost:3000/fichaDungeons/${dados.idUser}/${dados.username}`);
+      console.log("oioi");
+      const dadosa = await response.json();
+      console.log(dadosa);
+      console.log(dadosa.JogadorJogador);
+      console.log(dadosa.NomeJogador);
+      //document.getElementById('user').value = dados.username;
+      //document.getElementById('email').value = dados.email;
+    } catch (error) {
+       console.log("erro:::??????");
+       console.error('Erro ao obter mensagem do servidor:', error);
+     }
+  
+ }
   return (
     <>
       <HeaderLogado />

@@ -10,8 +10,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const tipoFichaImagens = {
-  CallCthulhu: CTHULHUFICHA,
-  DungeonsDragons: DragonsFicha,
+  fichaCall: CTHULHUFICHA,
+  fichaDungeons: DragonsFicha,
 };
 
 export default function PaginaInicialLogado() {
