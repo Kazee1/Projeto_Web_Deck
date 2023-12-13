@@ -49,8 +49,7 @@ export default function DungeonsDragons() {
 
   const {errors} = formState;
 
-  const submit = async (data) => {
-        
+  const submit = async (data) => {  
     try {
         const response = await axios.post('http://localhost:3000/DungeonsDragons', data);
         setMsg(response.data);
@@ -160,6 +159,11 @@ export default function DungeonsDragons() {
   {
     console.log("Token Inválido")
     return <p>Token Inválido</p>
+  }
+
+  const mostraParagrafo = ()=>{
+
+    return
   }
 
   return (
@@ -579,7 +583,8 @@ export default function DungeonsDragons() {
             </div>
           </div>
           <div className="BotaoSalvar">
-            <button className="SalvarFicha">Salvar</button>
+            <button className="SalvarFicha" onClick={mostraParagrafo()}>Salvar</button>
+            <p className="server-response">{msg}</p>
           </div>
         </form>
       </main>

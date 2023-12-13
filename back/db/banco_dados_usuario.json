@@ -154,5 +154,11 @@
     "username": "abobora",
     "email": "m@m",
     "password": "$2b$10$Hw1YL6STlghJD6oEAtKWHuLp3vI.oNkWXb78LORnc5rKPlbo51t.K"
+  },
+  {
+    "id": 27,
+    "username": "summer",
+    "email": "a@abcdeg",
+    "password": "$2b$10$EYtfL1cIS.NgM1fiGcxDb.G.zn4.hlIwLkeL1pCtSxRW4ejQtr/gG"
   }
 ]

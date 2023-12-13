@@ -686,6 +686,7 @@ async function dados2(){
           </div>
           <div className="BotaoSalvar">
             <button className="SalvarFicha">Salvar</button>
+            <p className="server-response">{msg}</p>
           </div>
         </form>
       </main>
