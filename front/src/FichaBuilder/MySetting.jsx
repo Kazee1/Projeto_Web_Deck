@@ -106,7 +106,7 @@ export default function Myprofile() {
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
-                <p className='erro'>{errors.password?.message}</p>
+                {/* <p className='erro'>{errors.password?.message}</p> */}
               </div>
               <div className="NewUsernameLayout">
                 <label>Username:</label>
@@ -117,7 +117,7 @@ export default function Myprofile() {
                   onChange={(e) => setNewUsername(e.target.value)}
                   disabled={!isEditMode}
                 />
-                <p className='erro'>{errors.username?.message}</p>
+                {/* <p className='erro'>{errors.username?.message}</p> */}
               </div>
               <div className="NewPasswordLayout">
                 <label>Nova Senha:</label>
@@ -128,7 +128,7 @@ export default function Myprofile() {
                   onChange={(e) => setNewPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
-                <p className='erro'>{errors.newPassword?.message}</p>
+                {/* <p className='erro'>{errors.newPassword?.message}</p> */}
               </div>
               <div className="ConfirmPasswordLayout">
                 <label>Confirmar Senha:</label>
@@ -139,7 +139,7 @@ export default function Myprofile() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   disabled={!isEditMode}
                 />
-                <p className='erro'>{errors.newPasswordConf?.message}</p>
+                {/* <p className='erro'>{errors.newPasswordConf?.message}</p> */}
               </div>
               <div className="NewEmailLayout">
                 <label>Mudar Email:</label>
@@ -150,7 +150,7 @@ export default function Myprofile() {
                   onChange={(e) => setNewEmail(e.target.value)}
                   disabled={!isEditMode}
                 />
-                <p className='erro'>{errors.email?.message}</p>
+                {/* <p className='erro'>{errors.email?.message}</p> */}
               </div>
             <div className="ButtonsWrapper">   
                 <button
