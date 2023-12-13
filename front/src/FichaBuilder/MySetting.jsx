@@ -58,6 +58,7 @@ export default function Myprofile() {
     }
     valida();
   }, []);
+  
   const submit = async (data) => { 
     setIsEditMode(false);
     setIsEditEnable(true);

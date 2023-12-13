@@ -27,7 +27,7 @@ export default function DungeonsDragons() {
   useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/DungeonsDragons`, config);
+        const response = await axios.get(`http://localhost:3000/DungeonsDragons/`, config);
         setValidado(true);
         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);

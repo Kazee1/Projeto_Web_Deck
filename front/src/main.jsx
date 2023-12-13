@@ -12,8 +12,9 @@ import EsqueceuSenha from './Inicio/EsqueceuSenha.jsx';
 import PaginaInicial from './Inicio/PaginaInicial.jsx';
 import PaginaInicialLogado from './FichaBuilder/PaginaInicialLogado.jsx';
 import DungeonsDragons from './FichaBuilder/Fichas/DungeonsDragons.jsx';
+import DungeonsDragonsEditar from './FichaBuilder/Fichas/DungeonsDragonsEditar.jsx';
+
 import CallCthulhu from './FichaBuilder/Fichas/CallCthulhu.jsx';
-import Myprofile from './FichaBuilder/Myprofile.jsx';
 import MySetting from './FichaBuilder/MySetting.jsx';
 //Adicionando as rotas
 const router = createBrowserRouter([
@@ -42,16 +43,12 @@ const router = createBrowserRouter([
         element: <DungeonsDragons/>
       },
       {
-        path: '/:tipoFicha/:userId/:nomeFicha', 
-        element: <DungeonsDragons />
+        path: 'DungeonsDragons/:userId/:nomeFicha', 
+        element: <DungeonsDragonsEditar />
       },
       {
         path: 'CallCthulhu',
         element: <CallCthulhu/>
-      },
-      {
-        path: 'profile',
-        element: <Myprofile/>
       },
       {
         path: 'setting',

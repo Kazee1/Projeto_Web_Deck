@@ -156,10 +156,6 @@ app.get("/inicio", verificaToken, async (req, res, next) => {
   res.status(200).json({ userId: req.userId });
 });
 
-app.get("/profile", verificaToken, async (req, res, next) => {
-  res.status(200).json({ userId: req.userId });
-});
-
 app.get("/setting", verificaToken, async (req, res, next) => {
   res.status(200).json({ userId: req.userId });
 });
@@ -229,6 +225,12 @@ app.get("/inicio2", async (req, res) => {
   }
 });
 
+function reorganizarIDs(fichas) {
+  for (let i = 0; i < fichas.length; i++) {
+    fichas[i].id = i + 1; 
+  }
+}
+
 app.delete('/ficha/:nomeDaFicha', (req, res) => {
     const nomeDaFicha = req.params.nomeDaFicha;
     console.log(nomeDaFicha)
@@ -243,7 +245,8 @@ app.delete('/ficha/:nomeDaFicha', (req, res) => {
       if (index !== -1) {
         // Remover a ficha do array
         fichas.splice(index, 1);
-  
+
+        reorganizarIDs(fichas);
         fs.writeFileSync('./db/banco_dados_fichas.json', JSON.stringify(fichas,null,2));
   
         res.status(200).json({ message: `Ficha ${nomeDaFicha} excluída com sucesso` });
