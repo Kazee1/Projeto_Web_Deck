@@ -584,7 +584,7 @@ export default function DungeonsDragons() {
           </div>
           <div className="BotaoSalvar">
             <button className="SalvarFicha" onClick={mostraParagrafo()}>Salvar</button>
-            {/* <p className="server-response">{msg}</p> */}
+            <p className="server-response">{msg}</p>
           </div>
         </form>
       </main>
