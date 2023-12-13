@@ -65,11 +65,11 @@ export default function Myprofile() {
     setIsSaveEnabled(false);
     try {
       const response = await axios.post('http://localhost:3000/setting', data);
-      //setMsg(response.data);
+      setMsg(response.data);
       //if(response.data.includes('sucesso'))
        // setFichaCriado(true);
   } catch (error) {
-      //setMsg(error.response.data);
+      setMsg(error.response.data);
   }  
 
   };
@@ -160,7 +160,7 @@ export default function Myprofile() {
                 >
                   Salvar
                 </button>
-                {/* <p className="server-response">{msg}</p> */}
+                <p className="server-response">{msg}</p>
               </div>
               </form>
               <div className="ButtonsWrapper">

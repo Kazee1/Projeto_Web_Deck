@@ -17,7 +17,7 @@ export default function Cadastro() {
     email: yup.string().email("Email inválido").required("Email obrigatório"),
     password: yup
       .string()
-      .min(2, "Senha com no mínimo 2 caracteres")
+      .min(4, "Senha com no mínimo 4 caracteres")
       .required("Senha obrigatória"),
     confirmPassword: yup
       .string()
