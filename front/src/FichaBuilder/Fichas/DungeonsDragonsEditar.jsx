@@ -16,6 +16,11 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import axios from "axios";
 
+let dados = {
+     username: "a",
+     idUser: "a"
+};
+
 
 export default function DungeonsDragons() {
   const [numDados, setNumDados] = useState(0);
@@ -58,23 +63,28 @@ export default function DungeonsDragons() {
 useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/fichaDungeons/:info/:infa`, config);
+        console.log("não esta certo");
+
+        const response = await axios.get(`http://localhost:3000/fichaDungeons/:userId/:nomeFicha`, config);
         const url = window.location.href;
         console.log(window.location.href);
         const parteUrl = url.split('/');
-        const rota = parteUrl[3];
-        const info = parteUrl[4]; // atualizado para usar o nome correto
-        const infa = parteUrl[5]; // atualizado para usar o nome correto
+        dados.idUser =  parteUrl[4];;
+        dados.username = parteUrl[5];;
+        console.log(dados.idUser);
+        console.log(dados.username);  
         setValidado(true);
         setUserId(response.data.userId);
-        console.log(response.data.user);
+    
+        // console.log(response.data.user);
         console.log(response.data.userId);
-        setUserId(response.data.userId);
-        console.log(rota);
-        setInfo(info); // atualizado para usar o nome correto
-        console.log(info);
-        setInfa(infa); // atualizado para usar o nome correto
-        console.log(infa);
+        console.log("algode errado");
+        // setUserId(response.data.userId);
+        // console.log(rota);
+        // setInfo(info); // atualizado para usar o nome correto
+        // console.log(info);
+        // setInfa(infa); // atualizado para usar o nome correto
+        // console.log(infa);
   
       } catch (error) {
         console.error('Erro ao obter dados:', error);
@@ -95,7 +105,7 @@ useEffect(() => {
   const submit = async (data) => {
         
     try {
-        const response = await axios.post('http://localhost:3000/DungeonsDragons', data);
+        const response = await axios.post('http://localhost:3000/fichaDungeons/:userId/:nomeFicha', data);
         setMsg(response.data);
         if(response.data.includes('sucesso')){
           setFichaCriado(true);

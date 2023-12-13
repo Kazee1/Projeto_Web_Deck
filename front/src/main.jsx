@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: 'fichaCall/:userId/:nomeFicha', 
         //path: 'DungeonsDragons/:userId/:nomeFicha', 
-        element: <CallCthulhu />
+        element: <CallCthulhuEditar />
       },
       {
         path: 'CallCthulhu',

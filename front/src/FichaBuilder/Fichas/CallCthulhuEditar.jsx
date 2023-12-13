@@ -25,7 +25,7 @@ export default function CallCthulhu() {
   useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/fichaCall`, config);
+        const response = await axios.get(`http://localhost:3000/fichaCall/:userId/:nomeFicha`, config);
         setValidado(true);
         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
@@ -50,7 +50,7 @@ export default function CallCthulhu() {
   const submit = async (data) => {
         
     try {
-        const response = await axios.post('http://localhost:3000/CallCthulhu', data);
+        const response = await axios.post('http://localhost:3000/fichaCall/:userId/:nomeFicha', data);
         setMsg(response.data);
         if(response.data.includes('sucesso')){
           setFichaCriado(true);
