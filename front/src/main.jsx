@@ -15,7 +15,6 @@ import DungeonsDragons from './FichaBuilder/Fichas/DungeonsDragons.jsx';
 import DungeonsDragonsEditar from './FichaBuilder/Fichas/DungeonsDragonsEditar.jsx';
 
 import CallCthulhu from './FichaBuilder/Fichas/CallCthulhu.jsx';
-import Myprofile from './FichaBuilder/Myprofile.jsx';
 import MySetting from './FichaBuilder/MySetting.jsx';
 //Adicionando as rotas
 const router = createBrowserRouter([
@@ -50,10 +49,6 @@ const router = createBrowserRouter([
       {
         path: 'CallCthulhu',
         element: <CallCthulhu/>
-      },
-      {
-        path: 'profile',
-        element: <Myprofile/>
       },
       {
         path: 'setting',
