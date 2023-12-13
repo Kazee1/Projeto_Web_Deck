@@ -580,6 +580,7 @@ export default function DungeonsDragons() {
           </div>
           <div className="BotaoSalvar">
             <button className="SalvarFicha">Salvar</button>
+            <p className="server-response">{msg}</p>
           </div>
         </form>
       </main>
