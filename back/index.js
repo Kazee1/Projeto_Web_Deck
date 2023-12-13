@@ -128,7 +128,7 @@ app.post('/DungeonsDragons',async (req,res) => {
 
     fichas.push(ficha);
     fs.writeFileSync(banco,JSON.stringify(fichas,null,2));
-    res.send(`Tudo certo usuario criado com sucesso.`);
+    res.send(`Ficha Criada com Sucesso`);
 
 })
 
@@ -147,7 +147,7 @@ app.post('/CallCthulhu', async (req,res) => {
 
     fichas.push(ficha);
     fs.writeFileSync(banco,JSON.stringify(fichas,null,2));
-    res.send(`Tudo certo usuario criado com sucesso.`);
+    res.send(`Ficha criada com sucesso`);
 })
 
 

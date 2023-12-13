@@ -51,16 +51,18 @@ export default function Myprofile() {
     }
     valida();
   }, []);
-
+  const [msg, setMsg] = useState();
   async function dados(){
     
       try {
         const response = await axios.get('http://localhost:3000/profile2');
+        setMsg(response.data)
         console.log("oioi");
         const dados = await response.json();
         document.getElementById('user').value = dados.username;
         document.getElementById('email').value = dados.email;
       } catch (error) {
+        setMsg(error.response.data)
         console.error('Erro ao obter mensagem do servidor:', error);
       }
     
@@ -125,6 +127,7 @@ export default function Myprofile() {
                 >
                   Salvar
                 </button>
+                {/* <p className="server-response">{msg}</p> */}
               </div>
             </div>
           </div>

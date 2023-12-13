@@ -162,8 +162,7 @@ export default function DungeonsDragons() {
   }
 
   const mostraParagrafo = ()=>{
-    let css = document.getElementsByClassName(".confMes").style
-    css.display = "broke"
+
     return
   }
 
@@ -584,8 +583,8 @@ export default function DungeonsDragons() {
             </div>
           </div>
           <div className="BotaoSalvar">
-            <button className="SalvarFicha" >Salvar</button>
-            <p className="confMes" onClick={mostraParagrafo()} display="none">Ficha Salva</p>
+            <button className="SalvarFicha" onClick={mostraParagrafo()}>Salvar</button>
+            {/* <p className="server-response">{msg}</p> */}
           </div>
         </form>
       </main>

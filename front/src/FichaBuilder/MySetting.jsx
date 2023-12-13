@@ -159,6 +159,7 @@ export default function Myprofile() {
                 >
                   Salvar
                 </button>
+                {/* <p className="server-response">{msg}</p> */}
               </div>
               </form>
               <div className="ButtonsWrapper">
