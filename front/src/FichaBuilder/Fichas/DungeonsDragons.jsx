@@ -4,7 +4,6 @@ import "../../Styles/Fichas/DungeonsDragons.css";
 import "../../Styles/Fichas/Dados.css";
 
 import {set, useForm} from 'react-hook-form';
-//import axios, * as others from 'axios';
 
 import Imagem1 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page1.jpg";
 import Imagem2 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page2.jpg";
@@ -29,11 +28,10 @@ export default function DungeonsDragons() {
       try {
         const response = await axios.get(`http://localhost:3000/DungeonsDragons/`, config);
         setValidado(true);
-        console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
+        console.log(response.data.userId); 
         setUserId(response.data.userId);
         
       } catch (error) {
-        // Trate os erros, se necessário
         console.error('Erro ao obter dados:', error);
         setValidado(false);
       }
@@ -66,7 +64,7 @@ export default function DungeonsDragons() {
 
   useEffect(() => {
     if (validado) {
-      mostrarDados(); // Execute se validado for true
+      mostrarDados(); 
     }
   }, [validado, numDados]);
 

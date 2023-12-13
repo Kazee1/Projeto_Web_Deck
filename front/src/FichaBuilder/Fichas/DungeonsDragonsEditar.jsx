@@ -4,7 +4,6 @@ import "../../Styles/Fichas/DungeonsDragons.css";
 import "../../Styles/Fichas/Dados.css";
 
 import {set, useForm} from 'react-hook-form';
-//import axios, * as others from 'axios';
 
 import Imagem1 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page1.jpg";
 import Imagem2 from "../../Imagens/Fichas/DungeonsDragons_Ficha_5E_page2.jpg";
@@ -30,36 +29,7 @@ export default function DungeonsDragons() {
   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
   const [inf, setInfo] = useState(null);
   const [infaa, setInfa] = useState(null);
-//   useEffect(() => {
-//     async function valida() {
-//       try {
-//         const response = await axios.get(`http://localhost:3000/fichaDungeons/:info/:infa`, config);
-        
-//         const url = window.location.href;
-//         console.log(window.location.href);
-//         console.log(response.data.info);
-//         console.log(response.data.infa);
-//         const parteUrl = url.split('/');
-//         const rota = parteUrl[3];
-//         const user = parteUrl[4];
-//         const Email = parteUrl[5];
-//         setValidado(true);
-//         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
-//         setUserId(response.data.userId);
-//         console.log(response.data.user);
-//         setUser(response.data.user);
-//         console.log(user);
-//         setEmail(Email);
-//         console.log(Email);
 
-//       } catch (error) {
-//         // Trate os erros, se necessário
-//         console.error('Erro ao obter dados:', error);
-//         setValidado(false);
-//       }
-//     }
-//     valida();
-//   }, []);
 
 useEffect(() => {
     async function valida() {
@@ -69,29 +39,11 @@ useEffect(() => {
         const parteUrl = url.split('/');
         dados.idUser =  parteUrl[4];;
         dados.username = parteUrl[5];;
-        console.log(dados.idUser);
-        console.log(dados.username);  
-        console.log("não esta certo");
-        // const response = await axios.get(`http://localhost:3000/fichaDungeons/:userId/:nomeFicha`, config , {
-        //   params: {
-        //     info: dados.idUser,
-        //     infa: dados.username,
-        //   },
-        // });
+    
         const response = await axios.get(`http://localhost:3000/editarFicha`, config);
         
         setValidado(true);
         setUserId(response.data.userId);
-    
-        // console.log(response.data.user);
-        console.log(response.data.userId);
-        console.log("algode errado");
-        // setUserId(response.data.userId);
-        // console.log(rota);
-        // setInfo(info); // atualizado para usar o nome correto
-        // console.log(info);
-        // setInfa(infa); // atualizado para usar o nome correto
-        console.log("infinito");
         dados2();
       } catch (error) {
         console.error('Erro ao obter dados:', error);
@@ -127,37 +79,9 @@ useEffect(() => {
 
 
 
-// async function dados() {
-//   console.log("boi feio");
-
-//   try {
-//     const response = await axios.get('/fichaDungeons/muda/pa');
-//     console.log("oioi");
-
-//     if (!response.ok) {
-//       // Se a resposta do servidor não estiver ok, lança um erro
-//       throw new Error(`Erro na requisição: ${response.statusText}`);
-//     }
-
-//     // Aguarda a resolução da promessa retornada por response.json()
-//     const dados = await response.json();
-
-//     console.log(dados.JogadorJogador);
-//     console.log(dados.NomeJogador);
-
-//     // Agora você pode acessar os dados normalmente
-//     // document.getElementById('user').value = dados.username;
-//     // document.getElementById('email').value = dados.email;
-//   } catch (error) {
-//     console.log("erro:::??????");
-//     console.error('Erro ao obter mensagem do servidor:', error.message);
-//   }
-// }
-
-
   useEffect(() => {
     if (validado) {
-      mostrarDados(); // Execute se validado for true
+      mostrarDados(); 
     }
   }, [validado, numDados]);
 
@@ -252,18 +176,11 @@ useEffect(() => {
     return <p>Token Inválido</p>
   }
 async function dados2(){
-  console.log("boi feio");
+
     try {
       const response = await fetch(`http://localhost:3000/fichaDungeons/${dados.idUser}/${dados.username}`);
-      console.log("oioi");
       const dadosa = await response.json();
-      console.log(dadosa);
-      console.log(dadosa.JogadorJogador);
-      console.log(dadosa.NomeJogador);
-      //document.getElementById('user').value = dados.username;
-      //document.getElementById('email').value = dados.email;
     } catch (error) {
-       console.log("erro:::??????");
        console.error('Erro ao obter mensagem do servidor:', error);
      }
   

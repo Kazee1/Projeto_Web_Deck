@@ -1,6 +1,5 @@
 import Footer from "../Inicio/Footer";
 import HeaderLogado from "./HeaderLogado";
-// import CTHULHUFICHA from '../Imagens/CTHULHUFicha'
 import DragonsFicha from "../Imagens/DragonsFicha.png";
 import CTHULHUFICHA from "../Imagens/CTHULHUFicha.png";
 
@@ -24,7 +23,6 @@ export default function PaginaInicialLogado() {
     tipoFichas: [],
   });
   const [filtro, setFiltro] = useState("");
-  //Trava por Token
 
   const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
@@ -42,10 +40,8 @@ export default function PaginaInicialLogado() {
           config
         );
         setValidado(true);
-        console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
       } catch (error) {
-        // Trate os erros, se necessário
         console.error("Erro ao obter dados:", error);
         setValidado(false);
       }
@@ -60,7 +56,6 @@ export default function PaginaInicialLogado() {
           const response = await axios.get(`http://localhost:3000/inicio2`);
 
           const { nomeFichas, tipoFichas } = response.data;
-          console.log(response.data);
           setFichasUsuario({ nomeFichas, tipoFichas });
           setFichasFiltradas({ nomeFichas, tipoFichas });
         }
@@ -95,7 +90,6 @@ export default function PaginaInicialLogado() {
   };
 
   const handleDivClick = (nomeFicha, tipoFicha) => {
-    // Lógica a ser executada quando a div for clicada
     console.log(`Div clicada! Index: ${nomeFicha} ${userId} ${tipoFicha}`);
     window.location.href = `http://localhost:5173/${tipoFicha}/${userId}/${nomeFicha}`;
   };
@@ -104,10 +98,8 @@ export default function PaginaInicialLogado() {
     try {
       const nomeDaFicha = fichasFiltradas.nomeFichas[index];
       
-      // Faz a requisição DELETE para o servidor com o nome da ficha
       await axios.delete(`http://localhost:3000/ficha/${nomeDaFicha}`);
       
-      // Se a exclusão for bem-sucedida no servidor, atualize a lista de fichas localmente
       const novasNomeFichas = [...fichasFiltradas.nomeFichas];
       const novosTipoFichas = [...fichasFiltradas.tipoFichas];
   
@@ -120,7 +112,6 @@ export default function PaginaInicialLogado() {
       });
     } catch (error) {
       console.error('Erro ao excluir ficha:', error);
-      // Lide com erros ou mostre uma mensagem de erro ao usuário
     }
   };
   

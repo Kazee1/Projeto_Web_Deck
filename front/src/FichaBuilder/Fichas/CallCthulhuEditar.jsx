@@ -38,11 +38,10 @@ export default function CallCthulhu() {
         console.log("não esta certo");
         const response = await axios.get(`http://localhost:3000/fichaCall/${dados.idUser}/${dados.username}`, config);
         setValidado(true);
-        console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
+        console.log(response.data.userId); 
         setUserId(response.data.userId);
         
       } catch (error) {
-        // Trate os erros, se necessário
         console.error('Erro ao obter dados:', error);
         setValidado(false);
       }

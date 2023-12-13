@@ -48,10 +48,8 @@ export default function Myprofile() {
           config
         );
         setValidado(true);
-        console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
       } catch (error) {
-        // Trate os erros, se necessário
         console.error("Erro ao obter dados:", error);
         setValidado(false);
       }
@@ -66,16 +64,11 @@ export default function Myprofile() {
     try {
       const response = await axios.post('http://localhost:3000/setting', data);
       setMsg(response.data);
-      //if(response.data.includes('sucesso'))
-       // setFichaCriado(true);
   } catch (error) {
       setMsg(error.response.data);
   }  
 
   };
-  // const handleSaveClick = () => {
- 
-  // };
 
   const handleEditClick = () => {
     setIsEditMode(true);
@@ -150,12 +143,10 @@ export default function Myprofile() {
                   onChange={(e) => setNewEmail(e.target.value)}
                   disabled={!isEditMode}
                 />
-                {/* <p className='erro'>{errors.email?.message}</p> */}
               </div>
             <div className="ButtonsWrapper">   
                 <button
                   className="Button2"
-                  //onClick={handleSaveClick}
                   disabled={!isSaveEnabled}
                 >
                   Salvar

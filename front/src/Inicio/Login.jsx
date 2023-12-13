@@ -22,23 +22,6 @@ export default function Login(){
       const [msg, setMsg] = useState('');
       const { errors } = formState;
 
-      // const submit = async (data) => {
-      //   try {
-      //     const response = await form.trigger();
-      //     if (Object.keys(errors).length === 0) {
-      //       const response = await axios.post('http://localhost:3000/Login', data);
-      //       if (response && response.data && response.data.token) {
-      //         const token = response.data.token;
-      //         sessionStorage.setItem('token', token);
-      //         setMsg('Autenticado');
-      //       } else {
-      //         setMsg('Erro ao autenticar');
-      //       }
-      //     }
-      //   } catch (error) {
-      //     setMsg(error.response?.data || 'Erro ao realizar a requisição');
-      //   }
-      // };
 
       const submit = async (data) => {
         
