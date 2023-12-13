@@ -23,17 +23,60 @@ export default function DungeonsDragons() {
   const [userId, setUserId] = useState(null);
   const [validado, setValidado] = useState(false);
   const config = {headers:{'Authorization' : 'Bearer '.concat(sessionStorage.getItem('token'))}}
-  
-  useEffect(() => {
+  const [inf, setInfo] = useState(null);
+  const [infaa, setInfa] = useState(null);
+//   useEffect(() => {
+//     async function valida() {
+//       try {
+//         const response = await axios.get(`http://localhost:3000/fichaDungeons/:info/:infa`, config);
+        
+//         const url = window.location.href;
+//         console.log(window.location.href);
+//         console.log(response.data.info);
+//         console.log(response.data.infa);
+//         const parteUrl = url.split('/');
+//         const rota = parteUrl[3];
+//         const user = parteUrl[4];
+//         const Email = parteUrl[5];
+//         setValidado(true);
+//         console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
+//         setUserId(response.data.userId);
+//         console.log(response.data.user);
+//         setUser(response.data.user);
+//         console.log(user);
+//         setEmail(Email);
+//         console.log(Email);
+
+//       } catch (error) {
+//         // Trate os erros, se necessário
+//         console.error('Erro ao obter dados:', error);
+//         setValidado(false);
+//       }
+//     }
+//     valida();
+//   }, []);
+useEffect(() => {
     async function valida() {
       try {
-        const response = await axios.get(`http://localhost:3000/DungeonsDragons/`, config);
+        const response = await axios.get(`http://localhost:3000/fichaDungeons/:info/:infa`, config);
+        const url = window.location.href;
+        console.log(window.location.href);
+        const parteUrl = url.split('/');
+        const rota = parteUrl[3];
+        const info = parteUrl[4]; // atualizado para usar o nome correto
+        const infa = parteUrl[5]; // atualizado para usar o nome correto
         setValidado(true);
-        console.log(response.data.userId); // ou faça o que for necessário com os dados recebidos
         setUserId(response.data.userId);
-        
+        console.log(response.data.user);
+        console.log(response.data.userId);
+        setUserId(response.data.userId);
+        console.log(rota);
+        setInfo(info); // atualizado para usar o nome correto
+        console.log(info);
+        setInfa(infa); // atualizado para usar o nome correto
+        console.log(infa);
+  
       } catch (error) {
-        // Trate os erros, se necessário
         console.error('Erro ao obter dados:', error);
         setValidado(false);
       }

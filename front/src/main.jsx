@@ -13,6 +13,7 @@ import PaginaInicial from './Inicio/PaginaInicial.jsx';
 import PaginaInicialLogado from './FichaBuilder/PaginaInicialLogado.jsx';
 import DungeonsDragons from './FichaBuilder/Fichas/DungeonsDragons.jsx';
 import DungeonsDragonsEditar from './FichaBuilder/Fichas/DungeonsDragonsEditar.jsx';
+import CallCthulhuEditar from './FichaBuilder/Fichas/CallCthulhuEditar.jsx';
 
 import CallCthulhu from './FichaBuilder/Fichas/CallCthulhu.jsx';
 import Myprofile from './FichaBuilder/Myprofile.jsx';
@@ -44,8 +45,14 @@ const router = createBrowserRouter([
         element: <DungeonsDragons/>
       },
       {
-        path: 'DungeonsDragons/:userId/:nomeFicha', 
+        path: 'fichaDungeons/:userId/:nomeFicha', 
+        //path: 'DungeonsDragons/:userId/:nomeFicha', 
         element: <DungeonsDragonsEditar />
+      },
+      {
+        path: 'fichaCall/:userId/:nomeFicha', 
+        //path: 'DungeonsDragons/:userId/:nomeFicha', 
+        element: <CallCthulhu />
       },
       {
         path: 'CallCthulhu',
